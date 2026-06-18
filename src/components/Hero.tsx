@@ -45,7 +45,7 @@ export default function Hero({ onBegin }: Props) {
         {/* Title */}
         <LightningText
           text="Mystery Tarot"
-          className="mb-1 h-[140px] max-w-xl mx-auto"
+          className="mb-1 h-[120px] max-w-[760px] mx-auto"
         />
         <p className="text-[var(--parchment-300)] text-lg mb-10 italic">
           Bí ẩn nằm trong những lá bài — hãy để vũ trụ lên tiếng

@@ -25,7 +25,7 @@ class TextMask {
 
     this.size = options.size || 100;
     this.copy = (options.copy || 'Mystery Tarot') + ' ';
-    this.color = options.color || '#f2d58a';
+    this.color = options.color || '#fff2c2';
     this.delay = options.delay || 2;
     this.basedelay = this.delay;
 
@@ -85,8 +85,8 @@ class Thunder {
   constructor(options: any = {}) {
     this.lifespan = options.lifespan || Math.round(Math.random() * 10 + 10);
     this.maxlife = this.lifespan;
-    this.color = options.color || '#f8e7b3';
-    this.glow = options.glow || '#d39d2a';
+    this.color = options.color || '#fff8e8';
+    this.glow = options.glow || '#f0c96a';
     this.x = options.x || 0;
     this.y = options.y || 0;
     this.width = options.width || 2;
@@ -134,9 +134,9 @@ class Thunder {
 
     const strength = Math.random() * 30 + 24;
     const light = ctx.createRadialGradient(this.x, this.y, 0, this.x, this.y, strength);
-    light.addColorStop(0, 'rgba(250, 215, 150, 0.55)');
-    light.addColorStop(0.25, 'rgba(250, 215, 150, 0.18)');
-    light.addColorStop(1, 'rgba(250, 215, 150, 0)');
+    light.addColorStop(0, 'rgba(255, 248, 232, 0.85)');
+    light.addColorStop(0.18, 'rgba(255, 226, 160, 0.42)');
+    light.addColorStop(1, 'rgba(255, 226, 160, 0)');
 
     ctx.beginPath();
     ctx.fillStyle = light;
@@ -287,11 +287,11 @@ export default function LightningText({ text = 'Mystery Tarot', className }: Lig
   };
 
   return (
-    <div className={cn('relative inline-flex items-center justify-center w-full h-[150px]', className)}>
+    <div className={cn('relative inline-flex items-center justify-center w-full h-[150px] bg-transparent overflow-hidden', className)}>
       <canvas
         ref={canvasRef}
         onClick={handleCanvasClick}
-        className="block w-full h-full cursor-crosshair"
+        className="block w-full h-full cursor-crosshair bg-transparent"
       />
     </div>
   );
