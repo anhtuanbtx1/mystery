@@ -327,7 +327,6 @@ const useShaderBackground = () => {
 // --- Main Component ---
 
 export default function CosmicBackground() {
-  const sigilRef = useRef<HTMLDivElement>(null);
   const cardsRef = useRef<HTMLDivElement>(null);
   const canvasRef = useShaderBackground();
 
@@ -357,9 +356,7 @@ export default function CosmicBackground() {
       const x = (e.clientX - window.innerWidth / 2) / window.innerWidth;
       const y = (e.clientY - window.innerHeight / 2) / window.innerHeight;
 
-      if (sigilRef.current) {
-        sigilRef.current.style.transform = `translate(${x * -28}px, ${y * -22}px)`;
-      }
+
       if (cardsRef.current) {
         const bgCards = cardsRef.current.querySelectorAll('.bg-card');
         bgCards.forEach((card, i) => {
@@ -382,28 +379,6 @@ export default function CosmicBackground() {
         style={{ filter: 'contrast(1.08) brightness(0.58) sepia(0.28)' }}
       />
 
-      {/* 2. Sigil */}
-      <div className="absolute inset-0 flex items-center justify-center pointer-events-none z-[2]">
-        <div
-          ref={sigilRef}
-          className="layer sigil-wrap w-[340px] h-[340px] opacity-15 text-[#b9a2e8] will-change-transform"
-          style={{ filter: 'drop-shadow(0 0 14px rgba(155,127,212,.22))' }}
-        >
-        <svg viewBox="0 0 200 200" width="100%" height="100%" fill="none" stroke="currentColor" strokeWidth="0.75" className="sigil-outer">
-          <circle cx="100" cy="100" r="94" strokeDasharray="7,5"></circle>
-          <circle cx="100" cy="100" r="78"></circle>
-          <path d="M100 20 L180 140 L20 140 Z" strokeWidth="0.5"></path>
-          <path d="M100 180 L180 60 L20 60 Z" strokeWidth="0.5"></path>
-        </svg>
-        <div className="absolute inset-0 flex items-center justify-center">
-          <svg viewBox="0 0 200 200" width="74%" height="74%" fill="none" stroke="currentColor" strokeWidth="0.75" className="sigil-inner">
-            <circle cx="100" cy="100" r="72"></circle>
-            <circle cx="100" cy="100" r="50" strokeDasharray="10,12"></circle>
-            <path d="M100 6 L100 194 M6 100 L194 100" strokeWidth="0.4"></path>
-          </svg>
-        </div>
-      </div>
-      </div>
 
       {/* 3. Sparkles (client-only) */}
       <div className="layer z-[3] pointer-events-none" suppressHydrationWarning>
