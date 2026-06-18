@@ -1,26 +1,148 @@
 @import "tailwindcss";
 
+@theme {
+  --color-gold-100: #fff0d0;
+  --color-gold-200: #ffe096;
+  --color-gold-300: #e8c97a;
+  --color-gold-400: #d4af37;
+  --color-gold-500: #aa8529;
+  --color-parchment-100: #fbf5e6;
+  --color-parchment-200: #f2e6ce;
+  --color-parchment-300: #e6d3b3;
+  --color-parchment-400: #d4b88c;
+  --color-bg-dark: #0a0612;
+}
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --gold-100: #fff0d0;
+  --gold-200: #ffe096;
+  --gold-300: #e8c97a;
+  --gold-400: #d4af37;
+  --gold-500: #aa8529;
+  --parchment-100: #fbf5e6;
+  --parchment-200: #f2e6ce;
+  --parchment-300: #e6d3b3;
+  --parchment-400: #d4b88c;
+  --bg-dark: #0a0612;
+  --bg-surface: #140920;
+  --font-display: 'Cinzel', Georgia, serif;
+  --font-body: 'Cormorant Garamond', Georgia, serif;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--bg-dark);
+  color: var(--parchment-100);
+  font-family: var(--font-body);
+  margin: 0;
+  overflow-x: hidden;
+}
+
+.font-display { font-family: var(--font-display); }
+.font-body { font-family: var(--font-body); }
+
+.text-glow { text-shadow: 0 0 12px rgba(232, 201, 122, 0.4); }
+.box-glow { box-shadow: 0 0 24px rgba(232, 201, 122, 0.15); }
+
+.custom-scrollbar::-webkit-scrollbar { width: 8px; }
+.custom-scrollbar::-webkit-scrollbar-thumb { background: rgba(232,201,122,0.25); border-radius: 999px; }
+
+@keyframes nebulaDrift {
+  0% { transform: scale(1.1) rotate(0deg) translate3d(0,0,0); opacity: 0.6; }
+  50% { transform: scale(1.2) rotate(3deg) translate3d(0,0,0); opacity: 0.85; }
+  100% { transform: scale(1.1) rotate(0deg) translate3d(0,0,0); opacity: 0.6; }
+}
+@keyframes sigilSpin {
+  0% { transform: translate3d(-50%, -50%, 0) rotate(360deg); }
+  100% { transform: translate3d(-50%, -50%, 0) rotate(0deg); }
+}
+.animate-nebula { will-change: transform, opacity; transform: translateZ(0); animation: nebulaDrift 40s ease-in-out infinite; }
+.animate-sigil { will-change: transform; transform: translateZ(0); animation: sigilSpin 90s linear infinite; }
+
+/* --- Cosmic Background Effects --- */
+.layer { position: absolute; inset: 0; pointer-events: none; }
+
+.nebula { animation: nebulaBreathe 18s ease-in-out infinite alternate; }
+@keyframes nebulaBreathe { 0% { transform: scale(1); } 100% { transform: scale(1.06) translate(1%,-1%); } }
+
+.stars { animation: starDrift 140s linear infinite; }
+@keyframes starDrift { from { background-position: 0 0; } to { background-position: 820px 620px; } }
+
+.sigil-wrap { animation: sigilFloat 8s ease-in-out infinite alternate; transform: translateX(-50%); }
+@keyframes sigilFloat { 
+  0% { transform: translateX(-50%) translateY(0) scale(.88); } 
+  100% { transform: translateX(-50%) translateY(-4px) scale(.92); } 
+}
+
+.sigil-outer, .sigil-inner { transform-origin: center; }
+.sigil-outer { animation: spinCW 42s linear infinite; }
+.sigil-inner { animation: spinCCW 28s linear infinite; }
+@keyframes spinCW { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+@keyframes spinCCW { from { transform: rotate(360deg); } to { transform: rotate(0deg); } }
+
+.sparkle { animation: twinkle 5.5s ease-in-out infinite; }
+@keyframes twinkle { 
+  0%,100% { opacity: 0; transform: scale(.6); } 
+  50% { opacity: .9; transform: scale(1.15); } 
+}
+
+.rune { animation: runeRise 12s linear infinite; }
+@keyframes runeRise { 
+  0% { transform: translateY(48px) rotate(0deg); opacity: 0; } 
+  15% { opacity: .35; } 
+  85% { opacity: .28; } 
+  100% { transform: translateY(-120px) rotate(20deg); opacity: 0; } 
+}
+
+.bg-card { animation: cardDrift var(--dur, 18s) ease-in-out infinite alternate; }
+@keyframes cardDrift { 
+  from { transform: translate3d(0,0,0) rotate(var(--rot-a)); } 
+  to { transform: translate3d(var(--dx), var(--dy), 0) rotate(var(--rot-b)); } 
+}
+
+@media (prefers-reduced-motion: reduce) { 
+  .nebula, .stars, .sigil-outer, .sigil-inner, .sparkle, .rune, .bg-card { animation: none !important; } 
+}
+
+:root {
+  --shadow-lg: 0 20px 40px -10px rgba(0,0,0,0.5);
+  --edge-gold: 0 0 0 1px rgba(232, 201, 122, 0.2);
+  --radius-card: 18px;
+}
+
+
+
+/* --- Cosmic Shooting Stars --- */
+.shooting-star {
+  position: absolute;
+  height: 2px;
+  border-radius: 999px;
+  transform-origin: left center;
+  background: linear-gradient(90deg,
+    rgba(255,255,255,0) 0%,
+    rgba(210,190,255,0.18) 35%,
+    rgba(235,225,255,0.68) 72%,
+    rgba(255,255,255,0.95) 100%
+  );
+  filter: blur(0.35px) drop-shadow(0 0 10px rgba(192,150,255,0.24));
+  animation: shoot var(--dur, 3s) linear infinite;
+  opacity: 0;
+}
+.shooting-star::after {
+  content: '';
+  position: absolute;
+  right: -1px;
+  top: 50%;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  transform: translateY(-50%);
+  background: rgba(255,255,255,0.92);
+  box-shadow: 0 0 10px rgba(220,200,255,0.65), 0 0 22px rgba(170,120,255,0.28);
+}
+
+@keyframes shoot {
+  0% { transform: translate3d(0,0,0) rotate(var(--angle, 24deg)) scaleX(0); opacity: 0; }
+  8% { opacity: var(--max-opacity, 0.5); transform: translate3d(0,0,0) rotate(var(--angle, 24deg)) scaleX(1); }
+  35% { opacity: calc(var(--max-opacity, 0.5) * 0.45); transform: translate3d(calc(var(--dist-x, 180px) * 0.45), calc(var(--dist-y, 80px) * 0.45), 0) rotate(var(--angle, 24deg)) scaleX(0.65); }
+  100% { opacity: 0; transform: translate3d(var(--dist-x, 180px), var(--dist-y, 80px), 0) rotate(var(--angle, 24deg)) scaleX(0.1); }
 }
