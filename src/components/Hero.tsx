@@ -1,7 +1,9 @@
 'use client';
 
 import React, { useState } from 'react';
+import { motion } from 'framer-motion';
 import TarotBookPopup from './TarotBookPopup';
+import { cn } from '@/lib/utils';
 
 interface Props {
   onBegin: () => void;
@@ -22,7 +24,21 @@ export default function Hero({ onBegin }: Props) {
       <div className="text-center max-w-3xl">
         {/* Brand emblem */}
         <div className="mb-6 opacity-80">
-          <img src="/assets/emblem.svg" alt="Mystery Tarot" className="w-14 h-14 mx-auto spin-slow drop-shadow-[0_0_12px_rgba(232,201,122,.22)]" />
+          <motion.div
+            className="mx-auto w-16 h-16 rounded-full flex items-center justify-center"
+            animate={{ rotate: 360 }}
+            transition={{ duration: 30, repeat: Infinity, ease: 'linear' }}
+          >
+            <motion.img
+              src="/assets/emblem.svg"
+              alt="Mystery Tarot"
+              className={cn(
+                'w-14 h-14 object-contain drop-shadow-[0_0_12px_rgba(232,201,122,.22)]'
+              )}
+              animate={{ rotate: 360 }}
+              transition={{ duration: 18, repeat: Infinity, ease: 'linear' }}
+            />
+          </motion.div>
         </div>
 
         {/* Title */}
