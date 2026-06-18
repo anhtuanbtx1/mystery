@@ -93,10 +93,21 @@ body {
   100% { transform: translateY(-120px) rotate(20deg); opacity: 0; } 
 }
 
-.bg-card { animation: cardDrift var(--dur, 18s) ease-in-out infinite alternate; }
-@keyframes cardDrift { 
-  from { transform: translate3d(0,0,0) rotate(var(--rot-a)); } 
-  to { transform: translate3d(var(--dx), var(--dy), 0) rotate(var(--rot-b)); } 
+.bg-card {
+  --mx: 0px;
+  --my: 0px;
+  --mr: 0deg;
+  --scale: 1;
+  --dx: 0px;
+  --dy: 0px;
+  animation: cardDrift var(--dur, 18s) ease-in-out infinite;
+  will-change: transform;
+}
+@keyframes cardDrift {
+  0% { transform: translate3d(var(--mx), var(--my), 0) rotate(var(--base-rot)) scale(var(--scale)); }
+  33% { transform: translate3d(calc(var(--mx) + var(--dx) * 0.8), calc(var(--my) + var(--dy) * 0.6), 0) rotate(calc(var(--base-rot) + 4deg)) scale(calc(var(--scale) * 1.025)); }
+  66% { transform: translate3d(calc(var(--mx) - var(--dx) * 0.5), calc(var(--my) + var(--dy) * 0.9), 0) rotate(calc(var(--base-rot) - 3deg)) scale(calc(var(--scale) * 0.985)); }
+  100% { transform: translate3d(var(--mx), var(--my), 0) rotate(var(--base-rot)) scale(var(--scale)); }
 }
 
 @media (prefers-reduced-motion: reduce) { 
