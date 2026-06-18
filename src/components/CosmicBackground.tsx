@@ -85,8 +85,9 @@ void main(void) {
     col+=.00125/d*(cos(sin(i)*vec3(1,2,3))+1.);
     float b=noise(i+p+bg*1.731);
     col+=.002*b/length(max(p,vec2(b*p.x*.02,p.y)));
-    vec3 purpleBase = mix(tintB, tintA, bg);
-    col = mix(col, purpleBase, d);
+    vec3 warmBase = mix(tintB, tintA, bg);
+    vec3 amberGlow = vec3(0.78, 0.42, 0.18) * bg * 0.18;
+    col = mix(col, warmBase + amberGlow, d);
   }
   O=vec4(col,1);
 }`;
@@ -215,8 +216,8 @@ void main(){gl_Position=position;}`;
     
     gl.uniform2f((program as any).resolution, this.canvas.width, this.canvas.height);
     gl.uniform1f((program as any).time, now * 1e-3);
-    gl.uniform3f((program as any).tintA, 0.42, 0.18, 0.78);
-    gl.uniform3f((program as any).tintB, 0.16, 0.05, 0.28);
+    gl.uniform3f((program as any).tintA, 0.52, 0.26, 0.11);
+    gl.uniform3f((program as any).tintB, 0.08, 0.035, 0.02);
     gl.uniform2f((program as any).move, this.mouseMove[0], this.mouseMove[1]);
     gl.uniform2f((program as any).touch, this.mouseCoords[0], this.mouseCoords[1]);
     gl.uniform1i((program as any).pointerCount, this.nbrOfPointers);
@@ -377,7 +378,7 @@ export default function CosmicBackground() {
       <canvas
         ref={canvasRef}
         className="absolute inset-0 w-full h-full object-contain pointer-events-auto touch-none opacity-85 saturate-150"
-        style={{ filter: 'contrast(1.05) brightness(0.65)' }}
+        style={{ filter: 'contrast(1.08) brightness(0.58) sepia(0.28)' }}
       />
 
       {/* 2. Sigil */}
