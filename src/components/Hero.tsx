@@ -96,11 +96,11 @@ export default function Hero({ onBegin }: Props) {
                 <div style={{ position: 'absolute', inset: 7, borderRadius: 14, border: '1px solid rgba(83,48,14,0.5)', pointerEvents: 'none' }} />
                 <div style={{ position: 'absolute', inset: 14, borderRadius: 12, border: '1px solid rgba(255,238,197,0.45)', pointerEvents: 'none' }} />
                 {/* Card art */}
-                <div style={{ position: 'absolute', inset: 18, borderRadius: 10, overflow: 'hidden', background: '#1a102b' }}>
+                <div style={{ position: 'absolute', inset: 18, borderRadius: 10, overflow: 'hidden', background: '#1a102b', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
                   <img
                     src="/assets/card-back.svg"
                     alt={card.label}
-                    style={{ width: '84%', height: '84%', objectFit: 'contain', opacity: isCenter ? 1 : 0.96, filter: isCenter ? 'drop-shadow(0 0 10px rgba(255,224,150,.2))' : 'none', transform: isCenter && hovered ? 'translateY(-2px)' : 'translateY(0)' }}
+                    style={{ width: '72%', height: '72%', objectFit: 'contain', opacity: isCenter ? 1 : 0.96, filter: isCenter ? 'drop-shadow(0 0 10px rgba(255,224,150,.2))' : 'none', transform: isCenter && hovered ? 'translateY(-2px)' : 'translateY(0)' }}
                   />
                 </div>
                 {/* Glow overlay for center card */}
