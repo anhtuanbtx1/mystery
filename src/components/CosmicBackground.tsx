@@ -19,11 +19,11 @@ type Rune = {
 const RUNE_CHARS = ['ᚠ', 'ᚢ', 'ᚦ', 'ᚨ', 'ᚱ', 'ᚲ', 'ᚷ', 'ᚹ', 'ᚺ', 'ᚾ', 'ᛁ', 'ᛃ', 'ᛏ', 'ᛒ', 'ᛗ', 'ᛚ'];
 
 const CARD_CONFIGS = [
-  { top: '10%', left: '-18px', rotA: '-16deg', rotB: '-24deg', dx: '18px', dy: '-18px', dur: '22s', scale: 0.88 },
-  { top: '24%', right: '2%', rotA: '18deg', rotB: '28deg', dx: '-18px', dy: '12px', dur: '26s', scale: 0.78 },
-  { top: '44%', left: '7%', rotA: '-12deg', rotB: '-6deg', dx: '-14px', dy: '20px', dur: '24s', scale: 0.92 },
-  { bottom: '14%', left: '12%', rotA: '32deg', rotB: '42deg', dx: '16px', dy: '-12px', dur: '28s', scale: 0.84 },
-  { bottom: '10%', right: '-22px', rotA: '-20deg', rotB: '-10deg', dx: '-20px', dy: '-16px', dur: '25s', scale: 0.9 }
+  { top: '10%', left: '-18px', baseRot: -16, driftX: 34, driftY: -26, dur: '22s', scale: 0.88, blur: '1.4px', opacity: 0.52 },
+  { top: '24%', right: '2%', baseRot: 18, driftX: -30, driftY: 18, dur: '26s', scale: 0.78, blur: '1.8px', opacity: 0.46 },
+  { top: '44%', left: '7%', baseRot: -12, driftX: -24, driftY: 28, dur: '24s', scale: 0.92, blur: '1.3px', opacity: 0.56 },
+  { bottom: '14%', left: '12%', baseRot: 32, driftX: 28, driftY: -20, dur: '28s', scale: 0.84, blur: '1.7px', opacity: 0.5 },
+  { bottom: '10%', right: '-22px', baseRot: -20, driftX: -36, driftY: -24, dur: '25s', scale: 0.9, blur: '1.5px', opacity: 0.53 }
 ];
 
 const defaultShaderSource = `#version 300 es
@@ -364,7 +364,10 @@ export default function CosmicBackground() {
         const bgCards = cardsRef.current.querySelectorAll('.bg-card');
         bgCards.forEach((card, i) => {
           const k = i % 2 === 0 ? -18 : 14;
-          (card as HTMLElement).style.transform = `translate(${x * k}px, ${y * k}px) scale(${CARD_CONFIGS[i].scale})`;
+          const jitterX = Math.sin(Date.now() * 0.0004 + i * 1.3) * 18;
+          const jitterY = Math.cos(Date.now() * 0.00035 + i * 1.7) * 12;
+          const jitterR = Math.sin(Date.now() * 0.0003 + i) * 6;
+          (card as HTMLElement).style.transform = `translate(${x * k + jitterX}px, ${y * k + jitterY}px) rotate(${CARD_CONFIGS[i].baseRot + jitterR}deg) scale(${CARD_CONFIGS[i].scale})`;
         });
       }
     };
@@ -442,12 +445,8 @@ export default function CosmicBackground() {
         {CARD_CONFIGS.map((c, i) => {
           const styleProps: any = {
             ...c,
-            '--rot-a': c.rotA,
-            '--rot-b': c.rotB,
-            '--dx': c.dx,
-            '--dy': c.dy,
             '--dur': c.dur,
-            transform: `scale(${c.scale})`,
+            transform: `scale(${c.scale}) rotate(${c.baseRot}deg)`,
             animationDelay: `${-i * 4}s`,
             backgroundImage: "url('/assets/card-back.svg')",
             backgroundPosition: 'center',
@@ -459,8 +458,8 @@ export default function CosmicBackground() {
           return (
             <div
               key={`bg-card-${i}`}
-              className="bg-card absolute w-[128px] h-[218px] rounded-[18px] opacity-55 blur-[1.5px]"
-              style={styleProps}
+              className="bg-card absolute w-[128px] h-[218px] rounded-[18px]"
+              style={{ ...styleProps, opacity: c.opacity, filter: `blur(${c.blur})` }}
             />
           );
         })}
