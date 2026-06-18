@@ -4,6 +4,7 @@ import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import TarotBookPopup from './TarotBookPopup';
 import { cn } from '@/lib/utils';
+import { AnimatedText } from './AnimatedText';
 
 interface Props {
   onBegin: () => void;
@@ -42,9 +43,13 @@ export default function Hero({ onBegin }: Props) {
         </div>
 
         {/* Title */}
-        <h1 className="text-4xl md:text-5xl font-display tracking-widest text-[var(--gold-300)] text-glow mb-3 uppercase">
-          Mystery Tarot
-        </h1>
+        <AnimatedText
+          text="Mystery Tarot"
+          gradientColors="linear-gradient(90deg, #d4af37 0%, #fff0b3 25%, #d4af37 50%, #fff0b3 75%, #d4af37 100%)"
+          gradientAnimationDuration={5}
+          className="mb-1"
+          textClassName="text-4xl md:text-[3.2rem] lg:text-[4rem]"
+        />
         <p className="text-[var(--parchment-300)] text-lg mb-10 italic">
           Bí ẩn nằm trong những lá bài — hãy để vũ trụ lên tiếng
         </p>
