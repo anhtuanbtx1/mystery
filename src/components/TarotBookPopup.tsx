@@ -72,7 +72,7 @@ export default function TarotBookPopup({ open, onClose }: Props) {
           <div className={`absolute inset-[6px] rounded-[14px] border ${isGold ? 'border-[#e8c97a]/20' : 'border-[#78beff]/18'}`} />
 
           <div className="absolute inset-0 flex items-center justify-center">
-            <motion.div className="absolute inset-0" initial="initial" whileHover="hover">
+            <motion.div className="absolute inset-0 flex items-center justify-center" initial="initial" whileHover="hover">
             {image ? (
               <motion.img
                 src={image}
@@ -89,7 +89,7 @@ export default function TarotBookPopup({ open, onClose }: Props) {
                 decoding="async"
                 alt={name}
                 variants={idx % 3 === 0 ? imageVariants.left : idx % 3 === 1 ? imageVariants.middle : imageVariants.right}
-                className={`w-[78%] h-[78%] object-contain opacity-95 ${isGold ? 'sepia-[0.45] hue-rotate-[-8deg] saturate-[1.2]' : 'hue-rotate-[190deg] saturate-[1.2]'}`}
+                style={{ width: '72%', height: '72%', objectFit: 'contain', display: 'block', margin: 'auto' }} className={`opacity-95 ${isGold ? 'sepia-[0.45] hue-rotate-[-8deg] saturate-[1.2]' : 'hue-rotate-[190deg] saturate-[1.2]'}`}
               />
             )}
             </motion.div>
