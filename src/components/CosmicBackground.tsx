@@ -16,18 +16,6 @@ type Rune = {
   animationDuration: string;
 };
 
-type ShootingStar = {
-  left: string;
-  top: string;
-  width: string;
-  angle: string;
-  distX: string;
-  distY: string;
-  maxOpacity: number;
-  delay: string;
-  duration: string;
-};
-
 const RUNE_CHARS = ['ᚠ', 'ᚢ', 'ᚦ', 'ᚨ', 'ᚱ', 'ᚲ', 'ᚷ', 'ᚹ', 'ᚺ', 'ᚾ', 'ᛁ', 'ᛃ', 'ᛏ', 'ᛒ', 'ᛗ', 'ᛚ'];
 
 const CARD_CONFIGS = [
@@ -38,18 +26,306 @@ const CARD_CONFIGS = [
   { bottom: '10%', right: '-22px', rotA: '-20deg', rotB: '-10deg', dx: '-20px', dy: '-16px', dur: '25s', scale: 0.9 }
 ];
 
+const defaultShaderSource = `#version 300 es
+precision highp float;
+out vec4 O;
+uniform vec2 resolution;
+uniform float time;
+#define FC gl_FragCoord.xy
+#define T time
+#define R resolution
+#define MN min(R.x,R.y)
+// Returns a pseudo random number for a given point (white noise)
+float rnd(vec2 p) {
+  p=fract(p*vec2(12.9898,78.233));
+  p+=dot(p,p+34.56);
+  return fract(p.x*p.y);
+}
+// Returns a pseudo random number for a given point (value noise)
+float noise(in vec2 p) {
+  vec2 i=floor(p), f=fract(p), u=f*f*(3.-2.*f);
+  float
+  a=rnd(i),
+  b=rnd(i+vec2(1,0)),
+  c=rnd(i+vec2(0,1)),
+  d=rnd(i+1.);
+  return mix(mix(a,b,u.x),mix(c,d,u.x),u.y);
+}
+// Returns a pseudo random number for a given point (fractal noise)
+float fbm(vec2 p) {
+  float t=.0, a=1.; mat2 m=mat2(1.,-.5,.2,1.2);
+  for (int i=0; i<5; i++) {
+    t+=a*noise(p);
+    p*=2.*m;
+    a*=.5;
+  }
+  return t;
+}
+float clouds(vec2 p) {
+  float d=1., t=.0;
+  for (float i=.0; i<3.; i++) {
+    float a=d*fbm(i*10.+p.x*.2+.2*(1.+i)*p.y+d+i*i+p);
+    t=mix(t,d,a);
+    d=a;
+    p*=2./(i+1.);
+  }
+  return t;
+}
+void main(void) {
+  vec2 uv=(FC-.5*R)/MN,st=uv*vec2(2,1);
+  vec3 col=vec3(0);
+  float bg=clouds(vec2(st.x+T*.5,-st.y));
+  uv*=1.-.3*(sin(T*.2)*.5+.5);
+  for (float i=1.; i<12.; i++) {
+    uv+=.1*cos(i*vec2(.1+.01*i, .8)+i*i+T*.5+.1*uv.x);
+    vec2 p=uv;
+    float d=length(p);
+    col+=.00125/d*(cos(sin(i)*vec3(1,2,3))+1.);
+    float b=noise(i+p+bg*1.731);
+    col+=.002*b/length(max(p,vec2(b*p.x*.02,p.y)));
+    col=mix(col,vec3(bg*.25,bg*.137,bg*.05),d);
+  }
+  O=vec4(col,1);
+}`;
+
+// --- Shader Classes ---
+
+class WebGLRenderer {
+  public canvas: HTMLCanvasElement;
+  public gl: WebGL2RenderingContext;
+  public program: WebGLProgram | null = null;
+  public vs: WebGLShader | null = null;
+  public fs: WebGLShader | null = null;
+  public buffer: WebGLBuffer | null = null;
+  public scale: number;
+  public shaderSource: string;
+  public mouseMove = [0, 0];
+  public mouseCoords = [0, 0];
+  public pointerCoords: number[] = [0, 0];
+  public nbrOfPointers = 0;
+
+  private vertexSrc = `#version 300 es
+precision highp float;
+in vec4 position;
+void main(){gl_Position=position;}`;
+
+  private vertices = [-1, 1, -1, -1, 1, 1, 1, -1];
+
+  constructor(canvas: HTMLCanvasElement, scale: number) {
+    this.canvas = canvas;
+    this.scale = scale;
+    this.gl = canvas.getContext('webgl2')!;
+    this.gl.viewport(0, 0, canvas.width * scale, canvas.height * scale);
+    this.shaderSource = defaultShaderSource;
+  }
+
+  updateShader(source: string) {
+    this.reset();
+    this.shaderSource = source;
+    this.setup();
+    this.init();
+  }
+
+  updateMove(deltas: number[]) { this.mouseMove = deltas; }
+  updateMouse(coords: number[]) { this.mouseCoords = coords; }
+  updatePointerCoords(coords: number[]) { this.pointerCoords = coords; }
+  updatePointerCount(nbr: number) { this.nbrOfPointers = nbr; }
+
+  updateScale(scale: number) {
+    this.scale = scale;
+    this.gl.viewport(0, 0, this.canvas.width * scale, this.canvas.height * scale);
+  }
+
+  compile(shader: WebGLShader, source: string) {
+    const gl = this.gl;
+    gl.shaderSource(shader, source);
+    gl.compileShader(shader);
+    if (!gl.getShaderParameter(shader, gl.COMPILE_STATUS)) {
+      console.error('Shader compilation error:', gl.getShaderInfoLog(shader));
+    }
+  }
+
+  test(source: string) {
+    let result = null;
+    const gl = this.gl;
+    const shader = gl.createShader(gl.FRAGMENT_SHADER)!;
+    gl.shaderSource(shader, source);
+    gl.compileShader(shader);
+    if (!gl.getShaderParameter(shader, gl.COMPILE_STATUS)) {
+      result = gl.getShaderInfoLog(shader);
+    }
+    gl.deleteShader(shader);
+    return result;
+  }
+
+  reset() {
+    const gl = this.gl;
+    if (this.program && !gl.getProgramParameter(this.program, gl.DELETE_STATUS)) {
+      if (this.vs) { gl.detachShader(this.program, this.vs); gl.deleteShader(this.vs); }
+      if (this.fs) { gl.detachShader(this.program, this.fs); gl.deleteShader(this.fs); }
+      gl.deleteProgram(this.program);
+    }
+  }
+
+  setup() {
+    const gl = this.gl;
+    this.vs = gl.createShader(gl.VERTEX_SHADER)!;
+    this.fs = gl.createShader(gl.FRAGMENT_SHADER)!;
+    this.compile(this.vs, this.vertexSrc);
+    this.compile(this.fs, this.shaderSource);
+    this.program = gl.createProgram()!;
+    gl.attachShader(this.program, this.vs);
+    gl.attachShader(this.program, this.fs);
+    gl.linkProgram(this.program);
+  }
+
+  init() {
+    const gl = this.gl;
+    const program = this.program!;
+    this.buffer = gl.createBuffer();
+    gl.bindBuffer(gl.ARRAY_BUFFER, this.buffer);
+    gl.bufferData(gl.ARRAY_BUFFER, new Float32Array(this.vertices), gl.STATIC_DRAW);
+
+    const position = gl.getAttribLocation(program, 'position');
+    gl.enableVertexAttribArray(position);
+    gl.vertexAttribPointer(position, 2, gl.FLOAT, false, 0, 0);
+
+    (program as any).resolution = gl.getUniformLocation(program, 'resolution');
+    (program as any).time = gl.getUniformLocation(program, 'time');
+    (program as any).move = gl.getUniformLocation(program, 'move');
+    (program as any).touch = gl.getUniformLocation(program, 'touch');
+    (program as any).pointerCount = gl.getUniformLocation(program, 'pointerCount');
+    (program as any).pointers = gl.getUniformLocation(program, 'pointers');
+  }
+
+  render(now = 0) {
+    const gl = this.gl;
+    const program = this.program;
+    if (!program || gl.getProgramParameter(program, gl.DELETE_STATUS)) return;
+
+    gl.clearColor(0, 0, 0, 1);
+    gl.clear(gl.COLOR_BUFFER_BIT);
+    gl.useProgram(program);
+    gl.bindBuffer(gl.ARRAY_BUFFER, this.buffer);
+    
+    gl.uniform2f((program as any).resolution, this.canvas.width, this.canvas.height);
+    gl.uniform1f((program as any).time, now * 1e-3);
+    gl.uniform2f((program as any).move, this.mouseMove[0], this.mouseMove[1]);
+    gl.uniform2f((program as any).touch, this.mouseCoords[0], this.mouseCoords[1]);
+    gl.uniform1i((program as any).pointerCount, this.nbrOfPointers);
+    gl.uniform2fv((program as any).pointers, this.pointerCoords);
+    gl.drawArrays(gl.TRIANGLE_STRIP, 0, 4);
+  }
+}
+
+class PointerHandler {
+  public scale: number;
+  public active = false;
+  public pointers = new Map<number, number[]>();
+  public lastCoords = [0, 0];
+  public moves = [0, 0];
+
+  constructor(element: HTMLCanvasElement, scale: number) {
+    this.scale = scale;
+    const map = (element: HTMLCanvasElement, scale: number, x: number, y: number) => 
+      [x * scale, element.height - y * scale];
+
+    element.addEventListener('pointerdown', (e) => {
+      this.active = true;
+      this.pointers.set(e.pointerId, map(element, this.getScale(), e.clientX, e.clientY));
+    });
+
+    element.addEventListener('pointerup', (e) => {
+      if (this.count === 1) this.lastCoords = this.first;
+      this.pointers.delete(e.pointerId);
+      this.active = this.pointers.size > 0;
+    });
+
+    element.addEventListener('pointerleave', (e) => {
+      if (this.count === 1) this.lastCoords = this.first;
+      this.pointers.delete(e.pointerId);
+      this.active = this.pointers.size > 0;
+    });
+
+    element.addEventListener('pointermove', (e) => {
+      if (!this.active) return;
+      this.lastCoords = [e.clientX, e.clientY];
+      this.pointers.set(e.pointerId, map(element, this.getScale(), e.clientX, e.clientY));
+      this.moves = [this.moves[0] + e.movementX, this.moves[1] + e.movementY];
+    });
+  }
+
+  getScale() { return this.scale; }
+  updateScale(scale: number) { this.scale = scale; }
+  get count() { return this.pointers.size; }
+  get move() { return this.moves; }
+  get coords() { return this.pointers.size > 0 ? Array.from(this.pointers.values()).flat() : [0, 0]; }
+  get first() { return this.pointers.values().next().value || this.lastCoords; }
+}
+
+const useShaderBackground = () => {
+  const canvasRef = useRef<HTMLCanvasElement>(null);
+  const animationFrameRef = useRef<number | undefined>(undefined);
+  const rendererRef = useRef<WebGLRenderer | null>(null);
+  const pointersRef = useRef<PointerHandler | null>(null);
+
+  const resize = () => {
+    if (!canvasRef.current) return;
+    const canvas = canvasRef.current;
+    const dpr = Math.max(1, 0.5 * window.devicePixelRatio);
+    canvas.width = window.innerWidth * dpr;
+    canvas.height = window.innerHeight * dpr;
+    if (rendererRef.current) rendererRef.current.updateScale(dpr);
+  };
+
+  const loop = (now: number) => {
+    if (!rendererRef.current || !pointersRef.current) return;
+    rendererRef.current.updateMouse(pointersRef.current.first);
+    rendererRef.current.updatePointerCount(pointersRef.current.count);
+    rendererRef.current.updatePointerCoords(pointersRef.current.coords);
+    rendererRef.current.updateMove(pointersRef.current.move);
+    rendererRef.current.render(now);
+    animationFrameRef.current = requestAnimationFrame(loop);
+  };
+
+  useEffect(() => {
+    if (!canvasRef.current) return;
+    const canvas = canvasRef.current;
+    const dpr = Math.max(1, 0.5 * window.devicePixelRatio);
+    
+    rendererRef.current = new WebGLRenderer(canvas, dpr);
+    pointersRef.current = new PointerHandler(canvas, dpr);
+    
+    rendererRef.current.setup();
+    rendererRef.current.init();
+    
+    resize();
+    if (rendererRef.current.test(defaultShaderSource) === null) {
+      rendererRef.current.updateShader(defaultShaderSource);
+    }
+    
+    loop(0);
+    window.addEventListener('resize', resize);
+    return () => {
+      window.removeEventListener('resize', resize);
+      if (animationFrameRef.current) cancelAnimationFrame(animationFrameRef.current);
+      if (rendererRef.current) rendererRef.current.reset();
+    };
+  }, []);
+
+  return canvasRef;
+};
+
+// --- Main Component ---
+
 export default function CosmicBackground() {
-  const nebulaRef = useRef<HTMLDivElement>(null);
-  const starsRef = useRef<HTMLDivElement>(null);
   const sigilRef = useRef<HTMLDivElement>(null);
   const cardsRef = useRef<HTMLDivElement>(null);
+  const canvasRef = useShaderBackground();
 
-  // Empty on SSR -> matches client first paint -> no hydration mismatch.
   const [sparkles, setSparkles] = useState<Sparkle[]>([]);
   const [runes, setRunes] = useState<Rune[]>([]);
-  const [shootingStars, setShootingStars] = useState<ShootingStar[]>([]);
 
-  // Generate randomized particles only on the client after mount.
   useEffect(() => {
     const nextSparkles: Sparkle[] = Array.from({ length: 42 }).map(() => ({
       left: `${Math.random() * 100}%`,
@@ -66,42 +342,13 @@ export default function CosmicBackground() {
       animationDuration: `${8 + Math.random() * 8}s`,
     }));
     setRunes(nextRunes);
-
-    const nextStars: ShootingStar[] = Array.from({ length: 5 }).map(() => {
-      const angleVal = 24 + Math.random() * 8;
-      const lengthVal = 55 + Math.random() * 95;
-      const drift = 120 + Math.random() * 140;
-      const rad = (angleVal * Math.PI) / 180;
-      const distX = drift * Math.cos(rad);
-      const distY = drift * Math.sin(rad);
-
-      return {
-        left: `${Math.random() * 75}%`,
-        top: `${Math.random() * 55}%`,
-        width: `${lengthVal}px`,
-        angle: `${angleVal}deg`,
-        distX: `${distX}px`,
-        distY: `${distY}px`,
-        maxOpacity: 0.18 + Math.random() * 0.22,
-        delay: `${Math.random() * 10}s`,
-        duration: `${9 + Math.random() * 8}s`
-      };
-    });
-    setShootingStars(nextStars);
   }, []);
 
-  // Parallax on mouse move.
   useEffect(() => {
     const handleMouseMove = (e: MouseEvent) => {
       const x = (e.clientX - window.innerWidth / 2) / window.innerWidth;
       const y = (e.clientY - window.innerHeight / 2) / window.innerHeight;
 
-      if (nebulaRef.current) {
-        nebulaRef.current.style.transform = `translate(${x * -30}px, ${y * -24}px) scale(1.02)`;
-      }
-      if (starsRef.current) {
-        starsRef.current.style.transform = `translate(${x * -12}px, ${y * -10}px)`;
-      }
       if (sigilRef.current) {
         sigilRef.current.style.transform = `translateX(calc(-50% + ${x * -28}px)) translateY(${y * -22}px)`;
       }
@@ -113,36 +360,23 @@ export default function CosmicBackground() {
         });
       }
     };
-
     window.addEventListener('mousemove', handleMouseMove);
     return () => window.removeEventListener('mousemove', handleMouseMove);
   }, []);
 
   return (
     <div className="absolute inset-0 pointer-events-none overflow-hidden" style={{ perspective: 1200 }}>
-      {/* 1. Nebula */}
-      <div
-        ref={nebulaRef}
-        className="layer nebula bg-[radial-gradient(circle_at_50%_22%,rgba(163,91,255,.18)_0%,transparent_28%),radial-gradient(circle_at_18%_78%,rgba(232,201,122,.06)_0%,transparent_18%),radial-gradient(circle_at_82%_72%,rgba(155,127,212,.08)_0%,transparent_20%)] opacity-95 blur-[18px]"
-        style={{ willChange: 'transform' }}
+      {/* 1. WebGL Shader Cosmic Background (Replaces Nebula, Static Stars, and Shooting Stars) */}
+      <canvas
+        ref={canvasRef}
+        className="absolute inset-0 w-full h-full object-contain pointer-events-auto touch-none opacity-85 saturate-150"
+        style={{ filter: 'hue-rotate(-40deg) contrast(1.1) brightness(0.7)' }}
       />
 
-      {/* 2. Stars */}
-      <div
-        ref={starsRef}
-        className="layer stars opacity-[0.62]"
-        style={{
-          backgroundImage: "url('/assets/starfield.svg')",
-          backgroundRepeat: 'repeat',
-          backgroundSize: '820px 620px',
-          willChange: 'transform',
-        }}
-      />
-
-      {/* 3. Sigil */}
+      {/* 2. Sigil */}
       <div
         ref={sigilRef}
-        className="layer sigil-wrap top-[4%] left-1/2 w-[300px] h-[300px] opacity-15 text-[#b9a2e8] will-change-transform"
+        className="layer sigil-wrap top-[4%] left-1/2 w-[300px] h-[300px] opacity-15 text-[#b9a2e8] will-change-transform pointer-events-none"
         style={{ filter: 'drop-shadow(0 0 14px rgba(155,127,212,.22))' }}
       >
         <svg viewBox="0 0 200 200" width="100%" height="100%" fill="none" stroke="currentColor" strokeWidth="0.75" className="sigil-outer">
@@ -160,8 +394,8 @@ export default function CosmicBackground() {
         </div>
       </div>
 
-      {/* 4. Sparkles (client-only) */}
-      <div className="layer z-[3]" suppressHydrationWarning>
+      {/* 3. Sparkles (client-only) */}
+      <div className="layer z-[3] pointer-events-none" suppressHydrationWarning>
         {sparkles.map((s, i) => (
           <div
             key={`sparkle-${i}`}
@@ -177,33 +411,8 @@ export default function CosmicBackground() {
         ))}
       </div>
 
-      {/* Shooting Stars layer (client-only) */}
-      <div className="layer z-[3] overflow-hidden" suppressHydrationWarning>
-        {shootingStars.map((s, i) => {
-          const inlineStyle = {
-            left: s.left,
-            top: s.top,
-            width: s.width,
-            '--angle': s.angle,
-            '--dist-x': s.distX,
-            '--dist-y': s.distY,
-            '--max-opacity': s.maxOpacity,
-            '--dur': s.duration,
-            animationDelay: s.delay,
-          } as React.CSSProperties & Record<string, string | number>;
-
-          return (
-            <div
-              key={`shooting-star-${i}`}
-              className="shooting-star"
-              style={inlineStyle}
-            />
-          );
-        })}
-      </div>
-
-      {/* 5. Runes (client-only) */}
-      <div className="layer z-[4] top-auto bottom-0 h-[36vh] overflow-hidden" suppressHydrationWarning>
+      {/* 4. Runes (client-only) */}
+      <div className="layer z-[4] top-auto bottom-0 h-[36vh] overflow-hidden pointer-events-none" suppressHydrationWarning>
         {runes.map((r, i) => (
           <div
             key={`rune-${i}`}
@@ -220,8 +429,8 @@ export default function CosmicBackground() {
         ))}
       </div>
 
-      {/* 6. Floating cards */}
-      <div ref={cardsRef} className="layer z-[5] overflow-hidden">
+      {/* 5. Floating cards */}
+      <div ref={cardsRef} className="layer z-[5] overflow-hidden pointer-events-none">
         {CARD_CONFIGS.map((c, i) => {
           const styleProps: any = {
             ...c,
