@@ -22,7 +22,7 @@ export default function Hero({ onBegin }: Props) {
       <div className="text-center max-w-3xl">
         {/* Brand emblem */}
         <div className="mb-6 opacity-80">
-          <img src="/assets/emblem.svg" alt="Mystery Tarot" className="w-14 h-14 mx-auto" />
+          <img src="/assets/emblem.svg" alt="Mystery Tarot" className="w-14 h-14 mx-auto spin-slow drop-shadow-[0_0_12px_rgba(232,201,122,.22)]" />
         </div>
 
         {/* Title */}

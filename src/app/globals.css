@@ -146,3 +146,7 @@ body {
   35% { opacity: calc(var(--max-opacity, 0.5) * 0.45); transform: translate3d(calc(var(--dist-x, 180px) * 0.45), calc(var(--dist-y, 80px) * 0.45), 0) rotate(var(--angle, 24deg)) scaleX(0.65); }
   100% { opacity: 0; transform: translate3d(var(--dist-x, 180px), var(--dist-y, 80px), 0) rotate(var(--angle, 24deg)) scaleX(0.1); }
 }
+
+
+@keyframes spinSlow { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+.spin-slow { animation: spinSlow 18s linear infinite; transform-origin: center; will-change: transform; }
