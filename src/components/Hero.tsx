@@ -68,16 +68,16 @@ export default function Hero({ onBegin }: Props) {
                 style={{
                   position: 'absolute',
                   left: '50%',
-                  top: hovered ? 18 : 54,
-                  width: isCenter ? 122 : 108,
-                  height: isCenter ? 202 : 176,
-                  marginLeft: isCenter ? -61 : -54,
+                  top: 18,
+                  width: 122,
+                  height: 202,
+                  marginLeft: -61,
                   transformOrigin: '50% 70%',
                   transform: hovered
                     ? `translateX(${card.x}px) translateY(${card.y}px) rotate(${card.rotate}deg) scale(${card.scale})`
-                    : `translateX(0px) translateY(${idx * 2}px) rotate(0deg) scale(0.98)`,
-                  zIndex: isCenter ? (hovered ? 30 : 20) : (hovered ? (idx === 0 ? 10 : 11) : (30 - idx)),
-                  transitionProperty: 'transform, box-shadow, filter, top, width, height, margin-left',
+                    : `translateX(0px) translateY(${idx * 8}px) rotate(0deg) scale(${1 - idx * 0.05})`,
+                  zIndex: isCenter ? 30 : (10 - idx),
+                  transitionProperty: 'transform, box-shadow, filter, top',
                   transitionDuration: hovered ? '0.62s' : '0.5s',
                   transitionTimingFunction: 'cubic-bezier(.16, 1, .3, 1)',
                   willChange: 'transform, box-shadow, filter',
