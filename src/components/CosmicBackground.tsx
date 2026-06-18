@@ -358,7 +358,7 @@ export default function CosmicBackground() {
       const y = (e.clientY - window.innerHeight / 2) / window.innerHeight;
 
       if (sigilRef.current) {
-        sigilRef.current.style.transform = `translate(-50%, -50%) translate(${x * -28}px, ${y * -22}px)`;
+        sigilRef.current.style.transform = `translate(${x * -28}px, ${y * -22}px)`;
       }
       if (cardsRef.current) {
         const bgCards = cardsRef.current.querySelectorAll('.bg-card');
@@ -383,11 +383,12 @@ export default function CosmicBackground() {
       />
 
       {/* 2. Sigil */}
-      <div
-        ref={sigilRef}
-        className="layer sigil-wrap absolute left-1/2 top-1/2 w-[340px] h-[340px] -translate-x-1/2 -translate-y-1/2 opacity-15 text-[#b9a2e8] will-change-transform pointer-events-none"
-        style={{ filter: 'drop-shadow(0 0 14px rgba(155,127,212,.22))', transform: 'translate(-50%, -50%) translateZ(0)' }}
-      >
+      <div className="absolute inset-0 flex items-center justify-center pointer-events-none z-[2]">
+        <div
+          ref={sigilRef}
+          className="layer sigil-wrap w-[340px] h-[340px] opacity-15 text-[#b9a2e8] will-change-transform"
+          style={{ filter: 'drop-shadow(0 0 14px rgba(155,127,212,.22))' }}
+        >
         <svg viewBox="0 0 200 200" width="100%" height="100%" fill="none" stroke="currentColor" strokeWidth="0.75" className="sigil-outer">
           <circle cx="100" cy="100" r="94" strokeDasharray="7,5"></circle>
           <circle cx="100" cy="100" r="78"></circle>
@@ -401,6 +402,7 @@ export default function CosmicBackground() {
             <path d="M100 6 L100 194 M6 100 L194 100" strokeWidth="0.4"></path>
           </svg>
         </div>
+      </div>
       </div>
 
       {/* 3. Sparkles (client-only) */}
