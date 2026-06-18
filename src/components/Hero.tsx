@@ -53,7 +53,7 @@ export default function Hero({ onBegin }: Props) {
 
         {/* Fan Cards */}
         <div
-          className="relative w-[360px] h-[290px] mx-auto mb-4 cursor-pointer"
+          className="relative w-[420px] h-[340px] mx-auto mb-4 cursor-pointer"
           style={{ perspective: 1200 }}
           onMouseEnter={() => setHovered(true)}
           onMouseLeave={() => setHovered(false)}
@@ -69,9 +69,9 @@ export default function Hero({ onBegin }: Props) {
                   position: 'absolute',
                   left: '50%',
                   top: 18,
-                  width: 122,
-                  height: 202,
-                  marginLeft: -61,
+                  width: 150,
+                  height: 250,
+                  marginLeft: -75,
                   transformOrigin: '50% 70%',
                   transform: hovered
                     ? `translateX(${card.x}px) translateY(${card.y}px) rotate(${card.rotate}deg) scale(${card.scale})`

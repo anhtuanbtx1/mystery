@@ -58,13 +58,13 @@ export default function TarotBookPopup({ open, onClose }: Props) {
     return (
       <motion.div
         key={name}
-        className="w-[116px] text-center"
+        className="w-[142px] text-center"
         initial="initial"
         whileHover="hover"
         variants={cardVariants}
       >
         <motion.div className={`
-          relative w-[116px] h-[194px] mx-auto rounded-[18px] overflow-hidden flex items-center justify-center border
+          relative w-[142px] h-[236px] mx-auto rounded-[20px] overflow-hidden flex items-center justify-center border
           ${isGold 
             ? 'bg-gradient-to-b from-[#3a1e0e]/95 to-[#160b05]/95 border-[#e8c97a]/30 shadow-[0_10px_26px_rgba(0,0,0,0.34),0_0_18px_rgba(232,201,122,0.14)]' 
             : 'bg-gradient-to-b from-[#11203e]/95 to-[#080d1a]/95 border-[#6eb4ff]/36 shadow-[0_10px_26px_rgba(0,0,0,0.34),0_0_18px_rgba(74,160,255,0.14)]'}
