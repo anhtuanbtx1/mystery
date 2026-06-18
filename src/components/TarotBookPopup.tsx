@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState, useEffect } from 'react';
-import Image from 'next/image';
+import { motion, Variants } from 'framer-motion';
 
 interface TarotCard {
   id: string;
@@ -42,34 +42,70 @@ export default function TarotBookPopup({ open, onClose }: Props) {
 
   if (!open) return null;
 
+  const cardVariants: Variants = {
+    initial: { rotate: 0, y: 0, scale: 1 },
+    hover: { y: -10, scale: 1.04, transition: { type: 'spring', stiffness: 220, damping: 16 } }
+  };
+
+  const imageVariants: any = {
+    left: { initial: { rotate: 0, x: 0, y: 0 }, hover: { rotate: -8, x: -18, y: 6, transition: { type: 'spring' as const, stiffness: 200, damping: 15 } } },
+    middle: { initial: { rotate: 0, x: 0, y: 0 }, hover: { rotate: 0, x: 0, y: -10, transition: { type: 'spring' as const, stiffness: 200, damping: 15 } } },
+    right: { initial: { rotate: 0, x: 0, y: 0 }, hover: { rotate: 8, x: 18, y: 8, transition: { type: 'spring' as const, stiffness: 200, damping: 15 } } },
+  };
+
   const renderCardTile = (name: string, idx: number, image?: string, numeral?: string, accent: 'gold' | 'blue' = 'gold') => {
     const isGold = accent === 'gold';
     return (
-      <div key={name} className="w-[116px] text-center">
-        <div className={`
+      <motion.div
+        key={name}
+        className="w-[116px] text-center"
+        initial="initial"
+        whileHover="hover"
+        variants={cardVariants}
+      >
+        <motion.div className={`
           relative w-[116px] h-[194px] mx-auto rounded-[18px] overflow-hidden flex items-center justify-center border
           ${isGold 
             ? 'bg-gradient-to-b from-[#3a1e0e]/95 to-[#160b05]/95 border-[#e8c97a]/30 shadow-[0_10px_26px_rgba(0,0,0,0.34),0_0_18px_rgba(232,201,122,0.14)]' 
             : 'bg-gradient-to-b from-[#11203e]/95 to-[#080d1a]/95 border-[#6eb4ff]/36 shadow-[0_10px_26px_rgba(0,0,0,0.34),0_0_18px_rgba(74,160,255,0.14)]'}
         `}>
-          {/* Inner Border Decorative */}
           <div className={`absolute inset-[6px] rounded-[14px] border ${isGold ? 'border-[#e8c97a]/20' : 'border-[#78beff]/18'}`} />
-          
-          {image ? (
-             <img src={image} loading="lazy" decoding="async" alt={name} className="w-full h-full object-cover saturate-[1.05] contrast-[1.05]" />
-          ) : (
-             <img src="/assets/card-back.svg" loading="lazy" decoding="async" alt={name} className={`w-[78%] h-[78%] object-contain opacity-95 ${isGold ? 'sepia-[0.45] hue-rotate-[-8deg] saturate-[1.2]' : 'hue-rotate-[190deg] saturate-[1.2]'}`} />
-          )}
+
+          <div className="absolute inset-0 flex items-center justify-center">
+            <motion.div className="absolute inset-0" initial="initial" whileHover="hover">
+            {image ? (
+              <motion.img
+                src={image}
+                loading="lazy"
+                decoding="async"
+                alt={name}
+                variants={idx % 3 === 0 ? imageVariants.left : idx % 3 === 1 ? imageVariants.middle : imageVariants.right}
+                className="w-full h-full object-cover saturate-[1.05] contrast-[1.05]"
+              />
+            ) : (
+              <motion.img
+                src="/assets/card-back.svg"
+                loading="lazy"
+                decoding="async"
+                alt={name}
+                variants={idx % 3 === 0 ? imageVariants.left : idx % 3 === 1 ? imageVariants.middle : imageVariants.right}
+                className={`w-[78%] h-[78%] object-contain opacity-95 ${isGold ? 'sepia-[0.45] hue-rotate-[-8deg] saturate-[1.2]' : 'hue-rotate-[190deg] saturate-[1.2]'}`}
+              />
+            )}
+            </motion.div>
+          </div>
 
           {numeral && (
-            <div className="absolute left-1/2 bottom-[10px] -translate-x-1/2 px-2 py-0.5 rounded-full bg-gradient-to-b from-[#583010]/95 to-[#2a1306]/98 border border-[#ffe096]/50 text-[#f5dfa2] text-[10px] font-display">
+            <motion.div className="absolute left-1/2 bottom-[10px] -translate-x-1/2 px-2 py-0.5 rounded-full bg-gradient-to-b from-[#583010]/95 to-[#2a1306]/98 border border-[#ffe096]/50 text-[#f5dfa2] text-[10px] font-display"
+              whileHover={{ scale: 1.06 }}
+            >
               {numeral}
-            </div>
+            </motion.div>
           )}
-        </div>
+        </motion.div>
         <div className="mt-2.5 text-[13px] text-[var(--parchment-100)] leading-tight">{name}</div>
         <div className="mt-1 text-[11px] text-white/40">{idx + 1}</div>
-      </div>
+      </motion.div>
     );
   };
 
