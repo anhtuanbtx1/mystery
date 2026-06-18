@@ -364,10 +364,8 @@ export default function CosmicBackground() {
         const bgCards = cardsRef.current.querySelectorAll('.bg-card');
         bgCards.forEach((card, i) => {
           const k = i % 2 === 0 ? -18 : 14;
-          const jitterX = Math.sin(Date.now() * 0.0004 + i * 1.3) * 18;
-          const jitterY = Math.cos(Date.now() * 0.00035 + i * 1.7) * 12;
-          const jitterR = Math.sin(Date.now() * 0.0003 + i) * 6;
-          (card as HTMLElement).style.transform = `translate(${x * k + jitterX}px, ${y * k + jitterY}px) rotate(${CARD_CONFIGS[i].baseRot + jitterR}deg) scale(${CARD_CONFIGS[i].scale})`;
+          (card as HTMLElement).style.setProperty('--mx', `${x * k}px`);
+          (card as HTMLElement).style.setProperty('--my', `${y * k}px`);
         });
       }
     };
@@ -387,8 +385,8 @@ export default function CosmicBackground() {
       {/* 2. Sigil */}
       <div
         ref={sigilRef}
-        className="layer sigil-wrap top-[4%] left-1/2 w-[300px] h-[300px] opacity-15 text-[#b9a2e8] will-change-transform pointer-events-none"
-        style={{ filter: 'drop-shadow(0 0 14px rgba(155,127,212,.22))' }}
+        className="layer sigil-wrap inset-0 mx-auto my-auto w-[340px] h-[340px] opacity-15 text-[#b9a2e8] will-change-transform pointer-events-none"
+        style={{ filter: 'drop-shadow(0 0 14px rgba(155,127,212,.22))', transform: 'translateZ(0)' }}
       >
         <svg viewBox="0 0 200 200" width="100%" height="100%" fill="none" stroke="currentColor" strokeWidth="0.75" className="sigil-outer">
           <circle cx="100" cy="100" r="94" strokeDasharray="7,5"></circle>
@@ -446,7 +444,12 @@ export default function CosmicBackground() {
           const styleProps: any = {
             ...c,
             '--dur': c.dur,
-            transform: `scale(${c.scale}) rotate(${c.baseRot}deg)`,
+            '--scale': c.scale,
+            '--base-rot': `${c.baseRot}deg`,
+            '--mx': '0px',
+            '--my': '0px',
+            '--dx': `${c.driftX}px`,
+            '--dy': `${c.driftY}px`,
             animationDelay: `${-i * 4}s`,
             backgroundImage: "url('/assets/card-back.svg')",
             backgroundPosition: 'center',
