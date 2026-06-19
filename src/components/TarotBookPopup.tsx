@@ -13,7 +13,7 @@ interface TarotCard {
 
 interface TarotData {
   majorArcana: TarotCard[];
-  wands: string[];
+  wands: Array<string | TarotCard>;
   cups: string[];
 }
 
@@ -161,7 +161,7 @@ export default function TarotBookPopup({ open, onClose }: Props) {
                    <span className="px-3 py-1 rounded-full bg-orange-500/10 border border-orange-500/20 text-[10px] uppercase text-orange-400/70 tracking-wider">Nguyên tố Lửa</span>
                  </div>
                  <div className="flex flex-wrap gap-6">
-                   {data.wands.map((name, i) => renderCardTile(name, i, undefined, undefined, 'gold'))}
+                   {data.wands.map((card, i) => renderCardTile(typeof card === 'string' ? card : card.name, i, typeof card === 'string' ? undefined : card.image, undefined, 'gold'))}
                  </div>
                </section>
 

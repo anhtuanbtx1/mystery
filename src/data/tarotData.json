@@ -65,7 +65,10 @@
     }
   ],
   "wands": [
-    "Một Gậy",
+    {
+      "name": "Người bảo vệ vĩnh hằng",
+      "image": "/assets/buffon.png"
+    },
     "Hai Gậy",
     "Ba Gậy",
     "Bốn Gậy",
