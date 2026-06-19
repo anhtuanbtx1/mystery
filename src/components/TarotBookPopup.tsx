@@ -58,18 +58,18 @@ export default function TarotBookPopup({ open, onClose }: Props) {
     return (
       <motion.div
         key={name}
-        className="w-[142px] text-center"
+        className="w-[200px] text-center"
         initial="initial"
         whileHover="hover"
         variants={cardVariants}
       >
         <motion.div className={`
-          relative w-[142px] h-[236px] mx-auto rounded-[20px] overflow-hidden flex items-center justify-center border
+          relative w-[200px] h-[320px] mx-auto rounded-[22px] overflow-hidden flex items-center justify-center border
           ${isGold 
             ? 'bg-gradient-to-b from-[#3a1e0e]/95 to-[#160b05]/95 border-[#e8c97a]/30 shadow-[0_10px_26px_rgba(0,0,0,0.34),0_0_18px_rgba(232,201,122,0.14)]' 
             : 'bg-gradient-to-b from-[#11203e]/95 to-[#080d1a]/95 border-[#6eb4ff]/36 shadow-[0_10px_26px_rgba(0,0,0,0.34),0_0_18px_rgba(74,160,255,0.14)]'}
         `}>
-          <div className={`absolute inset-[6px] rounded-[14px] border ${isGold ? 'border-[#e8c97a]/20' : 'border-[#78beff]/18'}`} />
+          <div className={`absolute inset-[8px] rounded-[16px] border ${isGold ? 'border-[#e8c97a]/20' : 'border-[#78beff]/18'}`} />
 
           <div className="absolute inset-0 flex items-center justify-center">
             <motion.div className="absolute inset-0 flex items-center justify-center" initial="initial" whileHover="hover">
@@ -149,7 +149,7 @@ export default function TarotBookPopup({ open, onClose }: Props) {
                    <h3 className="text-2xl font-display text-[var(--gold-300)]">Bộ Ẩn Chính</h3>
                    <span className="px-3 py-1 rounded-full bg-[#e8c97a]/10 border border-[#e8c97a]/20 text-[10px] uppercase text-white/50 tracking-wider">Hành trình linh hồn</span>
                  </div>
-                 <div className="flex flex-wrap gap-4">
+                 <div className="flex flex-wrap gap-6">
                    {data.majorArcana.map((c, i) => renderCardTile(c.name, i, c.image, c.numeral, 'gold'))}
                  </div>
                </section>
@@ -160,7 +160,7 @@ export default function TarotBookPopup({ open, onClose }: Props) {
                    <h3 className="text-2xl font-display text-[var(--gold-300)]">Bộ Gậy (Wands)</h3>
                    <span className="px-3 py-1 rounded-full bg-orange-500/10 border border-orange-500/20 text-[10px] uppercase text-orange-400/70 tracking-wider">Nguyên tố Lửa</span>
                  </div>
-                 <div className="flex flex-wrap gap-4">
+                 <div className="flex flex-wrap gap-6">
                    {data.wands.map((name, i) => renderCardTile(name, i, undefined, undefined, 'gold'))}
                  </div>
                </section>
@@ -171,7 +171,7 @@ export default function TarotBookPopup({ open, onClose }: Props) {
                    <h3 className="text-2xl font-display text-[var(--gold-300)]">Bộ Cốc (Cups)</h3>
                    <span className="px-3 py-1 rounded-full bg-blue-500/10 border border-blue-500/20 text-[10px] uppercase text-blue-400/70 tracking-wider">Nguyên tố Nước</span>
                  </div>
-                 <div className="flex flex-wrap gap-4">
+                 <div className="flex flex-wrap gap-6">
                    {data.cups.map((name, i) => renderCardTile(name, i, undefined, undefined, 'blue'))}
                  </div>
                </section>
