@@ -2,72 +2,72 @@
   "majorArcana": [
     {
       "id": "0",
-      "name": "Kẻ Ngốc",
-      "numeral": "0",
-      "image": "https://images.unsplash.com/photo-1518562180175-34a163b1a9a6?auto=format&fit=crop&w=400&q=80",
+      "name": "lampard",
+      "numeral": "",
+      "image": "/assets/lampard.webp",
       "meaning": "Sự khởi đầu mới, ngây thơ, mạo hiểm."
     },
     {
       "id": "1",
-      "name": "Pháp Sư",
-      "numeral": "I",
-      "image": "https://images.unsplash.com/photo-1516979187457-637abb4f9353?auto=format&fit=crop&w=400&q=80",
+      "name": "Bale",
+      "numeral": "",
+      "image": "/assets/bale.webp",
       "meaning": "Kỹ năng, sự tự tin, hành động có mục đích."
     },
     {
       "id": "2",
-      "name": "Nữ Tư Tế",
-      "numeral": "II",
-      "image": "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=400&q=80",
+      "name": "Hazard",
+      "numeral": "",
+      "image": "/assets/hazard.webp",
       "meaning": "Trực giác, bí mật, sự im lặng thần thánh."
     },
     {
       "id": "3",
-      "name": "Nữ Hoàng",
-      "numeral": "III",
-      "image": "https://images.unsplash.com/photo-1511300636408-a63a89df3482?auto=format&fit=crop&w=400&q=80",
+      "name": "Ronaldo",
+      "numeral": "",
+      "image": "/assets/ronaldo.webp",
       "meaning": "Sự màu mỡ, tự nhiên, sự dồi dào."
     },
     {
       "id": "4",
-      "name": "Nhà Ảo Thuật",
-      "numeral": "IV",
-      "image": "/assets/ronaldinho.png",
+      "name": "Rooney",
+      "numeral": "",
+      "image": "/assets/rooney.webp",
       "meaning": "Cấu trúc, quyền lực, sự ổn định."
     },
     {
       "id": "5",
-      "name": "Giáo Hoàng",
-      "numeral": "V",
-      "image": "/assets/5-The-Hierophant.jpg",
+      "name": "Ronaldinho",
+      "numeral": "",
+      "image": "/assets/ronaldinho.webp",
       "meaning": "Truyền thống, niềm tin, sự hướng dẫn."
     },
     {
       "id": "6",
-      "name": "Tình Nhân",
-      "numeral": "VI",
-      "image": "https://images.unsplash.com/photo-1492693429561-1c283eb1b2e8?auto=format&fit=crop&w=400&q=80",
+      "name": "Robinson",
+      "numeral": "",
+      "image": "/assets/robinson.webp",
       "meaning": "Lựa chọn, tình yêu, sự hòa hợp."
     },
     {
       "id": "7",
-      "name": "Cỗ Xe",
-      "numeral": "VII",
-      "image": "https://images.unsplash.com/photo-1457369804613-52c61a468e7d?auto=format&fit=crop&w=400&q=80",
+      "name": "Ozil",
+      "numeral": "",
+      "image": "/assets/ozil.webp",
       "meaning": "Chiến thắng, ý chí, sự kiểm soát."
     },
     {
       "id": "8",
-      "name": "Sức Mạnh",
-      "numeral": "VIII",
-      "image": "https://images.unsplash.com/photo-1501472312651-726afe119ff1?auto=format&fit=crop&w=400&q=80",
+      "name": "Michu",
+      "numeral": "",
+      "image": "/assets/michu.webp",
       "meaning": "Lòng can đảm, sự kiên nhẫn, sức mạnh nội tâm."
     }
   ],
   "wands": [
     {
       "name": "Người bảo vệ vĩnh hằng",
-      "image": "/assets/buffon.png"
+      "image": "/assets/tay_thi.webp"
     },
     "Hai Gậy",
     "Ba Gậy",

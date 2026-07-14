@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState, useEffect } from 'react';
-import { motion, Variants } from 'framer-motion';
+import { motion } from 'framer-motion';
 
 interface TarotCard {
   id: string;
@@ -22,14 +22,19 @@ interface Props {
   onClose: () => void;
 }
 
+interface SelectedCardPreview {
+  name: string;
+  image: string;
+}
+
 export default function TarotBookPopup({ open, onClose }: Props) {
   const [activeTab, setActiveTab] = useState('Bộ Ẩn');
   const [data, setData] = useState<TarotData | null>(null);
   const [loading, setLoading] = useState(true);
+  const [selectedCardPreview, setSelectedCardPreview] = useState<SelectedCardPreview | null>(null);
 
   useEffect(() => {
     if (open) {
-      setLoading(true);
       fetch('/api/tarot/cards')
         .then(res => res.json())
         .then(val => {
@@ -42,65 +47,57 @@ export default function TarotBookPopup({ open, onClose }: Props) {
 
   if (!open) return null;
 
-  const cardVariants: Variants = {
-    initial: { rotate: 0, y: 0, scale: 1 },
-    hover: { y: -10, scale: 1.04, transition: { type: 'spring', stiffness: 220, damping: 16 } }
-  };
-
-  const imageVariants: any = {
-    left: { initial: { rotate: 0, x: 0, y: 0 }, hover: { rotate: -8, x: -18, y: 6, transition: { type: 'spring' as const, stiffness: 200, damping: 15 } } },
-    middle: { initial: { rotate: 0, x: 0, y: 0 }, hover: { rotate: 0, x: 0, y: -10, transition: { type: 'spring' as const, stiffness: 200, damping: 15 } } },
-    right: { initial: { rotate: 0, x: 0, y: 0 }, hover: { rotate: 8, x: 18, y: 8, transition: { type: 'spring' as const, stiffness: 200, damping: 15 } } },
-  };
 
   const renderCardTile = (name: string, idx: number, image?: string, numeral?: string, accent: 'gold' | 'blue' = 'gold') => {
     const isGold = accent === 'gold';
+
     return (
       <motion.div
         key={name}
         className="w-[200px] text-center"
         initial="initial"
-        whileHover="hover"
-        variants={cardVariants}
+        whileHover={{ y: -8, scale: 1.02 }}
+        transition={{ type: 'spring', stiffness: 260, damping: 18 }}
       >
         <motion.div className={`
-          relative w-[200px] h-[320px] mx-auto rounded-[22px] overflow-hidden flex items-center justify-center border
-          ${isGold 
-            ? 'bg-gradient-to-b from-[#3a1e0e]/95 to-[#160b05]/95 border-[#e8c97a]/30 shadow-[0_10px_26px_rgba(0,0,0,0.34),0_0_18px_rgba(232,201,122,0.14)]' 
+          relative w-[200px] h-[200px] mx-auto overflow-hidden flex items-center justify-center border rounded-[18px]
+          ${isGold
+            ? 'bg-gradient-to-b from-[#3a1e0e]/95 to-[#160b05]/95 border-[#e8c97a]/30 shadow-[0_10px_26px_rgba(0,0,0,0.34),0_0_18px_rgba(232,201,122,0.14)]'
             : 'bg-gradient-to-b from-[#11203e]/95 to-[#080d1a]/95 border-[#6eb4ff]/36 shadow-[0_10px_26px_rgba(0,0,0,0.34),0_0_18px_rgba(74,160,255,0.14)]'}
         `}>
-          <div className={`absolute inset-[8px] rounded-[16px] border ${isGold ? 'border-[#e8c97a]/20' : 'border-[#78beff]/18'}`} />
+          <div className={`absolute inset-[8px] rounded-[14px] border ${isGold ? 'border-[#e8c97a]/20' : 'border-[#78beff]/18'}`} />
 
-          <div className="absolute inset-0 flex items-center justify-center">
-            <motion.div className="absolute inset-0 flex items-center justify-center" initial="initial" whileHover="hover">
+          <button
+            type="button"
+            onClick={() => image && setSelectedCardPreview({ name, image })}
+            className={`absolute inset-0 flex items-center justify-center ${image ? 'cursor-zoom-in' : 'cursor-default'}`}
+            aria-label={image ? `Mở lớn hình ${name}` : name}
+            disabled={!image}
+          >
             {image ? (
-              <motion.img
+              <img
                 src={image}
                 loading="lazy"
                 decoding="async"
                 alt={name}
-                variants={idx % 3 === 0 ? imageVariants.left : idx % 3 === 1 ? imageVariants.middle : imageVariants.right}
-                className="w-full h-full object-cover saturate-[1.05] contrast-[1.05]"
+                className="h-full w-full object-cover object-center saturate-[1.08] contrast-[1.08]"
               />
             ) : (
-              <motion.img
+              <img
                 src="/assets/card-back.svg"
                 loading="lazy"
                 decoding="async"
                 alt={name}
-                variants={idx % 3 === 0 ? imageVariants.left : idx % 3 === 1 ? imageVariants.middle : imageVariants.right}
-                style={{ width: '72%', height: '72%', objectFit: 'contain', display: 'block', margin: 'auto' }} className={`opacity-95 ${isGold ? 'sepia-[0.45] hue-rotate-[-8deg] saturate-[1.2]' : 'hue-rotate-[190deg] saturate-[1.2]'}`}
+                style={{ width: '72%', height: '72%', objectFit: 'contain', display: 'block', margin: 'auto' }}
+                className={`opacity-95 ${isGold ? 'sepia-[0.45] hue-rotate-[-8deg] saturate-[1.2]' : 'hue-rotate-[190deg] saturate-[1.2]'}`}
               />
             )}
-            </motion.div>
-          </div>
+          </button>
 
           {numeral && (
-            <motion.div className="absolute left-1/2 bottom-[10px] -translate-x-1/2 px-2 py-0.5 rounded-full bg-gradient-to-b from-[#583010]/95 to-[#2a1306]/98 border border-[#ffe096]/50 text-[#f5dfa2] text-[10px] font-display"
-              whileHover={{ scale: 1.06 }}
-            >
+            <div className="absolute left-1/2 bottom-[10px] -translate-x-1/2 px-2 py-0.5 rounded-full bg-gradient-to-b from-[#583010]/95 to-[#2a1306]/98 border border-[#ffe096]/50 text-[#f5dfa2] text-[10px] font-display">
               {numeral}
-            </motion.div>
+            </div>
           )}
         </motion.div>
         <div className="mt-2.5 text-[13px] text-[var(--parchment-100)] leading-tight">{name}</div>
@@ -110,11 +107,34 @@ export default function TarotBookPopup({ open, onClose }: Props) {
   };
 
   return (
-    <div className="fixed inset-0 z-[100] bg-black/75 backdrop-blur-[4px] flex items-center justify-center p-5 animate-in fade-in duration-300">
-      <div 
+    <div className="fixed inset-0 z-[100] bg-black/75 backdrop-blur-[4px] flex items-center justify-center p-5 animate-in fade-in duration-300" onClick={onClose}>
+      <div
         onClick={(e) => e.stopPropagation()}
-        className="w-full max-w-[1200px] h-full max-h-[900px] rounded-[26px] bg-gradient-to-b from-[#140920]/98 to-[#080410]/98 border border-[#e8c97a]/20 shadow-[0_40px_120px_rgba(0,0,0,0.65),0_0_80px_rgba(155,127,212,0.12)] overflow-hidden flex flex-col"
+        className="w-[min(1400px,96vw)] h-full max-h-[900px] rounded-[26px] bg-gradient-to-b from-[#140920]/98 to-[#080410]/98 border border-[#e8c97a]/20 shadow-[0_40px_120px_rgba(0,0,0,0.65),0_0_80px_rgba(155,127,212,0.12)] overflow-hidden flex flex-col"
       >
+        {selectedCardPreview && (
+          <div className="fixed inset-0 z-[110] bg-black/80 backdrop-blur-md flex items-center justify-center p-6" onClick={() => setSelectedCardPreview(null)}>
+            <div className="relative w-[min(420px,88vw)] rounded-[28px] border border-[#e8c97a]/25 bg-[rgba(18,9,28,0.98)] shadow-[0_30px_100px_rgba(0,0,0,0.75)] p-4" onClick={(e) => e.stopPropagation()}>
+              <button
+                onClick={() => setSelectedCardPreview(null)}
+                className="absolute right-4 top-4 z-10 rounded-full bg-black/35 px-3 py-1 text-2xl leading-none text-white/70 transition-colors hover:text-white"
+                aria-label="Đóng xem trước hình"
+              >
+                ×
+              </button>
+              <div className="overflow-hidden rounded-[20px] border border-[#e8c97a]/20 bg-[#0f0818] shadow-[0_0_0_1px_rgba(255,255,255,0.03)]">
+                <img
+                  src={selectedCardPreview.image}
+                  alt={selectedCardPreview.name}
+                  className="h-full w-full object-cover"
+                />
+              </div>
+              <div className="mt-4 text-center">
+                <div className="text-xl font-display text-[var(--gold-300)]">{selectedCardPreview.name}</div>
+              </div>
+            </div>
+          </div>
+        )}
         {/* Header */}
         <div className="flex items-center justify-between px-6 py-4.5 border-b border-[#e8c97a]/15">
           <div className="flex items-center gap-3">

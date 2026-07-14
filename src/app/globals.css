@@ -10,7 +10,7 @@
   --color-parchment-200: #f2e6ce;
   --color-parchment-300: #e6d3b3;
   --color-parchment-400: #d4b88c;
-  --color-bg-dark: #0a0612;
+  --color-bg-dark: #140920;
 }
 
 :root {
@@ -23,7 +23,7 @@
   --parchment-200: #f2e6ce;
   --parchment-300: #e6d3b3;
   --parchment-400: #d4b88c;
-  --bg-dark: #0a0612;
+  --bg-dark: #140920;
   --bg-surface: #140920;
   --font-display: 'Cinzel', Georgia, serif;
   --font-body: 'Cormorant Garamond', Georgia, serif;
@@ -46,73 +46,7 @@ body {
 .custom-scrollbar::-webkit-scrollbar { width: 8px; }
 .custom-scrollbar::-webkit-scrollbar-thumb { background: rgba(232,201,122,0.25); border-radius: 999px; }
 
-@keyframes nebulaDrift {
-  0% { transform: scale(1.1) rotate(0deg) translate3d(0,0,0); opacity: 0.6; }
-  50% { transform: scale(1.2) rotate(3deg) translate3d(0,0,0); opacity: 0.85; }
-  100% { transform: scale(1.1) rotate(0deg) translate3d(0,0,0); opacity: 0.6; }
-}
-@keyframes sigilSpin {
-  0% { transform: translate3d(-50%, -50%, 0) rotate(360deg); }
-  100% { transform: translate3d(-50%, -50%, 0) rotate(0deg); }
-}
-.animate-nebula { will-change: transform, opacity; transform: translateZ(0); animation: nebulaDrift 40s ease-in-out infinite; }
-.animate-sigil { will-change: transform; transform: translateZ(0); animation: sigilSpin 90s linear infinite; }
-
-/* --- Cosmic Background Effects --- */
 .layer { position: absolute; inset: 0; pointer-events: none; }
-
-.nebula { animation: nebulaBreathe 18s ease-in-out infinite alternate; }
-@keyframes nebulaBreathe { 0% { transform: scale(1); } 100% { transform: scale(1.06) translate(1%,-1%); } }
-
-.stars { animation: starDrift 140s linear infinite; }
-@keyframes starDrift { from { background-position: 0 0; } to { background-position: 820px 620px; } }
-
-.sigil-wrap { animation: sigilFloat 8s ease-in-out infinite alternate; transform: translateX(-50%); }
-@keyframes sigilFloat { 
-  0% { transform: translateX(-50%) translateY(0) scale(.88); } 
-  100% { transform: translateX(-50%) translateY(-4px) scale(.92); } 
-}
-
-.sigil-outer, .sigil-inner { transform-origin: center; }
-.sigil-outer { animation: spinCW 42s linear infinite; }
-.sigil-inner { animation: spinCCW 28s linear infinite; }
-@keyframes spinCW { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
-@keyframes spinCCW { from { transform: rotate(360deg); } to { transform: rotate(0deg); } }
-
-.sparkle { animation: twinkle 5.5s ease-in-out infinite; }
-@keyframes twinkle { 
-  0%,100% { opacity: 0; transform: scale(.6); } 
-  50% { opacity: .9; transform: scale(1.15); } 
-}
-
-.rune { animation: runeRise 12s linear infinite; }
-@keyframes runeRise { 
-  0% { transform: translateY(48px) rotate(0deg); opacity: 0; } 
-  15% { opacity: .35; } 
-  85% { opacity: .28; } 
-  100% { transform: translateY(-120px) rotate(20deg); opacity: 0; } 
-}
-
-.bg-card {
-  --mx: 0px;
-  --my: 0px;
-  --mr: 0deg;
-  --scale: 1;
-  --dx: 0px;
-  --dy: 0px;
-  animation: cardDrift var(--dur, 18s) ease-in-out infinite;
-  will-change: transform;
-}
-@keyframes cardDrift {
-  0% { transform: translate3d(var(--mx), var(--my), 0) rotate(var(--base-rot)) scale(var(--scale)); }
-  33% { transform: translate3d(calc(var(--mx) + var(--dx) * 0.8), calc(var(--my) + var(--dy) * 0.6), 0) rotate(calc(var(--base-rot) + 4deg)) scale(calc(var(--scale) * 1.025)); }
-  66% { transform: translate3d(calc(var(--mx) - var(--dx) * 0.5), calc(var(--my) + var(--dy) * 0.9), 0) rotate(calc(var(--base-rot) - 3deg)) scale(calc(var(--scale) * 0.985)); }
-  100% { transform: translate3d(var(--mx), var(--my), 0) rotate(var(--base-rot)) scale(var(--scale)); }
-}
-
-@media (prefers-reduced-motion: reduce) { 
-  .nebula, .stars, .sigil-outer, .sigil-inner, .sparkle, .rune, .bg-card { animation: none !important; } 
-}
 
 :root {
   --shadow-lg: 0 20px 40px -10px rgba(0,0,0,0.5);
@@ -120,44 +54,118 @@ body {
   --radius-card: 18px;
 }
 
-
-
-/* --- Cosmic Shooting Stars --- */
-.shooting-star {
-  position: absolute;
-  height: 2px;
-  border-radius: 999px;
-  transform-origin: left center;
-  background: linear-gradient(90deg,
-    rgba(255,255,255,0) 0%,
-    rgba(210,190,255,0.18) 35%,
-    rgba(235,225,255,0.68) 72%,
-    rgba(255,255,255,0.95) 100%
-  );
-  filter: blur(0.35px) drop-shadow(0 0 10px rgba(192,150,255,0.24));
-  animation: shoot var(--dur, 3s) linear infinite;
-  opacity: 0;
+/* --- Animated background layers --- */
+.bg-nebula {
+  background:
+    radial-gradient(70% 60% at 18% 24%, rgba(138, 76, 206, 0.6) 0%, rgba(138, 76, 206, 0.18) 42%, transparent 74%),
+    radial-gradient(62% 68% at 78% 18%, rgba(108, 54, 184, 0.48) 0%, rgba(108, 54, 184, 0.16) 48%, transparent 76%),
+    radial-gradient(80% 70% at 52% 72%, rgba(80, 32, 146, 0.42) 0%, rgba(80, 32, 146, 0.14) 52%, transparent 78%);
+  background-color: #140920;
+  animation: nebulaDrift 15s ease-in-out infinite alternate;
+  will-change: transform, opacity;
 }
-.shooting-star::after {
+
+@keyframes nebulaDrift {
+  0% { transform: scale(1.0) translate3d(0, 0, 0); opacity: 0.92; }
+  50% { transform: scale(1.08) translate3d(1.4%, -1.6%, 0); opacity: 1; }
+  100% { transform: scale(1.0) translate3d(0, 0, 0); opacity: 0.92; }
+}
+
+.bg-vignette {
+  background: radial-gradient(circle at 50% 42%, rgba(0, 0, 0, 0) 42%, rgba(0, 0, 0, 0.28) 72%, rgba(0, 0, 0, 0.54) 96%);
+  background-color: transparent;
+  animation: fogDrift 16s ease-in-out infinite alternate;
+}
+
+.bg-vignette::after {
   content: '';
   position: absolute;
-  right: -1px;
-  top: 50%;
-  width: 5px;
-  height: 5px;
-  border-radius: 50%;
-  transform: translateY(-50%);
-  background: rgba(255,255,255,0.92);
-  box-shadow: 0 0 10px rgba(220,200,255,0.65), 0 0 22px rgba(170,120,255,0.28);
+  inset: 0;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.02) 0%, rgba(255, 255, 255, 0.015) 42%, rgba(255, 255, 255, 0.035) 100%);
+  mix-blend-mode: screen;
+  animation: fogDrift 16s ease-in-out infinite alternate;
+  opacity: 0.72;
 }
 
-@keyframes shoot {
-  0% { transform: translate3d(0,0,0) rotate(var(--angle, 24deg)) scaleX(0); opacity: 0; }
-  8% { opacity: var(--max-opacity, 0.5); transform: translate3d(0,0,0) rotate(var(--angle, 24deg)) scaleX(1); }
-  35% { opacity: calc(var(--max-opacity, 0.5) * 0.45); transform: translate3d(calc(var(--dist-x, 180px) * 0.45), calc(var(--dist-y, 80px) * 0.45), 0) rotate(var(--angle, 24deg)) scaleX(0.65); }
-  100% { opacity: 0; transform: translate3d(var(--dist-x, 180px), var(--dist-y, 80px), 0) rotate(var(--angle, 24deg)) scaleX(0.1); }
+@keyframes fogDrift {
+  0% { transform: translate3d(0, 0, 0); opacity: 0.58; }
+  50% { transform: translate3d(1.2%, -0.8%, 0); opacity: 0.82; }
+  100% { transform: translate3d(0, 0, 0); opacity: 0.58; }
 }
 
+.bg-sigil-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: centerFloat 10s ease-in-out infinite;
+  opacity: 0.4;
+}
 
-@keyframes spinSlow { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
-.spin-slow { animation: spinSlow 18s linear infinite; transform-origin: center; will-change: transform; }
+.bg-sigil {
+  width: 42vw;
+  max-width: 640px;
+  height: auto;
+  opacity: 0.9;
+  animation: bgSigilSpin 80s linear infinite, bgSigilBreath 8s ease-in-out infinite;
+  transform-origin: center;
+  filter: saturate(0.88) brightness(0.92);
+}
+
+@keyframes bgSigilSpin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes bgSigilBreath {
+  0%, 100% { transform: scale(0.94); opacity: 0.82; }
+  50% { transform: scale(1.02); opacity: 1; }
+}
+
+@keyframes centerFloat {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-14px); }
+}
+
+/* Floating tarot cards */
+.bg-card {
+  width: 108px;
+  height: 152px;
+  border-radius: 14px;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  box-shadow: var(--shadow-lg), var(--edge-gold);
+  will-change: transform;
+  animation: cardDrift var(--dur, 22s) ease-in-out infinite;
+  animation-delay: var(--delay, 0s);
+}
+
+@media (max-width: 1024px) {
+  .bg-card { width: 92px; height: 128px; }
+}
+
+@media (max-width: 640px) {
+  .bg-card { width: 72px; height: 100px; }
+}
+
+@keyframes cardDrift {
+  0%, 100% {
+    transform: translate3d(var(--mx, 0px), var(--my, 0px), 0) rotate(var(--base-rot, 0deg)) scale(var(--scale, 1));
+  }
+  28% {
+    transform: translate3d(calc(var(--mx, 0px) + var(--dx, 0px)), calc(var(--my, 0px) + var(--dy, 0px)), 0) rotate(calc(var(--base-rot, 0deg) + 6deg)) scale(calc(var(--scale, 1) * 1.04));
+  }
+  58% {
+    transform: translate3d(calc(var(--mx, 0px) - var(--dx, 0px) * 0.65), calc(var(--my, 0px) + var(--dy, 0px) * 0.75), 0) rotate(calc(var(--base-rot, 0deg) - 4deg)) scale(calc(var(--scale, 1) * 0.98));
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .bg-nebula,
+  .bg-vignette,
+  .bg-vignette::after,
+  .bg-sigil,
+  .bg-card {
+    animation: none !important;
+  }
+}

@@ -8,7 +8,7 @@ export default function HomePage() {
   const [started, setStarted] = useState(false);
 
   return (
-    <main className="relative min-h-screen overflow-hidden bg-[#0a0612]">
+    <main className="relative isolate min-h-screen overflow-hidden bg-[var(--bg-dark)]">
       {/* Ported Multi-layer Background */}
       <CosmicBackground />
 

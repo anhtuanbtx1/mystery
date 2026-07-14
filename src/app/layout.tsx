@@ -15,7 +15,6 @@ export default function RootLayout({
   return (
     <html lang="vi">
       <body className="antialiased overflow-hidden">
-        <InkRevealToggle />
         {children}
       </body>
     </html>

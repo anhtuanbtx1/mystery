@@ -10,7 +10,7 @@ interface LightningTextProps {
   className?: string;
 }
 
-export default function LightningText({ text = "Mystery Tarot", className }: LightningTextProps) {
+export default function LightningText({ text = "Football Player Card", className }: LightningTextProps) {
   const canvasRef = useRef<HTMLCanvasElement | null>(null);
   const frameRef = useRef<number | null>(null);
   const sparksRef = useRef<SparkPoint[]>([]);
@@ -47,13 +47,24 @@ export default function LightningText({ text = "Mystery Tarot", className }: Lig
       ctx.font = `700 ${fontSize}px Georgia`;
       ctx.textAlign = "center";
       ctx.textBaseline = "middle";
-      ctx.shadowBlur = 18;
-      ctx.shadowColor = "rgba(255, 239, 190, 0.8)";
-      ctx.fillStyle = "rgba(255, 245, 220, 0.96)";
+
+      const titleGradient = ctx.createLinearGradient(w * 0.18, h / 2, w * 0.82, h / 2);
+      titleGradient.addColorStop(0, "#6b2cff");
+      titleGradient.addColorStop(0.36, "#c879ff");
+      titleGradient.addColorStop(0.68, "#ffe096");
+      titleGradient.addColorStop(1, "#fff0d0");
+
+      ctx.shadowBlur = 26;
+      ctx.shadowColor = "rgba(200, 121, 255, 0.72)";
+      ctx.fillStyle = titleGradient;
       ctx.fillText(text, w / 2, h / 2);
 
-      ctx.lineWidth = 1.5;
-      ctx.strokeStyle = "rgba(212, 175, 55, 0.85)";
+      ctx.lineWidth = 2;
+      ctx.strokeStyle = "rgba(255, 224, 150, 0.82)";
+      ctx.strokeText(text, w / 2, h / 2);
+
+      ctx.lineWidth = 0.75;
+      ctx.strokeStyle = "rgba(255, 240, 208, 0.92)";
       ctx.strokeText(text, w / 2, h / 2);
       ctx.restore();
 
@@ -88,8 +99,10 @@ export default function LightningText({ text = "Mystery Tarot", className }: Lig
         }
         ctx.beginPath();
         ctx.shadowBlur = 16;
-        ctx.shadowColor = "rgba(255, 232, 160, 0.9)";
-        ctx.fillStyle = `rgba(255, 244, 210, ${Math.max(0, s.life)})`;
+        ctx.shadowColor = "rgba(200, 121, 255, 0.82)";
+        ctx.fillStyle = s.x < w / 2
+          ? `rgba(216, 164, 255, ${Math.max(0, s.life)})`
+          : `rgba(255, 232, 160, ${Math.max(0, s.life)})`;
         ctx.arc(s.x, s.y, 1.2 + s.life * 1.8, 0, Math.PI * 2);
         ctx.fill();
       }
