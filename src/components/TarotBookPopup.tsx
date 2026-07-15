@@ -166,7 +166,7 @@ export default function TarotBookPopup({ open, onClose }: Props) {
                {/* Major Arcana */}
                <section>
                  <div className="flex items-center justify-between mb-6">
-                   <h3 className="text-2xl font-display text-[var(--gold-300)]">Bộ Ẩn Chính</h3>
+                   <h3 className="text-2xl font-display text-[var(--gold-300)]">Ngoại Hạng Anh</h3>
                    <span className="px-3 py-1 rounded-full bg-[#e8c97a]/10 border border-[#e8c97a]/20 text-[10px] uppercase text-white/50 tracking-wider">Hành trình linh hồn</span>
                  </div>
                  <div className="flex flex-wrap gap-6">
@@ -177,7 +177,7 @@ export default function TarotBookPopup({ open, onClose }: Props) {
                {/* Wands */}
                <section>
                  <div className="flex items-center justify-between mb-6">
-                   <h3 className="text-2xl font-display text-[var(--gold-300)]">Bộ Gậy (Wands)</h3>
+                   <h3 className="text-2xl font-display text-[var(--gold-300)]">La Liga</h3>
                    <span className="px-3 py-1 rounded-full bg-orange-500/10 border border-orange-500/20 text-[10px] uppercase text-orange-400/70 tracking-wider">Nguyên tố Lửa</span>
                  </div>
                  <div className="flex flex-wrap gap-6">

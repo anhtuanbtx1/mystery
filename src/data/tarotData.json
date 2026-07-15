@@ -2,7 +2,7 @@
   "majorArcana": [
     {
       "id": "0",
-      "name": "lampard",
+      "name": "Lampard",
       "numeral": "",
       "image": "/assets/lampard.webp",
       "meaning": "Sự khởi đầu mới, ngây thơ, mạo hiểm."
@@ -23,6 +23,13 @@
     },
     {
       "id": "3",
+      "name": "Berbatov",
+      "numeral": "",
+      "image": "/assets/berbatov.webp",
+      "meaning": "Sự màu mỡ, tự nhiên, sự dồi dào."
+    },
+    {
+      "id": "3",
       "name": "Ronaldo",
       "numeral": "",
       "image": "/assets/ronaldo.webp",
@@ -37,9 +44,9 @@
     },
     {
       "id": "5",
-      "name": "Ronaldinho",
+      "name": "Vermaelen",
       "numeral": "",
-      "image": "/assets/ronaldinho.webp",
+      "image": "/assets/vermaelen.webp",
       "meaning": "Truyền thống, niềm tin, sự hướng dẫn."
     },
     {
@@ -58,6 +65,27 @@
     },
     {
       "id": "8",
+      "name": "Suarez",
+      "numeral": "",
+      "image": "/assets/suarez.webp",
+      "meaning": "Lòng can đảm, sự kiên nhẫn, sức mạnh nội tâm."
+    },
+    {
+      "id": "8",
+      "name": "Fabregas",
+      "numeral": "",
+      "image": "/assets/fabregas.webp",
+      "meaning": "Lòng can đảm, sự kiên nhẫn, sức mạnh nội tâm."
+    },
+    {
+      "id": "8",
+      "name": "Persie",
+      "numeral": "",
+      "image": "/assets/persie_ars.webp",
+      "meaning": "Lòng can đảm, sự kiên nhẫn, sức mạnh nội tâm."
+    },
+    {
+      "id": "8",
       "name": "Michu",
       "numeral": "",
       "image": "/assets/michu.webp",
@@ -66,13 +94,25 @@
   ],
   "wands": [
     {
-      "name": "Người bảo vệ vĩnh hằng",
-      "image": "/assets/tay_thi.webp"
+      "name": "Balotelli",
+      "image": "/assets/balotelli.webp"
     },
-    "Hai Gậy",
-    "Ba Gậy",
-    "Bốn Gậy",
-    "Năm Gậy",
+     {
+      "name": "Lennon",
+      "image": "/assets/lennon.webp"
+    },
+    {
+      "name": "Persie",
+      "image": "/assets/persie.webp"
+    },
+    {
+      "name": "Luiz",
+      "image": "/assets/luiz.webp"
+    },
+    {
+      "name": "Arshavin",
+      "image": "/assets/arshavin.webp"
+    },
     "Sáu Gậy",
     "Bảy Gậy",
     "Tám Gậy",
