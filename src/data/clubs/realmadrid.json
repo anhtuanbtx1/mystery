@@ -1,0 +1,21 @@
+[
+  {
+    "id": "1",
+    "name": "Bale",
+    "numeral": "",
+    "image": "/assets/bale.webp",
+    "meaning": "Kỹ năng, sự tự tin, hành động có mục đích."
+  },
+  {
+    "name": "Benzema",
+    "image": "/assets/benzema.webp"
+  },
+  {
+    "name": "Varane",
+    "image": "/assets/varane_real.webp"
+  },
+  {
+    "name": "Roberto Carlos",
+    "image": "/assets/carlos.webp"
+  }
+]

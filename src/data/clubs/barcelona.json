@@ -1,0 +1,14 @@
+[
+  {
+    "name": "Neymar Jr",
+    "image": "/assets/neymar.webp"
+  },
+  {
+    "name": "De Jong",
+    "image": "/assets/jong.webp"
+  },
+  {
+    "name": "Lionel Messi",
+    "image": "/assets/messi.webp"
+  }
+]

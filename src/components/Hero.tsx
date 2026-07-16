@@ -15,18 +15,18 @@ export default function Hero({ onBegin }: Props) {
   const [bookOpen, setBookOpen] = useState(false);
 
   const fanCards = [
-    { label: 'Quá khứ', rotate: -18, x: -112, y: 18, z: 1, scale: 0.92 },
-    { label: 'Hiện tại', rotate: 0, x: 0, y: hovered ? -18 : -6, z: 3, scale: hovered ? 1.09 : 1 },
-    { label: 'Tương lai', rotate: 18, x: 112, y: 18, z: 1, scale: 0.92 },
+    { label: 'Quá khứ', rotate: -18, x: -64, y: 12, z: 1, scale: 0.92 },
+    { label: 'Hiện tại', rotate: 0, x: 0, y: hovered ? -12 : -4, z: 3, scale: hovered ? 1.09 : 1 },
+    { label: 'Tương lai', rotate: 18, x: 64, y: 12, z: 1, scale: 0.92 },
   ];
 
   return (
     <div className="min-h-[calc(100vh-72px)] flex items-center justify-center px-5 py-8">
-      <div className="text-center max-w-3xl">
+      <div className="text-center w-full max-w-3xl mx-auto flex flex-col items-center">
         {/* Brand emblem */}
-        <div className="mb-6 opacity-80">
+        <div className="mb-4 sm:mb-6 opacity-80">
           <motion.div
-            className="mx-auto w-16 h-16 rounded-full flex items-center justify-center"
+            className="mx-auto w-12 h-12 sm:w-16 sm:h-16 rounded-full flex items-center justify-center"
             animate={{ rotate: 360 }}
             transition={{ duration: 30, repeat: Infinity, ease: 'linear' }}
           >
@@ -34,7 +34,7 @@ export default function Hero({ onBegin }: Props) {
               src="/assets/emblem.svg"
               alt="Mystery Tarot"
               className={cn(
-                'w-14 h-14 object-contain drop-shadow-[0_0_12px_rgba(232,201,122,.22)]'
+                'w-10 h-10 sm:w-14 sm:h-14 object-contain drop-shadow-[0_0_12px_rgba(232,201,122,.22)]'
               )}
               animate={{ rotate: 360 }}
               transition={{ duration: 18, repeat: Infinity, ease: 'linear' }}
@@ -45,15 +45,15 @@ export default function Hero({ onBegin }: Props) {
         {/* Title */}
         <LightningText
           text="Football Player Card"
-          className="mb-1 h-[120px] max-w-[820px] mx-auto"
+          className="mb-1 h-[80px] sm:h-[120px] w-full max-w-[820px] mx-auto"
         />
-        <p className="text-[var(--parchment-300)] text-lg mb-10 italic">
+        <p className="text-[var(--parchment-300)] text-sm sm:text-lg mb-8 sm:mb-10 italic px-2">
           Bí ẩn nằm trong những lá bài — hãy để vũ trụ lên tiếng
         </p>
 
         {/* Fan Cards */}
         <div
-          className="relative w-[420px] h-[340px] mx-auto mb-4 cursor-pointer"
+          className="relative w-full max-w-[420px] h-[260px] sm:h-[340px] mx-auto mb-6 sm:mb-4 cursor-pointer"
           style={{ perspective: 1200 }}
           onMouseEnter={() => setHovered(true)}
           onMouseLeave={() => setHovered(false)}
@@ -62,16 +62,13 @@ export default function Hero({ onBegin }: Props) {
         >
           {fanCards.map((card, idx) => {
             const isCenter = idx === 1;
+            // Use CSS media queries or tailwind via state for dynamic sizing,
+            // but for inline styles we'll use viewport relative units or percentages
             return (
               <div
                 key={card.label}
+                className="absolute left-1/2 top-2 sm:top-[18px] w-[110px] h-[180px] sm:w-[150px] sm:h-[250px] -ml-[55px] sm:-ml-[75px]"
                 style={{
-                  position: 'absolute',
-                  left: '50%',
-                  top: 18,
-                  width: 150,
-                  height: 250,
-                  marginLeft: -75,
                   transformOrigin: '50% 70%',
                   transform: hovered
                     ? `translateX(${card.x}px) translateY(${card.y}px) rotate(${card.rotate}deg) scale(${card.scale})`

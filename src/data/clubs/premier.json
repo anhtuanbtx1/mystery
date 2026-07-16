@@ -1,0 +1,70 @@
+[
+   {
+    "id": "3",
+    "name": "De Gea",
+    "numeral": "",
+    "image": "/assets/gea.webp",
+    "meaning": "Sự màu mỡ, tự nhiên, sự dồi dào."
+  },
+  {
+    "id": "3",
+    "name": "Berbatov",
+    "numeral": "",
+    "image": "/assets/berbatov.webp",
+    "meaning": "Sự màu mỡ, tự nhiên, sự dồi dào."
+  },
+  {
+    "id": "3",
+    "name": "Ronaldo",
+    "numeral": "",
+    "image": "/assets/ronaldo_mu.webp",
+    "meaning": "Sự màu mỡ, tự nhiên, sự dồi dào."
+  },
+  {
+    "name": "Ronaldo (MU - Retro)",
+    "image": "/assets/ronaldo_mu_1.webp"
+  },
+  {
+    "id": "4",
+    "name": "Rooney",
+    "numeral": "",
+    "image": "/assets/rooney.webp",
+    "meaning": "Cấu trúc, quyền lực, sự ổn định."
+  },
+  {
+    "name": "Rooney (Retro 1)",
+    "image": "/assets/rooney_mu.webp"
+  },
+  {
+    "name": "Rooney (Retro 2)",
+    "image": "/assets/rooney_mu_1.webp"
+  },
+  {
+    "id": "4",
+    "name": "Lukaku",
+    "numeral": "",
+    "image": "/assets/lukaku.webp",
+    "meaning": "Cấu trúc, quyền lực, sự ổn định."
+  },
+  {
+    "name": "Persie",
+     "numeral": "20",
+    "image": "/assets/persie_mu.webp"
+  },
+  {
+    "name": "Van Persie (MU 2)",
+    "image": "/assets/persie_mu_1.webp"
+  },
+  {
+    "name": "Rashford",
+    "image": "/assets/rashford.webp"
+  },
+  {
+    "name": "Pogba",
+    "image": "/assets/pogba.webp"
+  },
+  {
+    "name": "Casemiro",
+    "image": "/assets/casemiro.webp"
+  }
+]

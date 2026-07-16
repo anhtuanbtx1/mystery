@@ -1,0 +1,20 @@
+[
+  {
+    "id": "0",
+    "name": "Lampard",
+    "numeral": "",
+    "image": "/assets/lampard.webp",
+    "meaning": "Sự khởi đầu mới, ngây thơ, mạo hiểm."
+  },
+  {
+    "id": "2",
+    "name": "Hazard",
+    "numeral": "",
+    "image": "/assets/hazard.webp",
+    "meaning": "Trực giác, bí mật, sự im lặng thần thánh."
+  },
+  {
+    "name": "Luiz",
+    "image": "/assets/luiz.webp"
+  }
+]
