@@ -1,6 +1,10 @@
 [
   {
-    "name": "Cabaye (Newcastle)",
+    "name": "Cabaye",
     "image": "/assets/cabaye.webp"
+  },
+  {
+    "name": "Tiote",
+    "image": "/assets/tiote.webp"
   }
 ]

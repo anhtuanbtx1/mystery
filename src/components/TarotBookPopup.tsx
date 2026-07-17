@@ -12,7 +12,7 @@ interface TarotCard {
 }
 
 interface TarotData {
-  premier: TarotCard[];
+  manu: TarotCard[];
   arsenal: TarotCard[];
   liverpool: TarotCard[];
   chelsea: TarotCard[];
@@ -246,7 +246,7 @@ export default function TarotBookPopup({ open, onClose }: Props) {
                    <span className="px-3 py-1 rounded-full bg-[#e8c97a]/10 border border-[#e8c97a]/20 text-[10px] uppercase text-white/50 tracking-wider">Quỷ đỏ</span>
                  </div>
                  <div className="flex flex-wrap gap-4 sm:gap-6">
-                   {data.premier ? groupCards(data.premier).map((g, i) => renderCardGroupTile(g, i, 'gold')) : null}
+                   {data.manu ? groupCards(data.manu).map((g, i) => renderCardGroupTile(g, i, 'gold')) : null}
                  </div>
                </section>
 
@@ -321,16 +321,6 @@ export default function TarotBookPopup({ open, onClose }: Props) {
                  </div>
                </section>
 
-               {/* Cups */}
-               <section>
-                 <div className="flex items-center justify-between mb-6">
-                   <h3 className="text-2xl font-display text-[var(--gold-300)]">Bộ Cốc (Cups)</h3>
-                   <span className="px-3 py-1 rounded-full bg-blue-500/10 border border-blue-500/20 text-[10px] uppercase text-blue-400/70 tracking-wider">Nguyên tố Nước</span>
-                 </div>
-                 <div className="flex flex-wrap gap-4 sm:gap-6">
-                   {data.cups ? groupCards(data.cups).map((g, i) => renderCardGroupTile(g, i, 'blue')) : null}
-                 </div>
-               </section>
              </div>
           ) : data && activeTab === 'La Liga' ? (
              <div className="space-y-12">

@@ -8,6 +8,13 @@
   },
   {
     "id": "1",
+    "name": "Ramos",
+    "numeral": "",
+    "image": "/assets/ramos.webp",
+    "meaning": "Kỹ năng, sự tự tin, hành động có mục đích."
+  },
+  {
+    "id": "1",
     "name": "Courtois",
     "numeral": "",
     "image": "/assets/courtois.webp",

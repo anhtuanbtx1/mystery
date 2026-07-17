@@ -4,6 +4,10 @@
     "image": "/assets/son.webp"
   },
   {
+    "name": "Vertonghen",
+    "image": "/assets/vertonghen.webp"
+  },
+  {
     "name": "Lennon",
     "image": "/assets/lennon.webp"
   }

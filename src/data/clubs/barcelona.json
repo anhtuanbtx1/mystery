@@ -8,6 +8,10 @@
     "image": "/assets/jong.webp"
   },
   {
+    "name": "Suarez",
+    "image": "/assets/suarez_bar.webp"
+  },
+  {
     "name": "Lionel Messi",
     "image": "/assets/messi.webp"
   }

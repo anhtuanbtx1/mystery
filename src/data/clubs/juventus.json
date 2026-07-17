@@ -3,6 +3,18 @@
     "name": "Buffon",
     "image": "/assets/buffon.webp"
   },
+   {
+    "name": "Chiellini",
+    "image": "/assets/chiellini.webp"
+  },
+  {
+    "name": "Pogba",
+    "image": "/assets/pogba_juv.webp"
+  },
+  {
+    "name": "Dybala",
+    "image": "/assets/dybala.webp"
+  },
   {
     "name": "Ronaldo (Juve)",
     "image": "/assets/ronaldo_juv.webp"

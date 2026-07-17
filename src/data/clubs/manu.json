@@ -45,6 +45,16 @@
     "image": "/assets/persie_mu.webp"
   },
   {
+    "name": "Bruno",
+     "numeral": "20",
+    "image": "/assets/fernandes.webp"
+  },
+  {
+    "name": "Mata",
+     "numeral": "20",
+    "image": "/assets/mata.webp"
+  },
+  {
     "name": "Persie",
     "image": "/assets/persie_mu_1.webp"
   },
@@ -55,6 +65,10 @@
   {
     "name": "Pogba",
     "image": "/assets/pogba.webp"
+  },
+  {
+    "name": "Vidic",
+    "image": "/assets/vidic.webp"
   },
   {
     "name": "Maguire",

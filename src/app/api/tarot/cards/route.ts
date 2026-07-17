@@ -1,5 +1,5 @@
 import { NextResponse } from 'next/server';
-import premier from '@/data/clubs/premier.json';
+import manu from '@/data/clubs/manu.json';
 import arsenal from '@/data/clubs/arsenal.json';
 import liverpool from '@/data/clubs/liverpool.json';
 import chelsea from '@/data/clubs/chelsea.json';
@@ -18,7 +18,7 @@ import cups from '@/data/clubs/cups.json';
 
 export async function GET() {
   const aggregatedData = {
-    premier,
+    manu,
     arsenal,
     liverpool,
     chelsea,

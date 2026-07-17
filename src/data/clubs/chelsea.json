@@ -14,6 +14,20 @@
     "meaning": "Trực giác, bí mật, sự im lặng thần thánh."
   },
   {
+    "id": "2",
+    "name": "Terry",
+    "numeral": "",
+    "image": "/assets/terry.webp",
+    "meaning": "Trực giác, bí mật, sự im lặng thần thánh."
+  },
+  {
+    "id": "2",
+    "name": "Oscar",
+    "numeral": "",
+    "image": "/assets/oscar.webp",
+    "meaning": "Trực giác, bí mật, sự im lặng thần thánh."
+  },
+  {
     "name": "Luiz",
     "image": "/assets/luiz.webp"
   }
