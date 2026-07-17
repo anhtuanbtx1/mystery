@@ -11,6 +11,18 @@
     "image": "/assets/torres.webp"
   },
   {
+    "name": "Johnson",
+    "image": "/assets/johnson.webp"
+  },
+  {
+    "name": "Sturridge",
+    "image": "/assets/sturridge.webp"
+  },
+  {
+    "name": "Firmino",
+    "image": "/assets/firmino.webp"
+  },
+  {
     "name": "Coutinho",
     "image": "/assets/coutinho.webp"
   }

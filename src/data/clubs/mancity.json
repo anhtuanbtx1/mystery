@@ -12,6 +12,10 @@
     "image": "/assets/toure.webp"
   },
   {
+    "name": "Aguero",
+    "image": "/assets/aguero.webp"
+  },
+  {
     "name": "Tevez",
     "image": "/assets/tevez.webp"
   }

@@ -25,13 +25,6 @@
     "image": "/assets/ronaldo_mu_1.webp"
   },
   {
-    "id": "4",
-    "name": "Rooney",
-    "numeral": "",
-    "image": "/assets/rooney.webp",
-    "meaning": "Cấu trúc, quyền lực, sự ổn định."
-  },
-  {
     "name": "Rooney (Retro 1)",
     "image": "/assets/rooney_mu.webp"
   },
@@ -52,7 +45,7 @@
     "image": "/assets/persie_mu.webp"
   },
   {
-    "name": "Van Persie (MU 2)",
+    "name": "Persie",
     "image": "/assets/persie_mu_1.webp"
   },
   {
@@ -62,6 +55,10 @@
   {
     "name": "Pogba",
     "image": "/assets/pogba.webp"
+  },
+  {
+    "name": "Maguire",
+    "image": "/assets/maguire.webp"
   },
   {
     "name": "Casemiro",

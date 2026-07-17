@@ -7,6 +7,13 @@
     "meaning": "Kỹ năng, sự tự tin, hành động có mục đích."
   },
   {
+    "id": "1",
+    "name": "Courtois",
+    "numeral": "",
+    "image": "/assets/courtois.webp",
+    "meaning": "Kỹ năng, sự tự tin, hành động có mục đích."
+  },
+  {
     "name": "Benzema",
     "image": "/assets/benzema.webp"
   },
