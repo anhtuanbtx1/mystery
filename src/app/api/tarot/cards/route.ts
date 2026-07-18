@@ -15,6 +15,8 @@ import bayern from '@/data/clubs/bayern.json';
 import dortmund from '@/data/clubs/dortmund.json';
 import wands from '@/data/clubs/wands.json';
 import cups from '@/data/clubs/cups.json';
+import astonvilla from '@/data/clubs/astonvilla.json';
+import valencia from '@/data/clubs/valencia.json';
 
 export async function GET() {
   const aggregatedData = {
@@ -32,6 +34,8 @@ export async function GET() {
     juventus,
     bayern,
     dortmund,
+    astonvilla,
+    valencia,
     wands,
     cups
   };
