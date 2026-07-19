@@ -6,5 +6,13 @@
   {
     "name": "Tiote",
     "image": "/assets/tiote.webp"
+  },
+  {
+    "name": "Krul",
+    "image": "/assets/krul.webp"
+  },
+  {
+    "name": "Shearer",
+    "image": "/assets/shearer.webp"
   }
 ]

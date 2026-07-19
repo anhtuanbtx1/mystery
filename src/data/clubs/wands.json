@@ -13,6 +13,30 @@
     "image": "/assets/robinson.webp",
     "meaning": "Lựa chọn, tình yêu, sự hòa hợp."
   },
+  {
+    "name": "Godin",
+    "image": "/assets/godin.webp"
+  },
+  {
+    "name": "Maradona",
+    "image": "/assets/maradona.webp"
+  },
+  {
+    "name": "Thiago Silva",
+    "image": "/assets/silva_psg.webp"
+  },
+  {
+    "name": "Totti",
+    "image": "/assets/totti.webp"
+  },
+  {
+    "name": "Doue",
+    "image": "/assets/doue.webp"
+  },
+  {
+    "name": "Eze",
+    "image": "/assets/eze.webp"
+  },
   "Tiểu Đồng Gậy",
   "Kỵ Sĩ Gậy",
   "Nữ Hoàng Gậy",

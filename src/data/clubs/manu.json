@@ -71,6 +71,30 @@
     "image": "/assets/vidic.webp"
   },
   {
+    "name": "Ferdinand",
+    "image": "/assets/ferdinand.webp"
+  },
+  {
+    "name": "Giggs",
+    "image": "/assets/giggs.webp"
+  },
+  {
+    "name": "Scholes",
+    "image": "/assets/scholes.webp"
+  },
+  {
+    "name": "Schmeichel",
+    "image": "/assets/schmeichel.webp"
+  },
+  {
+    "name": "Wan-Bissaka",
+    "image": "/assets/bissaka.webp"
+  },
+  {
+    "name": "Cavani",
+    "image": "/assets/cavani.webp"
+  },
+  {
     "name": "Maguire",
     "image": "/assets/maguire.webp"
   },

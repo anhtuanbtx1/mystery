@@ -7,6 +7,10 @@
     "meaning": "Kỹ năng, sự tự tin, hành động có mục đích."
   },
   {
+    "name": "Bale (Real)",
+    "image": "/assets/bale_real.webp"
+  },
+  {
     "id": "1",
     "name": "Ramos",
     "numeral": "",
@@ -31,5 +35,17 @@
   {
     "name": "Roberto Carlos",
     "image": "/assets/carlos.webp"
+  },
+  {
+    "name": "Xabi Alonso",
+    "image": "/assets/alonso.webp"
+  },
+  {
+    "name": "Marcelo",
+    "image": "/assets/marcelo.webp"
+  },
+  {
+    "name": "Mbappe",
+    "image": "/assets/mbappe_real.webp"
   }
 ]

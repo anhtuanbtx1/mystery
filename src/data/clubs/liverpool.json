@@ -11,6 +11,22 @@
     "image": "/assets/torres_liv.webp"
   },
   {
+    "name": "Gerrard",
+    "image": "/assets/gerrard.webp"
+  },
+  {
+    "name": "Henderson",
+    "image": "/assets/henderson.webp"
+  },
+  {
+    "name": "Reina",
+    "image": "/assets/reina.webp"
+  },
+  {
+    "name": "Skrtel",
+    "image": "/assets/skrtel.webp"
+  },
+  {
     "name": "Johnson",
     "image": "/assets/johnson.webp"
   },

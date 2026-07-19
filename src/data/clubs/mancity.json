@@ -18,5 +18,13 @@
   {
     "name": "Tevez",
     "image": "/assets/tevez.webp"
+  },
+  {
+    "name": "Cancelo",
+    "image": "/assets/cancelo.webp"
+  },
+  {
+    "name": "Hart",
+    "image": "/assets/hart.webp"
   }
 ]

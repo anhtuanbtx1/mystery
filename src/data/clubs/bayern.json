@@ -6,5 +6,9 @@
   {
     "name": "Robben",
     "image": "/assets/robben.webp"
+  },
+  {
+    "name": "Kimmich",
+    "image": "/assets/kimmich.webp"
   }
 ]

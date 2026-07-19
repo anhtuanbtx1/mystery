@@ -30,5 +30,21 @@
   {
     "name": "Luiz",
     "image": "/assets/luiz.webp"
+  },
+  {
+    "name": "Cech (Chelsea)",
+    "image": "/assets/cech_chelsea.webp"
+  },
+  {
+    "name": "Cole",
+    "image": "/assets/cole.webp"
+  },
+  {
+    "name": "Drogba",
+    "image": "/assets/drogba.webp"
+  },
+  {
+    "name": "Torres (Chelsea)",
+    "image": "/assets/torres_alt.webp"
   }
 ]

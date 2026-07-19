@@ -14,5 +14,9 @@
   {
     "name": "Lionel Messi",
     "image": "/assets/messi.webp"
+  },
+  {
+    "name": "Pique",
+    "image": "/assets/pique_bar.webp"
   }
 ]

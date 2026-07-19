@@ -41,5 +41,21 @@
    {
     "name": "Giroud",
     "image": "/assets/giroud.webp"
+  },
+  {
+    "name": "Cazorla",
+    "image": "/assets/cazorla.webp"
+  },
+  {
+    "name": "Cech (Arsenal)",
+    "image": "/assets/cech_ars.webp"
+  },
+  {
+    "name": "Mertesacker",
+    "image": "/assets/mertesacker.webp"
+  },
+  {
+    "name": "Walcott",
+    "image": "/assets/walcott.webp"
   }
 ]
