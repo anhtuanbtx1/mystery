@@ -21,6 +21,7 @@ interface TarotData {
   newcastle: TarotCard[];
   barcelona: TarotCard[];
   realmadrid: TarotCard[];
+  atletico: TarotCard[];
   inter: TarotCard[];
   acmilan: TarotCard[];
   juventus: TarotCard[];
@@ -28,8 +29,9 @@ interface TarotData {
   dortmund: TarotCard[];
   astonvilla: TarotCard[];
   valencia: TarotCard[];
+  roma: TarotCard[];
+  psg: TarotCard[];
   wands: Array<string | TarotCard>;
-  cups: string[];
 }
 
 interface Props {
@@ -222,7 +224,7 @@ export default function TarotBookPopup({ open, onClose }: Props) {
              </div>
           </div>
           <div className="flex items-center gap-2 sm:gap-3 flex-wrap">
-            {['Ngoại Hạng Anh', 'La Liga', 'Serie A', 'Bundesliga'].map(t => (
+            {['Ngoại Hạng Anh', 'La Liga', 'Serie A', 'Bundesliga', 'Ligue 1'].map(t => (
               <button
                 key={t}
                 onClick={() => setActiveTab(t)}
@@ -357,6 +359,15 @@ export default function TarotBookPopup({ open, onClose }: Props) {
                </section>
                <section>
                  <div className="flex items-center justify-between mb-6">
+                   <h3 className="text-2xl font-display text-[var(--gold-300)]">Atletico Madrid</h3>
+                   <span className="px-3 py-1 rounded-full bg-[#e8c97a]/10 border border-[#e8c97a]/20 text-[10px] uppercase text-white/50 tracking-wider">Los Colchoneros</span>
+                 </div>
+                 <div className="flex flex-wrap gap-4 sm:gap-6">
+                   {data.atletico ? groupCards(data.atletico).map((g, i) => renderCardGroupTile(g, i, "gold")) : null}
+                 </div>
+               </section>
+               <section>
+                 <div className="flex items-center justify-between mb-6">
                    <h3 className="text-2xl font-display text-[var(--gold-300)]">Valencia</h3>
                    <span className="px-3 py-1 rounded-full bg-[#e8c97a]/10 border border-[#e8c97a]/20 text-[10px] uppercase text-white/50 tracking-wider">Los Che</span>
                  </div>
@@ -397,6 +408,16 @@ export default function TarotBookPopup({ open, onClose }: Props) {
                    {data.juventus ? groupCards(data.juventus).map((g, i) => renderCardGroupTile(g, i, 'gold')) : null}
                  </div>
                </section>
+
+                <section>
+                 <div className="flex items-center justify-between mb-6">
+                   <h3 className="text-2xl font-display text-[var(--gold-300)]">AS Roma</h3>
+                   <span className="px-3 py-1 rounded-full bg-[#e8c97a]/10 border border-[#e8c97a]/20 text-[10px] uppercase text-white/50 tracking-wider">I Giallorossi</span>
+                 </div>
+                 <div className="flex flex-wrap gap-4 sm:gap-6">
+                   {data.roma ? groupCards(data.roma).map((g, i) => renderCardGroupTile(g, i, 'gold')) : null}
+                 </div>
+               </section>
              </div>
           ) : data && activeTab === 'Bundesliga' ? (
              <div className="space-y-12">
@@ -417,6 +438,18 @@ export default function TarotBookPopup({ open, onClose }: Props) {
                  </div>
                  <div className="flex flex-wrap gap-4 sm:gap-6">
                    {data.dortmund ? groupCards(data.dortmund).map((g, i) => renderCardGroupTile(g, i, 'gold')) : null}
+                 </div>
+               </section>
+             </div>
+          ) : data && activeTab === 'Ligue 1' ? (
+             <div className="space-y-12">
+                <section>
+                 <div className="flex items-center justify-between mb-6">
+                   <h3 className="text-2xl font-display text-[var(--gold-300)]">Paris Saint-Germain</h3>
+                   <span className="px-3 py-1 rounded-full bg-[#e8c97a]/10 border border-[#e8c97a]/20 text-[10px] uppercase text-white/50 tracking-wider">Les Parisiens</span>
+                 </div>
+                 <div className="flex flex-wrap gap-4 sm:gap-6">
+                   {data.psg ? groupCards(data.psg).map((g, i) => renderCardGroupTile(g, i, 'gold')) : null}
                  </div>
                </section>
              </div>
