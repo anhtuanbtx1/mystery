@@ -18,5 +18,17 @@
   {
     "name": "Pique",
     "image": "/assets/pique_bar.webp"
+  },
+  {
+    "name": "Iniesta",
+    "image": "/assets/iniesta.webp"
+  },
+  {
+    "name": "Ronaldinho",
+    "image": "/assets/ronaldinho_bar.webp"
+  },
+  {
+    "name": "Ter Stegen",
+    "image": "/assets/stegen.webp"
   }
 ]

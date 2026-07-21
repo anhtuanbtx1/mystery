@@ -10,5 +10,9 @@
   {
     "name": "Maldini",
     "image": "/assets/maldini.webp"
+  },
+  {
+    "name": "Van Basten",
+    "image": "/assets/basten.webp"
   }
 ]

@@ -61,5 +61,13 @@
   {
     "name": "Walcott",
     "image": "/assets/walcott.webp"
+  },
+  {
+    "name": "Henry",
+    "image": "/assets/henry_ars.webp"
+  },
+  {
+    "name": "Henry (Retro)",
+    "image": "/assets/henry_ars1.webp"
   }
 ]

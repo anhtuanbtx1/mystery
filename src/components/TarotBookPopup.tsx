@@ -29,6 +29,7 @@ interface TarotData {
   dortmund: TarotCard[];
   astonvilla: TarotCard[];
   valencia: TarotCard[];
+  fulham: TarotCard[];
   roma: TarotCard[];
   psg: TarotCard[];
   wands: Array<string | TarotCard>;
@@ -320,6 +321,16 @@ export default function TarotBookPopup({ open, onClose }: Props) {
                  </div>
                  <div className="flex flex-wrap gap-4 sm:gap-6">
                    {data.astonvilla ? groupCards(data.astonvilla).map((g, i) => renderCardGroupTile(g, i, "gold")) : null}
+                 </div>
+               </section>
+
+               <section>
+                 <div className="flex items-center justify-between mb-6">
+                   <h3 className="text-2xl font-display text-[var(--gold-300)]">Fulham</h3>
+                   <span className="px-3 py-1 rounded-full bg-[#e8c97a]/10 border border-[#e8c97a]/20 text-[10px] uppercase text-white/50 tracking-wider font-display">The Cottagers</span>
+                 </div>
+                 <div className="flex flex-wrap gap-4 sm:gap-6">
+                   {data.fulham ? groupCards(data.fulham).map((g, i) => renderCardGroupTile(g, i, "gold")) : null}
                  </div>
                </section>
 

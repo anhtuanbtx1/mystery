@@ -26,5 +26,13 @@
   {
     "name": "Hart",
     "image": "/assets/hart.webp"
+  },
+  {
+    "name": "De Bruyne",
+    "image": "/assets/bruyne.webp"
+  },
+  {
+    "name": "Semenyo",
+    "image": "/assets/semenyo.webp"
   }
 ]

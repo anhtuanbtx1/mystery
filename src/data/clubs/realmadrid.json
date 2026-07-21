@@ -47,5 +47,9 @@
   {
     "name": "Mbappe",
     "image": "/assets/mbappe_real.webp"
+  },
+  {
+    "name": "Fede Valverde",
+    "image": "/assets/valverde.webp"
   }
 ]

@@ -25,6 +25,10 @@
     "image": "/assets/ronaldo_mu_1.webp"
   },
   {
+    "name": "Ronaldo (Retro)",
+    "image": "/assets/ronaldo_mu_2.webp"
+  },
+  {
     "name": "Rooney (Retro 1)",
     "image": "/assets/rooney_mu.webp"
   },
@@ -93,6 +97,14 @@
   {
     "name": "Cavani",
     "image": "/assets/cavani.webp"
+  },
+  {
+    "name": "L. Martinez",
+    "image": "/assets/martinez_mu.webp"
+  },
+  {
+    "name": "Mason Mount",
+    "image": "/assets/mount.webp"
   },
   {
     "name": "Maguire",

@@ -6,5 +6,21 @@
   {
     "name": "Doue",
     "image": "/assets/doue.webp"
+  },
+  {
+    "name": "Barcola",
+    "image": "/assets/barcola.webp"
+  },
+  {
+    "name": "Kimpembe",
+    "image": "/assets/kimpembe.webp"
+  },
+  {
+    "name": "Di Maria",
+    "image": "/assets/maria_psg.webp"
+  },
+  {
+    "name": "Kvaratskhelia",
+    "image": "/assets/kvaratskhelia.webp"
   }
 ]

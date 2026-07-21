@@ -10,5 +10,13 @@
   {
     "name": "Kimmich",
     "image": "/assets/kimmich.webp"
+  },
+  {
+    "name": "Matthaus",
+    "image": "/assets/matthaus.webp"
+  },
+  {
+    "name": "Musiala",
+    "image": "/assets/musiala.webp"
   }
 ]

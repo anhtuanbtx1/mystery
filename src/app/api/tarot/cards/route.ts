@@ -16,6 +16,7 @@ import bayern from '@/data/clubs/bayern.json';
 import dortmund from '@/data/clubs/dortmund.json';
 import roma from '@/data/clubs/roma.json';
 import psg from '@/data/clubs/psg.json';
+import fulham from '@/data/clubs/fulham.json';
 import wands from '@/data/clubs/wands.json';
 import astonvilla from '@/data/clubs/astonvilla.json';
 import valencia from '@/data/clubs/valencia.json';
@@ -41,6 +42,7 @@ export async function GET() {
     psg,
     astonvilla,
     valencia,
+    fulham,
     wands
   };
 
