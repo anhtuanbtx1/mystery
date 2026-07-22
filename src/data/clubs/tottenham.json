@@ -10,5 +10,9 @@
   {
     "name": "Lennon",
     "image": "/assets/lennon.webp"
+  },
+  {
+    "name": "Bale",
+    "image": "/assets/bale_tot.webp"
   }
 ]

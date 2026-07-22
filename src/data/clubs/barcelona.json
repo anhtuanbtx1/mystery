@@ -28,6 +28,10 @@
     "image": "/assets/ronaldinho_bar.webp"
   },
   {
+    "name": "Cancelo",
+    "image": "/assets/cancelo.webp"
+  },
+  {
     "name": "Ter Stegen",
     "image": "/assets/stegen.webp"
   }
