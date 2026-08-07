@@ -113,7 +113,7 @@ export default function TarotBookPopup({ open, onClose }: Props) {
         className="w-[125px] sm:w-[200px] text-center"
         initial="initial"
         whileHover={{ y: -8, scale: 1.02 }}
-        transition={{ type: 'spring', stiffness: 260, damping: 18 }}
+        transition={{ type: 'spring', stiffness: 450, damping: 22 }}
       >
         <motion.div className={`
           relative w-[125px] h-[125px] sm:w-[200px] sm:h-[200px] mx-auto overflow-hidden flex items-center justify-center border rounded-[14px] sm:rounded-[18px]
@@ -219,7 +219,7 @@ export default function TarotBookPopup({ open, onClose }: Props) {
         {/* Header */}
         <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-y-3 px-4 sm:px-6 py-4 border-b border-[#e8c97a]/15">
           <div className="flex items-center gap-3">
-             <div className="text-xl sm:text-[28px] tracking-[0.06em] text-[var(--gold-400)] font-display uppercase text-glow">Quyền Năng</div>
+             <div className="text-xl sm:text-[28px] tracking-[0.06em] text-[var(--gold-400)] font-display uppercase text-glow">Bộ sưu tập</div>
              <div className="w-5 h-5 sm:w-6 sm:h-6 rounded-full bg-purple-500/20 flex items-center justify-center border border-purple-500/40">
                <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full bg-purple-400 animate-pulse" />
              </div>

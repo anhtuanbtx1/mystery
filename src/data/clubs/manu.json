@@ -1,5 +1,5 @@
 [
-   {
+  {
     "id": "3",
     "name": "De Gea",
     "numeral": "",
@@ -49,17 +49,17 @@
   },
   {
     "name": "Persie",
-     "numeral": "20",
+    "numeral": "20",
     "image": "/assets/persie_mu.webp"
   },
   {
     "name": "Bruno",
-     "numeral": "20",
+    "numeral": "20",
     "image": "/assets/fernandes.webp"
   },
   {
     "name": "Mata",
-     "numeral": "20",
+    "numeral": "20",
     "image": "/assets/mata.webp"
   },
   {
@@ -117,5 +117,81 @@
   {
     "name": "Casemiro",
     "image": "/assets/casemiro.webp"
+  },
+  {
+    "name": "Amrabat",
+    "image": "/assets/amrabat.webp"
+  },
+  {
+    "name": "Baily",
+    "image": "/assets/baily.webp"
+  },
+  {
+    "name": "Dalot",
+    "image": "/assets/dalot.webp"
+  },
+  {
+    "name": "Gea",
+    "image": "/assets/gea_mu_1.webp"
+  },
+  {
+    "name": "Henderson",
+    "image": "/assets/henderson_mu_1.webp"
+  },
+  {
+    "name": "Hoijlund",
+    "image": "/assets/hoijlund.webp"
+  },
+  {
+    "name": "Lingard",
+    "image": "/assets/lingard.webp"
+  },
+  {
+    "name": "Lukaku",
+    "image": "/assets/lukaku_mu_1.webp"
+  },
+  {
+    "name": "Mazraoui",
+    "image": "/assets/mazraoui.webp"
+  },
+  {
+    "name": "Pogba",
+    "image": "/assets/pogba_mu_1.webp"
+  },
+  {
+    "name": "Pogba",
+    "image": "/assets/pogba_mu_2.webp"
+  },
+  {
+    "name": "Ronaldo",
+    "image": "/assets/ronaldo_mu_3.webp"
+  },
+  {
+    "name": "Rooney",
+    "image": "/assets/rooney_mu_2.webp"
+  },
+  {
+    "name": "Sachez",
+    "image": "/assets/sachez_mu_1.webp"
+  },
+  {
+    "name": "Scholes",
+    "image": "/assets/scholes_mu_1.webp"
+  },
+  {
+    "name": "Smalling",
+    "image": "/assets/smalling.webp"
+  },
+  {
+    "name": "Ugarte",
+    "image": "/assets/ugarte.webp"
+  },
+  {
+    "name": "Yoro",
+    "image": "/assets/yoro.webp"
+  },
+  {
+    "name": "Zirkzee",
+    "image": "/assets/zirkzee.webp"
   }
 ]

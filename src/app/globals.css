@@ -136,8 +136,8 @@ body {
   background-repeat: no-repeat;
   box-shadow: var(--shadow-lg), var(--edge-gold);
   will-change: transform;
-  animation: cardDrift var(--dur, 22s) ease-in-out infinite;
-  animation-delay: var(--delay, 0s);
+  animation: cardDrift calc(var(--dur, 22s) * 0.4) ease-in-out infinite;
+  animation-delay: calc(var(--delay, 0s) * 0.4);
 }
 
 @media (max-width: 1024px) {

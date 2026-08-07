@@ -75,7 +75,7 @@ export default function Hero({ onBegin }: Props) {
                     : 'translateX(0px) translateY(0px) rotate(0deg) scale(1)',
                   zIndex: isCenter ? 30 : (10 - idx),
                   transitionProperty: 'transform, box-shadow, filter, top',
-                  transitionDuration: hovered ? '0.62s' : '0.5s',
+                  transitionDuration: hovered ? '0.3s' : '0.25s',
                   transitionTimingFunction: 'cubic-bezier(.16, 1, .3, 1)',
                   willChange: 'transform, box-shadow, filter',
                   borderRadius: 20,

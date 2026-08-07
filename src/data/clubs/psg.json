@@ -22,5 +22,17 @@
   {
     "name": "Kvaratskhelia",
     "image": "/assets/kvaratskhelia.webp"
+  },
+  {
+    "name": "Hakimi",
+    "image": "/assets/hakimi.webp"
+  },
+  {
+    "name": "Muani",
+    "image": "/assets/muani.webp"
+  },
+  {
+    "name": "Navas",
+    "image": "/assets/navas.webp"
   }
 ]

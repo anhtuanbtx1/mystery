@@ -34,5 +34,9 @@
   {
     "name": "Ter Stegen",
     "image": "/assets/stegen.webp"
+  },
+  {
+    "name": "Koude",
+    "image": "/assets/koude.webp"
   }
 ]

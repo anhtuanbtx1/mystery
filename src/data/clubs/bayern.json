@@ -22,5 +22,25 @@
   {
     "name": "Musiala",
     "image": "/assets/musiala.webp"
+  },
+  {
+    "name": "Hummels",
+    "image": "/assets/hummels.webp"
+  },
+  {
+    "name": "Kane",
+    "image": "/assets/kane.webp"
+  },
+  {
+    "name": "Ligt",
+    "image": "/assets/ligt.webp"
+  },
+  {
+    "name": "Ligt",
+    "image": "/assets/ligt_juv.webp"
+  },
+  {
+    "name": "Upamecano",
+    "image": "/assets/upamecano.webp"
   }
 ]

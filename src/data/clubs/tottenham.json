@@ -14,5 +14,13 @@
   {
     "name": "Bale",
     "image": "/assets/bale_tot.webp"
+  },
+  {
+    "name": "Bale",
+    "image": "/assets/bale_tot_1.webp"
+  },
+  {
+    "name": "Perisic",
+    "image": "/assets/perisic.webp"
   }
 ]

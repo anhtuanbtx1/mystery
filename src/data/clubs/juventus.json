@@ -3,7 +3,7 @@
     "name": "Buffon",
     "image": "/assets/buffon.webp"
   },
-   {
+  {
     "name": "Chiellini",
     "image": "/assets/chiellini.webp"
   },
@@ -22,5 +22,13 @@
   {
     "name": "Ronaldo (Juve 2)",
     "image": "/assets/ronaldo_juv_1.webp"
+  },
+  {
+    "name": "Buffon",
+    "image": "/assets/buffon_juv_1.webp"
+  },
+  {
+    "name": "Ligt",
+    "image": "/assets/ligt_juv.webp"
   }
 ]

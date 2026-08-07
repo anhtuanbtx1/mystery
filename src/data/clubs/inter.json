@@ -10,5 +10,17 @@
   {
     "name": "Ronaldo",
     "image": "/assets/ronaldo_inter.webp"
+  },
+  {
+    "name": "Lautaro",
+    "image": "/assets/lautaro_inter_1.webp"
+  },
+  {
+    "name": "Lukaku",
+    "image": "/assets/lukaku_inter.webp"
+  },
+  {
+    "name": "Sanchez",
+    "image": "/assets/sanchez_inter.webp"
   }
 ]

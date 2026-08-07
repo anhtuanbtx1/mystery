@@ -2,5 +2,13 @@
   {
     "name": "Totti",
     "image": "/assets/totti.webp"
+  },
+  {
+    "name": "Dzeko",
+    "image": "/assets/dzeko.webp"
+  },
+  {
+    "name": "Lukaku",
+    "image": "/assets/lukaku_roma.webp"
   }
 ]

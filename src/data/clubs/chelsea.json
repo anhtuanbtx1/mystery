@@ -50,5 +50,21 @@
   {
     "name": "Makelele",
     "image": "/assets/makelele.webp"
+  },
+  {
+    "name": "Cahill",
+    "image": "/assets/cahill.webp"
+  },
+  {
+    "name": "Lampard",
+    "image": "/assets/lampard_chel_1.webp"
+  },
+  {
+    "name": "Palmer",
+    "image": "/assets/palmer.webp"
+  },
+  {
+    "name": "Terry",
+    "image": "/assets/terry_chel_1.webp"
   }
 ]

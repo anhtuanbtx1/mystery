@@ -6,7 +6,6 @@
     "image": "/assets/bale_real.webp",
     "meaning": "Kỹ năng, sự tự tin, hành động có mục đích."
   },
-  
   {
     "id": "1",
     "name": "Ramos",
@@ -33,7 +32,6 @@
     "name": "Roberto Carlos",
     "image": "/assets/carlos.webp"
   },
-  
   {
     "name": "Marcelo",
     "image": "/assets/marcelo.webp"
@@ -45,5 +43,9 @@
   {
     "name": "Fede Valverde",
     "image": "/assets/valverde.webp"
+  },
+  {
+    "name": "Bellingham",
+    "image": "/assets/bellingham.webp"
   }
 ]

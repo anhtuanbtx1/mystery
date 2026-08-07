@@ -1,5 +1,5 @@
 [
-   {
+  {
     "id": "8",
     "name": "Michu",
     "numeral": "",
@@ -20,5 +20,13 @@
   "Tiểu Đồng Gậy",
   "Kỵ Sĩ Gậy",
   "Nữ Hoàng Gậy",
-  "Vua Gậy"
+  "Vua Gậy",
+  {
+    "name": "Imobile",
+    "image": "/assets/imobile.webp"
+  },
+  {
+    "name": "Ziyech",
+    "image": "/assets/ziyech.webp"
+  }
 ]
