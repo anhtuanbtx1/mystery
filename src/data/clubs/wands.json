@@ -28,5 +28,41 @@
   {
     "name": "Ziyech",
     "image": "/assets/ziyech.webp"
+  },
+  {
+    "name": "Julio Cesar",
+    "image": "/assets/cesar.webp"
+  },
+  {
+    "name": "Crouch",
+    "image": "/assets/crouch.webp"
+  },
+  {
+    "name": "Johnson",
+    "image": "/assets/johnson_sunder.webp"
+  },
+  {
+    "name": "Kvaratskhelia",
+    "image": "/assets/kvaratskhelia_napoli.webp"
+  },
+  {
+    "name": "Di Maria",
+    "image": "/assets/maria_ben.webp"
+  },
+  {
+    "name": "McTominay",
+    "image": "/assets/mctominay_napoli.webp"
+  },
+  {
+    "name": "Mitoma",
+    "image": "/assets/mitoma.webp"
+  },
+  {
+    "name": "Osimhen",
+    "image": "/assets/osimhen.webp"
+  },
+  {
+    "name": "Rice",
+    "image": "/assets/rice_west.webp"
   }
 ]

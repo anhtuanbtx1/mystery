@@ -22,5 +22,17 @@
   {
     "name": "Sanchez",
     "image": "/assets/sanchez_inter.webp"
+  },
+  {
+    "name": "Dimarco",
+    "image": "/assets/dimarco.webp"
+  },
+  {
+    "name": "Eriksen",
+    "image": "/assets/eriksen_inter.webp"
+  },
+  {
+    "name": "Thuram",
+    "image": "/assets/thuram.webp"
   }
 ]

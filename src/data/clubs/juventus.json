@@ -30,5 +30,29 @@
   {
     "name": "Ligt",
     "image": "/assets/ligt_juv.webp"
+  },
+  {
+    "name": "Bonucci",
+    "image": "/assets/bonucci.webp"
+  },
+  {
+    "name": "Chiesa",
+    "image": "/assets/chiesa.webp"
+  },
+  {
+    "name": "Dybala",
+    "image": "/assets/dybala_juv_1.webp"
+  },
+  {
+    "name": "Di Maria",
+    "image": "/assets/maria_juv.webp"
+  },
+  {
+    "name": "Del Piero",
+    "image": "/assets/piero.webp"
+  },
+  {
+    "name": "Pirlo",
+    "image": "/assets/pirlo.webp"
   }
 ]

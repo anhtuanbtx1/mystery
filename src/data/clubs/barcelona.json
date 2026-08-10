@@ -38,5 +38,25 @@
   {
     "name": "Koude",
     "image": "/assets/koude.webp"
+  },
+  {
+    "name": "Alba",
+    "image": "/assets/alba.webp"
+  },
+  {
+    "name": "Busquets",
+    "image": "/assets/busquet.webp"
+  },
+  {
+    "name": "Ferran Torres",
+    "image": "/assets/ferran.webp"
+  },
+  {
+    "name": "Pedri",
+    "image": "/assets/pedri.webp"
+  },
+  {
+    "name": "Puyol",
+    "image": "/assets/puyol.webp"
   }
 ]

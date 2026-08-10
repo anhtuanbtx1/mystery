@@ -22,5 +22,33 @@
   {
     "name": "Perisic",
     "image": "/assets/perisic.webp"
+  },
+  {
+    "name": "Adebayor",
+    "image": "/assets/adebayor_tot.webp"
+  },
+  {
+    "name": "Bale",
+    "image": "/assets/bale_tot_2.webp"
+  },
+  {
+    "name": "Mousa Dembele",
+    "image": "/assets/dembele.webp"
+  },
+  {
+    "name": "Kane",
+    "image": "/assets/kane_tot_1.webp"
+  },
+  {
+    "name": "Modric",
+    "image": "/assets/modric_tot.webp"
+  },
+  {
+    "name": "Son Heung-Min",
+    "image": "/assets/son_tot_1.webp"
+  },
+  {
+    "name": "Walker",
+    "image": "/assets/walker_tot_1.webp"
   }
 ]

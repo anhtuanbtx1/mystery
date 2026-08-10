@@ -10,5 +10,13 @@
   {
     "name": "Lukaku",
     "image": "/assets/lukaku_roma.webp"
+  },
+  {
+    "name": "Dybala",
+    "image": "/assets/dybala_roma.webp"
+  },
+  {
+    "name": "Totti",
+    "image": "/assets/totti_rom_1.webp"
   }
 ]

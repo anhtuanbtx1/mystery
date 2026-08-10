@@ -66,5 +66,25 @@
   {
     "name": "Terry",
     "image": "/assets/terry_chel_1.webp"
+  },
+  {
+    "name": "Azpilicueta",
+    "image": "/assets/azpilicueta.webp"
+  },
+  {
+    "name": "Eto'o",
+    "image": "/assets/eto_chel.webp"
+  },
+  {
+    "name": "Kante",
+    "image": "/assets/kante.webp"
+  },
+  {
+    "name": "Mason Mount",
+    "image": "/assets/mount_chel.webp"
+  },
+  {
+    "name": "Ziyech",
+    "image": "/assets/ziyech_chel.webp"
   }
 ]

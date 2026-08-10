@@ -34,5 +34,29 @@
   {
     "name": "Navas",
     "image": "/assets/navas.webp"
+  },
+  {
+    "name": "Icardi",
+    "image": "/assets/icardi.webp"
+  },
+  {
+    "name": "Messi",
+    "image": "/assets/messi_psg.webp"
+  },
+  {
+    "name": "Neymar",
+    "image": "/assets/neymar_psg.webp"
+  },
+  {
+    "name": "Ramos",
+    "image": "/assets/ramos_psg.webp"
+  },
+  {
+    "name": "Verratti",
+    "image": "/assets/verratti.webp"
+  },
+  {
+    "name": "Vitinha",
+    "image": "/assets/vitinha.webp"
   }
 ]

@@ -89,5 +89,37 @@
   {
     "name": "Vieira",
     "image": "/assets/vieira.webp"
+  },
+  {
+    "name": "Calafiori",
+    "image": "/assets/calafiori.webp"
+  },
+  {
+    "name": "Gabriel Jesus",
+    "image": "/assets/jesus.webp"
+  },
+  {
+    "name": "Lacazette",
+    "image": "/assets/lacazette.webp"
+  },
+  {
+    "name": "Merino",
+    "image": "/assets/merino.webp"
+  },
+  {
+    "name": "Ozil",
+    "image": "/assets/ozil_ars_1.webp"
+  },
+  {
+    "name": "Partey",
+    "image": "/assets/partey.webp"
+  },
+  {
+    "name": "Vieira",
+    "image": "/assets/vieira_ars_1.webp"
+  },
+  {
+    "name": "Wilshere",
+    "image": "/assets/wilshere.webp"
   }
 ]

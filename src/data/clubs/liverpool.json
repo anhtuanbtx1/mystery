@@ -53,5 +53,17 @@
   {
     "name": "Szoboszlai",
     "image": "/assets/szoboszlai.webp"
+  },
+  {
+    "name": "Gravenberch",
+    "image": "/assets/gravenberch.webp"
+  },
+  {
+    "name": "Robertson",
+    "image": "/assets/robertson.webp"
+  },
+  {
+    "name": "Torres",
+    "image": "/assets/torres_liv_1.webp"
   }
 ]

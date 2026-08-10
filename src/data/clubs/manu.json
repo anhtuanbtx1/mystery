@@ -193,5 +193,9 @@
   {
     "name": "Zirkzee",
     "image": "/assets/zirkzee.webp"
+  },
+  {
+    "name": "Cantona",
+    "image": "/assets/cantona.webp"
   }
 ]

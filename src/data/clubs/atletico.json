@@ -14,5 +14,13 @@
   {
     "name": "Savic",
     "image": "/assets/savic.webp"
+  },
+  {
+    "name": "Koke",
+    "image": "/assets/koke.webp"
+  },
+  {
+    "name": "De Paul",
+    "image": "/assets/paul.webp"
   }
 ]

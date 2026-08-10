@@ -6,5 +6,25 @@
   {
     "name": "Haaland",
     "image": "/assets/haaland_dor.webp"
+  },
+  {
+    "name": "Bellingham",
+    "image": "/assets/bellingham_dor.webp"
+  },
+  {
+    "name": "Brandt",
+    "image": "/assets/brandt.webp"
+  },
+  {
+    "name": "Emre Can",
+    "image": "/assets/can.webp"
+  },
+  {
+    "name": "Haaland",
+    "image": "/assets/haaland_dor_1.webp"
+  },
+  {
+    "name": "Reus",
+    "image": "/assets/reus_dor_1.webp"
   }
 ]

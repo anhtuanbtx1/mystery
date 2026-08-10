@@ -42,5 +42,21 @@
   {
     "name": "Upamecano",
     "image": "/assets/upamecano.webp"
+  },
+  {
+    "name": "Thiago Alcantara",
+    "image": "/assets/alcantara.webp"
+  },
+  {
+    "name": "Davies",
+    "image": "/assets/davis.webp"
+  },
+  {
+    "name": "Ligt",
+    "image": "/assets/ligt_bayern.webp"
+  },
+  {
+    "name": "Olise",
+    "image": "/assets/olise.webp"
   }
 ]

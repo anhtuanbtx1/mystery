@@ -46,5 +46,25 @@
   {
     "name": "Walker",
     "image": "/assets/walker.webp"
+  },
+  {
+    "name": "Cancelo",
+    "image": "/assets/cancelo_mc.webp"
+  },
+  {
+    "name": "Dias",
+    "image": "/assets/dias_mc.webp"
+  },
+  {
+    "name": "Gundogan",
+    "image": "/assets/gundogan.webp"
+  },
+  {
+    "name": "Gvardiol",
+    "image": "/assets/gvardiol.webp"
+  },
+  {
+    "name": "Toure",
+    "image": "/assets/toure_mc_1.webp"
   }
 ]

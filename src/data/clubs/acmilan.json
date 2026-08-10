@@ -18,5 +18,13 @@
   {
     "name": "Morata",
     "image": "/assets/morata.webp"
+  },
+  {
+    "name": "Giroud",
+    "image": "/assets/giround.webp"
+  },
+  {
+    "name": "Leao",
+    "image": "/assets/leao.webp"
   }
 ]

@@ -47,5 +47,25 @@
   {
     "name": "Bellingham",
     "image": "/assets/bellingham.webp"
+  },
+  {
+    "name": "Roberto Carlos",
+    "image": "/assets/carlos_real_1.webp"
+  },
+  {
+    "name": "Casemiro",
+    "image": "/assets/casemiro_real.webp"
+  },
+  {
+    "name": "Hazard",
+    "image": "/assets/hazard_real.webp"
+  },
+  {
+    "name": "Kroos",
+    "image": "/assets/kroos.webp"
+  },
+  {
+    "name": "Rudiger",
+    "image": "/assets/rudiger_real.webp"
   }
 ]
