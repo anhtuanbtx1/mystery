@@ -70,10 +70,6 @@
     "image": "/assets/alderweireld_sou.webp"
   },
   {
-    "name": "Anelka",
-    "image": "/assets/anelka.webp"
-  },
-  {
     "name": "Barkley",
     "image": "/assets/barkley.webp"
   },
@@ -88,10 +84,6 @@
   {
     "name": "Cunha",
     "image": "/assets/cunha_wof.webp"
-  },
-  {
-    "name": "Falcao",
-    "image": "/assets/falcao.webp"
   },
   {
     "name": "Ferdinand",
@@ -112,10 +104,6 @@
   {
     "name": "Pickford",
     "image": "/assets/pickford.webp"
-  },
-  {
-    "name": "Richarlison",
-    "image": "/assets/richarlison.webp"
   },
   {
     "name": "Savic",

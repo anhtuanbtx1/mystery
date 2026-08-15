@@ -20,10 +20,6 @@
     "image": "/assets/bale_tot_1.webp"
   },
   {
-    "name": "Perisic",
-    "image": "/assets/perisic.webp"
-  },
-  {
     "name": "Adebayor",
     "image": "/assets/adebayor_tot.webp"
   },
@@ -58,5 +54,9 @@
   {
     "name": "Vertonghen",
     "image": "/assets/vertonghen_tot_1.webp"
+  },
+  {
+    "name": "Richarlison",
+    "image": "/assets/richarlison.webp"
   }
 ]

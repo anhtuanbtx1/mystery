@@ -1,9 +1,5 @@
 [
   {
-    "name": "Buffon",
-    "image": "/assets/buffon.webp"
-  },
-  {
     "name": "Chiellini",
     "image": "/assets/chiellini.webp"
   },
@@ -52,7 +48,7 @@
     "image": "/assets/piero.webp"
   },
   {
-    "name": "Pirlo",
-    "image": "/assets/pirlo.webp"
+    "name": "Morata",
+    "image": "/assets/morata.webp"
   }
 ]

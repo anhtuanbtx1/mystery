@@ -1,5 +1,9 @@
 [
   {
+    "name": "Buffon",
+    "image": "/assets/buffon.webp"
+  },
+  {
     "name": "Thiago Silva",
     "image": "/assets/silva_psg.webp"
   },

@@ -7,6 +7,14 @@
     "meaning": "Sự màu mỡ, tự nhiên, sự dồi dào."
   },
   {
+    "name": "De Gea",
+    "image": "/assets/gea_mu_1.webp"
+  },
+  {
+    "name": "De Gea",
+    "image": "/assets/gea_mu_2.webp"
+  },
+  {
     "name": "Henderson",
     "image": "/assets/henderson.webp"
   },
@@ -56,6 +64,10 @@
     "name": "Bruno",
     "numeral": "20",
     "image": "/assets/fernandes.webp"
+  },
+  {
+    "name": "Falcao",
+    "image": "/assets/falcao.webp"
   },
   {
     "name": "Mata",
@@ -131,10 +143,6 @@
     "image": "/assets/dalot.webp"
   },
   {
-    "name": "Gea",
-    "image": "/assets/gea_mu_1.webp"
-  },
-  {
     "name": "Henderson",
     "image": "/assets/henderson_mu_1.webp"
   },
@@ -197,10 +205,6 @@
   {
     "name": "Cantona",
     "image": "/assets/cantona.webp"
-  },
-  {
-    "name": "De Gea",
-    "image": "/assets/gea_mu_2.webp"
   },
   {
     "name": "Di Maria",
