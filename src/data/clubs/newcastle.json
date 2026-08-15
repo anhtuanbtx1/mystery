@@ -22,5 +22,13 @@
   {
     "name": "Shearer",
     "image": "/assets/shearer_black.webp"
+  },
+  {
+    "name": "Guimaraes",
+    "image": "/assets/guimaraes.webp"
+  },
+  {
+    "name": "Sissoko",
+    "image": "/assets/sissoko_new.webp"
   }
 ]

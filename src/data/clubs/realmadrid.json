@@ -67,5 +67,17 @@
   {
     "name": "Rudiger",
     "image": "/assets/rudiger_real.webp"
+  },
+  {
+    "name": "Modric",
+    "image": "/assets/modric.webp"
+  },
+  {
+    "name": "Kroos",
+    "image": "/assets/kroos_real_1.webp"
+  },
+  {
+    "name": "Vinicius Jr",
+    "image": "/assets/vini.webp"
   }
 ]

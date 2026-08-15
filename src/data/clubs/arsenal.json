@@ -121,5 +121,21 @@
   {
     "name": "Wilshere",
     "image": "/assets/wilshere.webp"
+  },
+  {
+    "name": "Koscielny",
+    "image": "/assets/koscielny.webp"
+  },
+  {
+    "name": "Vieira",
+    "image": "/assets/viera_ars_1.webp"
+  },
+  {
+    "name": "Xhaka",
+    "image": "/assets/xhaka.webp"
+  },
+  {
+    "name": "Mkhitaryan",
+    "image": "/assets/mkkhitaryan.webp"
   }
 ]

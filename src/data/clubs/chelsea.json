@@ -86,5 +86,53 @@
   {
     "name": "Ziyech",
     "image": "/assets/ziyech_chel.webp"
+  },
+  {
+    "name": "Azpilicueta",
+    "image": "/assets/azpilicueta_chel_1.webp"
+  },
+  {
+    "name": "Cech",
+    "image": "/assets/cech_chel_1.webp"
+  },
+  {
+    "name": "Diego Costa",
+    "image": "/assets/costa_chel.webp"
+  },
+  {
+    "name": "Drogba",
+    "image": "/assets/drogba_chel_1.webp"
+  },
+  {
+    "name": "Fabregas",
+    "image": "/assets/fabregas_chel.webp"
+  },
+  {
+    "name": "Jorginho",
+    "image": "/assets/jorginho.webp"
+  },
+  {
+    "name": "Kalou",
+    "image": "/assets/kalou.webp"
+  },
+  {
+    "name": "Lampard",
+    "image": "/assets/lampard_chel_2.webp"
+  },
+  {
+    "name": "Mata",
+    "image": "/assets/mata_chel.webp"
+  },
+  {
+    "name": "Terry",
+    "image": "/assets/terry_chel_2.webp"
+  },
+  {
+    "name": "Torres",
+    "image": "/assets/torres_chel.webp"
+  },
+  {
+    "name": "Willian",
+    "image": "/assets/willian_chel.webp"
   }
 ]

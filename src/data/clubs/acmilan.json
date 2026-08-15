@@ -26,5 +26,9 @@
   {
     "name": "Leao",
     "image": "/assets/leao.webp"
+  },
+  {
+    "name": "Ibrahimovic",
+    "image": "/assets/ibrahimovic_ac.webp"
   }
 ]

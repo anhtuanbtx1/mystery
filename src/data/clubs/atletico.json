@@ -22,5 +22,13 @@
   {
     "name": "De Paul",
     "image": "/assets/paul.webp"
+  },
+  {
+    "name": "Griezmann",
+    "image": "/assets/griezmann_alt_1.webp"
+  },
+  {
+    "name": "Oblak",
+    "image": "/assets/oblak.webp"
   }
 ]

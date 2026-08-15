@@ -66,5 +66,13 @@
   {
     "name": "Toure",
     "image": "/assets/toure_mc_1.webp"
+  },
+  {
+    "name": "Otamendi",
+    "image": "/assets/otamendi.webp"
+  },
+  {
+    "name": "Phillips",
+    "image": "/assets/phillips.webp"
   }
 ]

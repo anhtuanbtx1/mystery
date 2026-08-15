@@ -50,5 +50,13 @@
   {
     "name": "Walker",
     "image": "/assets/walker_tot_1.webp"
+  },
+  {
+    "name": "Son Heung-Min",
+    "image": "/assets/son_tot_2.webp"
+  },
+  {
+    "name": "Vertonghen",
+    "image": "/assets/vertonghen_tot_1.webp"
   }
 ]

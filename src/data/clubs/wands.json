@@ -64,5 +64,69 @@
   {
     "name": "Rice",
     "image": "/assets/rice_west.webp"
+  },
+  {
+    "name": "Alderweireld",
+    "image": "/assets/alderweireld_sou.webp"
+  },
+  {
+    "name": "Anelka",
+    "image": "/assets/anelka.webp"
+  },
+  {
+    "name": "Barkley",
+    "image": "/assets/barkley.webp"
+  },
+  {
+    "name": "Barry",
+    "image": "/assets/barry.webp"
+  },
+  {
+    "name": "Bolasie",
+    "image": "/assets/bolasie_everton.webp"
+  },
+  {
+    "name": "Cunha",
+    "image": "/assets/cunha_wof.webp"
+  },
+  {
+    "name": "Falcao",
+    "image": "/assets/falcao.webp"
+  },
+  {
+    "name": "Ferdinand",
+    "image": "/assets/ferdinand_rangers.webp"
+  },
+  {
+    "name": "Kante",
+    "image": "/assets/kante_lec.webp"
+  },
+  {
+    "name": "Lamela",
+    "image": "/assets/lamela_sevila.webp"
+  },
+  {
+    "name": "Lukaku",
+    "image": "/assets/lukaku_everton.webp"
+  },
+  {
+    "name": "Pickford",
+    "image": "/assets/pickford.webp"
+  },
+  {
+    "name": "Richarlison",
+    "image": "/assets/richarlison.webp"
+  },
+  {
+    "name": "Savic",
+    "image": "/assets/savic_lazio.webp"
+  },
+  {
+    "name": "Stones",
+    "image": "/assets/stones_everton.webp"
+  },
+  {
+    "name": "Toney",
+    "image": "/assets/toney.webp"
   }
 ]

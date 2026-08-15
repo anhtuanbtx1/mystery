@@ -65,5 +65,37 @@
   {
     "name": "Torres",
     "image": "/assets/torres_liv_1.webp"
+  },
+  {
+    "name": "Alonso",
+    "image": "/assets/alonso_liv.webp"
+  },
+  {
+    "name": "Emre Can",
+    "image": "/assets/can_liv.webp"
+  },
+  {
+    "name": "Coutinho",
+    "image": "/assets/coutinho_liv_1.webp"
+  },
+  {
+    "name": "Konate",
+    "image": "/assets/konate.webp"
+  },
+  {
+    "name": "Milner",
+    "image": "/assets/milner_liv.webp"
+  },
+  {
+    "name": "Salah",
+    "image": "/assets/salah_liv_1.webp"
+  },
+  {
+    "name": "Suarez",
+    "image": "/assets/suarez_alt.webp"
+  },
+  {
+    "name": "Szoboszlai",
+    "image": "/assets/szoboszlai_liv_1.webp"
   }
 ]

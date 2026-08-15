@@ -197,5 +197,41 @@
   {
     "name": "Cantona",
     "image": "/assets/cantona.webp"
+  },
+  {
+    "name": "De Gea",
+    "image": "/assets/gea_mu_2.webp"
+  },
+  {
+    "name": "Di Maria",
+    "image": "/assets/maria_mu.webp"
+  },
+  {
+    "name": "Pogba",
+    "image": "/assets/paul_alt_1.webp"
+  },
+  {
+    "name": "Persie",
+    "image": "/assets/persie_mu_2.webp"
+  },
+  {
+    "name": "Ronaldo",
+    "image": "/assets/ronaldo_mu_4.webp"
+  },
+  {
+    "name": "Rooney",
+    "image": "/assets/rooney_mu_3.webp"
+  },
+  {
+    "name": "Rooney",
+    "image": "/assets/rooney_mu_4.webp"
+  },
+  {
+    "name": "Scholes",
+    "image": "/assets/scholes_mu_2.webp"
+  },
+  {
+    "name": "Schweinsteiger",
+    "image": "/assets/schweinsteiger.webp"
   }
 ]
