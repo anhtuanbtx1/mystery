@@ -1,0 +1,26 @@
+[
+  {
+    "name": "Barkley",
+    "image": "/assets/barkley.webp"
+  },
+  {
+    "name": "Barry",
+    "image": "/assets/barry.webp"
+  },
+  {
+    "name": "Bolasie",
+    "image": "/assets/bolasie_everton.webp"
+  },
+  {
+    "name": "Lukaku",
+    "image": "/assets/lukaku_everton.webp"
+  },
+  {
+    "name": "Pickford",
+    "image": "/assets/pickford.webp"
+  },
+  {
+    "name": "Stones",
+    "image": "/assets/stones_everton.webp"
+  }
+]

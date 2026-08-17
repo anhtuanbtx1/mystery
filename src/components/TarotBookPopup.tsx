@@ -30,6 +30,14 @@ interface TarotData {
   astonvilla: TarotCard[];
   valencia: TarotCard[];
   fulham: TarotCard[];
+  everton: TarotCard[];
+  southampton: TarotCard[];
+  sunderland: TarotCard[];
+  wolverhampton: TarotCard[];
+  brentford: TarotCard[];
+  qpr: TarotCard[];
+  napoli: TarotCard[];
+  sevilla: TarotCard[];
   roma: TarotCard[];
   psg: TarotCard[];
   wands: Array<string | TarotCard>;
@@ -335,7 +343,67 @@ export default function TarotBookPopup({ open, onClose }: Props) {
                </section>
 
 
-               {/* Wands */}
+               <section>
+                  <div className="flex items-center justify-between mb-6">
+                    <h3 className="text-2xl font-display text-[var(--gold-300)]">Everton</h3>
+                    <span className="px-3 py-1 rounded-full bg-[#e8c97a]/10 border border-[#e8c97a]/20 text-[10px] uppercase text-white/50 tracking-wider font-display">The Toffees</span>
+                  </div>
+                  <div className="flex flex-wrap gap-4 sm:gap-6">
+                    {data.everton ? groupCards(data.everton).map((g, i) => renderCardGroupTile(g, i, "gold")) : null}
+                  </div>
+                </section>
+
+                <section>
+                  <div className="flex items-center justify-between mb-6">
+                    <h3 className="text-2xl font-display text-[var(--gold-300)]">Southampton</h3>
+                    <span className="px-3 py-1 rounded-full bg-[#e8c97a]/10 border border-[#e8c97a]/20 text-[10px] uppercase text-white/50 tracking-wider font-display">The Saints</span>
+                  </div>
+                  <div className="flex flex-wrap gap-4 sm:gap-6">
+                    {data.southampton ? groupCards(data.southampton).map((g, i) => renderCardGroupTile(g, i, "gold")) : null}
+                  </div>
+                </section>
+
+                <section>
+                  <div className="flex items-center justify-between mb-6">
+                    <h3 className="text-2xl font-display text-[var(--gold-300)]">Sunderland</h3>
+                    <span className="px-3 py-1 rounded-full bg-[#e8c97a]/10 border border-[#e8c97a]/20 text-[10px] uppercase text-white/50 tracking-wider font-display">The Black Cats</span>
+                  </div>
+                  <div className="flex flex-wrap gap-4 sm:gap-6">
+                    {data.sunderland ? groupCards(data.sunderland).map((g, i) => renderCardGroupTile(g, i, "gold")) : null}
+                  </div>
+                </section>
+
+                <section>
+                  <div className="flex items-center justify-between mb-6">
+                    <h3 className="text-2xl font-display text-[var(--gold-300)]">Wolverhampton</h3>
+                    <span className="px-3 py-1 rounded-full bg-[#e8c97a]/10 border border-[#e8c97a]/20 text-[10px] uppercase text-white/50 tracking-wider font-display">Wolves</span>
+                  </div>
+                  <div className="flex flex-wrap gap-4 sm:gap-6">
+                    {data.wolverhampton ? groupCards(data.wolverhampton).map((g, i) => renderCardGroupTile(g, i, "gold")) : null}
+                  </div>
+                </section>
+
+                <section>
+                  <div className="flex items-center justify-between mb-6">
+                    <h3 className="text-2xl font-display text-[var(--gold-300)]">Brentford</h3>
+                    <span className="px-3 py-1 rounded-full bg-[#e8c97a]/10 border border-[#e8c97a]/20 text-[10px] uppercase text-white/50 tracking-wider font-display">The Bees</span>
+                  </div>
+                  <div className="flex flex-wrap gap-4 sm:gap-6">
+                    {data.brentford ? groupCards(data.brentford).map((g, i) => renderCardGroupTile(g, i, "gold")) : null}
+                  </div>
+                </section>
+
+                <section>
+                  <div className="flex items-center justify-between mb-6">
+                    <h3 className="text-2xl font-display text-[var(--gold-300)]">QPR</h3>
+                    <span className="px-3 py-1 rounded-full bg-[#e8c97a]/10 border border-[#e8c97a]/20 text-[10px] uppercase text-white/50 tracking-wider font-display">The Hoops</span>
+                  </div>
+                  <div className="flex flex-wrap gap-4 sm:gap-6">
+                    {data.qpr ? groupCards(data.qpr).map((g, i) => renderCardGroupTile(g, i, "gold")) : null}
+                  </div>
+                </section>
+
+                {/* Wands */}
                <section>
                  <div className="flex items-center justify-between mb-6">
                    <h3 className="text-2xl font-display text-[var(--gold-300)]">Ngoại Hạng Anh (Khác)</h3>

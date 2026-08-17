@@ -13,10 +13,6 @@
     "image": "/assets/robinson.webp",
     "meaning": "Lựa chọn, tình yêu, sự hòa hợp."
   },
-  {
-    "name": "Maradona",
-    "image": "/assets/maradona.webp"
-  },
   "Tiểu Đồng Gậy",
   "Kỵ Sĩ Gậy",
   "Nữ Hoàng Gậy",
@@ -30,91 +26,27 @@
     "image": "/assets/ziyech.webp"
   },
   {
-    "name": "Julio Cesar",
-    "image": "/assets/cesar.webp"
-  },
-  {
     "name": "Crouch",
     "image": "/assets/crouch.webp"
-  },
-  {
-    "name": "Johnson",
-    "image": "/assets/johnson_sunder.webp"
-  },
-  {
-    "name": "Kvaratskhelia",
-    "image": "/assets/kvaratskhelia_napoli.webp"
   },
   {
     "name": "Di Maria",
     "image": "/assets/maria_ben.webp"
   },
   {
-    "name": "McTominay",
-    "image": "/assets/mctominay_napoli.webp"
-  },
-  {
     "name": "Mitoma",
     "image": "/assets/mitoma.webp"
-  },
-  {
-    "name": "Osimhen",
-    "image": "/assets/osimhen.webp"
   },
   {
     "name": "Rice",
     "image": "/assets/rice_west.webp"
   },
   {
-    "name": "Alderweireld",
-    "image": "/assets/alderweireld_sou.webp"
-  },
-  {
-    "name": "Barkley",
-    "image": "/assets/barkley.webp"
-  },
-  {
-    "name": "Barry",
-    "image": "/assets/barry.webp"
-  },
-  {
-    "name": "Bolasie",
-    "image": "/assets/bolasie_everton.webp"
-  },
-  {
-    "name": "Cunha",
-    "image": "/assets/cunha_wof.webp"
-  },
-  {
-    "name": "Ferdinand",
-    "image": "/assets/ferdinand_rangers.webp"
-  },
-  {
     "name": "Kante",
     "image": "/assets/kante_lec.webp"
   },
   {
-    "name": "Lamela",
-    "image": "/assets/lamela_sevila.webp"
-  },
-  {
-    "name": "Lukaku",
-    "image": "/assets/lukaku_everton.webp"
-  },
-  {
-    "name": "Pickford",
-    "image": "/assets/pickford.webp"
-  },
-  {
     "name": "Savic",
     "image": "/assets/savic_lazio.webp"
-  },
-  {
-    "name": "Stones",
-    "image": "/assets/stones_everton.webp"
-  },
-  {
-    "name": "Toney",
-    "image": "/assets/toney.webp"
   }
 ]

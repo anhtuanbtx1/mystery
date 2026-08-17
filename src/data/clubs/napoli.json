@@ -1,0 +1,26 @@
+[
+  {
+    "name": "Kvaratskhelia",
+    "image": "/assets/kvaratskhelia_napoli.webp"
+  },
+  {
+    "name": "Kvaratskhelia",
+    "image": "/assets/kvaratskhelia.webp"
+  },
+  {
+    "name": "McTominay",
+    "image": "/assets/mctominay_napoli.webp"
+  },
+  {
+    "name": "Osimhen",
+    "image": "/assets/osimhen.webp"
+  },
+  {
+    "name": "Koulibaly",
+    "image": "/assets/koulibaly.webp"
+  },
+  {
+    "name": "Maradona",
+    "image": "/assets/maradona.webp"
+  }
+]
