@@ -56,12 +56,14 @@ body {
 
 /* --- Animated background layers --- */
 .bg-nebula {
+  inset: -8%;
   background:
     radial-gradient(70% 60% at 18% 24%, rgba(138, 76, 206, 0.6) 0%, rgba(138, 76, 206, 0.18) 42%, transparent 74%),
     radial-gradient(62% 68% at 78% 18%, rgba(108, 54, 184, 0.48) 0%, rgba(108, 54, 184, 0.16) 48%, transparent 76%),
     radial-gradient(80% 70% at 52% 72%, rgba(80, 32, 146, 0.42) 0%, rgba(80, 32, 146, 0.14) 52%, transparent 78%);
   background-color: #140920;
   animation: nebulaDrift 15s ease-in-out infinite alternate;
+  transform-origin: center;
   will-change: transform, opacity;
 }
 
@@ -72,9 +74,12 @@ body {
 }
 
 .bg-vignette {
+  inset: -8%;
   background: radial-gradient(circle at 50% 42%, rgba(0, 0, 0, 0) 42%, rgba(0, 0, 0, 0.28) 72%, rgba(0, 0, 0, 0.54) 96%);
   background-color: transparent;
   animation: fogDrift 16s ease-in-out infinite alternate;
+  transform-origin: center;
+  will-change: transform, opacity;
 }
 
 .bg-vignette::after {
@@ -131,10 +136,12 @@ body {
   width: 108px;
   height: 152px;
   border-radius: 14px;
+  overflow: hidden;
+  background-color: #120a22;
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
-  box-shadow: var(--shadow-lg), var(--edge-gold);
+  box-shadow: 0 18px 34px -18px rgba(21, 9, 32, 0.72), 0 0 22px rgba(155, 127, 212, 0.12), var(--edge-gold);
   will-change: transform;
   animation: cardDrift calc(var(--dur, 22s) * 0.4) ease-in-out infinite;
   animation-delay: calc(var(--delay, 0s) * 0.4);

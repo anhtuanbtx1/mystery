@@ -84,8 +84,8 @@ export default function Hero({ onBegin }: Props) {
                     : 'linear-gradient(180deg, rgba(30,14,54,0.95), rgba(10,5,20,0.95))',
                   border: isCenter ? '1px solid rgba(255,224,150,0.38)' : '1px solid rgba(232,201,122,0.22)',
                   boxShadow: isCenter && hovered
-                    ? '0 24px 56px rgba(0,0,0,.52), 0 0 42px rgba(232,201,122,.18), 0 0 60px rgba(155,127,212,.24)'
-                    : '0 14px 32px rgba(0,0,0,.34), 0 0 24px rgba(155,127,212,.16)',
+                    ? '0 24px 54px -24px rgba(21,9,32,.78), 0 0 42px rgba(232,201,122,.18), 0 0 60px rgba(155,127,212,.24)'
+                    : '0 14px 30px -18px rgba(21,9,32,.68), 0 0 24px rgba(155,127,212,.16)',
                   filter: isCenter ? 'none' : hovered ? 'brightness(0.88)' : 'brightness(0.96)',
                 }}
               >
@@ -113,14 +113,6 @@ export default function Hero({ onBegin }: Props) {
             );
           })}
         </div>
-
-        {/* Hint text */}
-        <button
-          onClick={() => setBookOpen(true)}
-          className="text-[var(--gold-400)] text-sm opacity-70 hover:opacity-100 transition-opacity underline underline-offset-4 mb-8 block mx-auto"
-        >
-          Rê chuột vào lá bài để xòe ra • Click để mở Sách Phép Tarot
-        </button>
 
         {/* CTA */}
         <button
