@@ -25,6 +25,10 @@ import brentford from '@/data/clubs/brentford.json';
 import qpr from '@/data/clubs/qpr.json';
 import napoli from '@/data/clubs/napoli.json';
 import sevilla from '@/data/clubs/sevilla.json';
+import lazio from '@/data/clubs/lazio.json';
+import benfica from '@/data/clubs/benfica.json';
+import westham from '@/data/clubs/westham.json';
+import stokecity from '@/data/clubs/stokecity.json';
 import wands from '@/data/clubs/wands.json';
 import astonvilla from '@/data/clubs/astonvilla.json';
 import valencia from '@/data/clubs/valencia.json';
@@ -59,6 +63,10 @@ export async function GET() {
     qpr,
     napoli,
     sevilla,
+    lazio,
+    benfica,
+    westham,
+    stokecity,
     wands
   };
 

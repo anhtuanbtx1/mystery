@@ -38,6 +38,10 @@ interface TarotData {
   qpr: TarotCard[];
   napoli: TarotCard[];
   sevilla: TarotCard[];
+  lazio: TarotCard[];
+  benfica: TarotCard[];
+  westham: TarotCard[];
+  stokecity: TarotCard[];
   roma: TarotCard[];
   psg: TarotCard[];
   wands: Array<string | TarotCard>;
@@ -72,7 +76,6 @@ export default function TarotBookPopup({ open, onClose }: Props) {
   }, [open]);
 
   if (!open) return null;
-
 
   const getCoreName = (name: string) => name.split(' (')[0].trim();
 
@@ -174,54 +177,78 @@ export default function TarotBookPopup({ open, onClose }: Props) {
     <div className="fixed inset-0 z-[100] bg-black/75 backdrop-blur-[4px] flex items-center justify-center p-5 animate-in fade-in duration-300" onClick={onClose}>
       <div
         onClick={(e) => e.stopPropagation()}
-        className="w-[min(1400px,96vw)] h-full max-h-[900px] rounded-[26px] bg-gradient-to-b from-[#140920]/98 to-[#080410]/98 border border-[#e8c97a]/20 shadow-[0_40px_120px_rgba(0,0,0,0.65),0_0_80px_rgba(155,127,212,0.12)] overflow-hidden flex flex-col"
+        className="w-[min(1400px,96vw)] h-full max-h-[900px] rounded-[26px] bg-gradient-to-b from-[#140920]/98 to-[#080410]/98 border border-[#e8c97a]/20 shadow-[0_40px_120px_rgba(0,0,0,0.65),0_0_80px_rgba(155,127,212,0.12)] overflow-hidden flex flex-col relative"
       >
         {selectedCardPreview && (
-          <div className="fixed inset-0 z-[110] bg-black/85 backdrop-blur-md flex items-center justify-center p-4 sm:p-6" onClick={() => setSelectedCardPreview(null)}>
-            <div className="relative w-[min(1200px,96vw)] max-h-[90vh] rounded-[28px] border border-[#e8c97a]/25 bg-[rgba(18,9,28,0.98)] shadow-[0_30px_100px_rgba(0,0,0,0.75)] p-6 flex flex-col items-center" onClick={(e) => e.stopPropagation()}>
+          <div
+            className="fixed inset-0 z-[110] bg-black/90 backdrop-blur-md flex items-center justify-center p-3 sm:p-6 animate-in fade-in duration-200"
+            onClick={() => setSelectedCardPreview(null)}
+          >
+            <motion.div
+              initial={{ scale: 0.88, opacity: 0, y: 15 }}
+              animate={{ scale: 1, opacity: 1, y: 0 }}
+              transition={{ type: 'spring', stiffness: 350, damping: 25 }}
+              className="relative w-[min(1350px,98vw)] max-h-[94vh] rounded-[28px] border border-[#e8c97a]/35 bg-gradient-to-b from-[#1c0d2e]/98 to-[#0b0514]/98 shadow-[0_30px_120px_rgba(0,0,0,0.85),0_0_80px_rgba(232,201,122,0.15)] p-5 sm:p-8 flex flex-col items-center overflow-hidden"
+              onClick={(e) => e.stopPropagation()}
+            >
+              {/* Close Button */}
               <button
                 onClick={() => setSelectedCardPreview(null)}
-                className="absolute right-4 top-4 z-20 rounded-full bg-black/50 px-3 py-1 text-2xl leading-none text-white/70 transition-colors hover:text-white"
+                className="absolute right-4 top-4 z-30 rounded-full bg-black/60 border border-white/20 w-10 h-10 sm:w-11 sm:h-11 flex items-center justify-center text-2xl text-white/70 transition-all hover:text-white hover:bg-black/80 hover:scale-105 active:scale-95"
                 aria-label="Đóng xem trước hình"
               >
-                ×
+                ✕
               </button>
 
-              <div className="text-2xl font-display text-[var(--gold-300)] mb-6 mt-2 text-center">
+              {/* Header Title */}
+              <div className="text-2xl sm:text-4xl font-display text-[var(--gold-300)] text-glow mb-4 sm:mb-6 mt-1 text-center tracking-wider uppercase font-bold">
                 {selectedCardPreview.coreName}
               </div>
 
-              {/* Multiple Cards Side by Side */}
-              <div className="w-full flex justify-center items-start gap-4 sm:gap-8 overflow-x-auto pb-4 custom-scrollbar">
-                {selectedCardPreview.cards.map((c, i) => (
-                  <div key={c.id || i} className="flex flex-col items-center shrink-0 w-[160px] sm:w-[240px]">
-                    <div className="relative w-full rounded-[16px] sm:rounded-[20px] border border-[#e8c97a]/25 shadow-[0_15px_35px_rgba(0,0,0,0.5)] flex items-center justify-center overflow-hidden">
-                      {c.image ? (
-                        <img
-                          src={c.image}
-                          alt={c.name}
-                          className="w-full h-auto block"
-                        />
-                      ) : (
-                        <div className="w-full aspect-[2/3] bg-[#0f0818] flex items-center justify-center text-white/40 italic">
-                          Không có ảnh
-                        </div>
-                      )}
-                    </div>
-                    <div className="mt-4 text-center w-full">
-                      <div className="text-sm sm:text-base font-display text-[var(--parchment-200)]">
-                        {c.name}
+              {/* Cards Container */}
+              <div className="w-full flex-1 flex justify-center items-center gap-6 sm:gap-10 overflow-x-auto overflow-y-auto p-2 sm:p-4 custom-scrollbar">
+                {selectedCardPreview.cards.map((c, i) => {
+                  const singleCard = selectedCardPreview.cards.length === 1;
+                  return (
+                    <motion.div
+                      key={c.id || i}
+                      initial={{ scale: 0.9, opacity: 0 }}
+                      animate={{ scale: 1, opacity: 1 }}
+                      transition={{ delay: i * 0.08 }}
+                      className={`flex flex-col items-center shrink-0 ${
+                        singleCard
+                          ? 'w-[min(380px,85vw)] sm:w-[min(480px,85vw)] md:w-[min(540px,80vw)]'
+                          : 'w-[min(280px,75vw)] sm:w-[min(360px,75vw)] md:w-[min(420px,70vw)]'
+                      }`}
+                    >
+                      <div className="relative w-full rounded-[20px] sm:rounded-[26px] border-2 border-[#e8c97a]/40 shadow-[0_20px_50px_rgba(0,0,0,0.7),0_0_30px_rgba(232,201,122,0.15)] flex items-center justify-center overflow-hidden group bg-[#0e0719]">
+                        {c.image ? (
+                          <img
+                            src={c.image}
+                            alt={c.name}
+                            className="w-full max-h-[68vh] object-contain block transition-transform duration-300 group-hover:scale-105"
+                          />
+                        ) : (
+                          <div className="w-full aspect-[2/3] max-h-[68vh] bg-[#0f0818] flex items-center justify-center text-white/40 italic text-lg">
+                            Không có ảnh
+                          </div>
+                        )}
                       </div>
-                      {c.meaning && (
-                        <p className="mt-1 text-[11px] sm:text-xs text-[var(--parchment-400)] italic leading-relaxed px-1">
-                          {c.meaning}
-                        </p>
-                      )}
-                    </div>
-                  </div>
-                ))}
+                      <div className="mt-4 sm:mt-5 text-center w-full">
+                        <div className="text-lg sm:text-2xl font-display text-[var(--gold-200)] font-semibold tracking-wide">
+                          {c.name}
+                        </div>
+                        {c.meaning && (
+                          <p className="mt-2 text-xs sm:text-base text-[var(--parchment-200)] italic leading-relaxed max-w-md mx-auto">
+                            "{c.meaning}"
+                          </p>
+                        )}
+                      </div>
+                    </motion.div>
+                  );
+                })}
               </div>
-            </div>
+            </motion.div>
           </div>
         )}
         {/* Header */}
@@ -233,7 +260,7 @@ export default function TarotBookPopup({ open, onClose }: Props) {
              </div>
           </div>
           <div className="flex items-center gap-2 sm:gap-3 flex-wrap">
-            {['Ngoại Hạng Anh', 'La Liga', 'Serie A', 'Bundesliga', 'Ligue 1'].map(t => (
+            {['Ngoại Hạng Anh', 'La Liga', 'Serie A', 'Bundesliga', 'Ligue 1', 'Giải Khác'].map(t => (
               <button
                 key={t}
                 onClick={() => setActiveTab(t)}
@@ -332,18 +359,17 @@ export default function TarotBookPopup({ open, onClose }: Props) {
                  </div>
                </section>
 
-               <section>
-                 <div className="flex items-center justify-between mb-6">
-                   <h3 className="text-2xl font-display text-[var(--gold-300)]">Fulham</h3>
-                   <span className="px-3 py-1 rounded-full bg-[#e8c97a]/10 border border-[#e8c97a]/20 text-[10px] uppercase text-white/50 tracking-wider font-display">The Cottagers</span>
-                 </div>
-                 <div className="flex flex-wrap gap-4 sm:gap-6">
-                   {data.fulham ? groupCards(data.fulham).map((g, i) => renderCardGroupTile(g, i, "gold")) : null}
-                 </div>
-               </section>
+                <section>
+                  <div className="flex items-center justify-between mb-6">
+                    <h3 className="text-2xl font-display text-[var(--gold-300)]">Fulham</h3>
+                    <span className="px-3 py-1 rounded-full bg-[#e8c97a]/10 border border-[#e8c97a]/20 text-[10px] uppercase text-white/50 tracking-wider font-display">The Cottagers</span>
+                  </div>
+                  <div className="flex flex-wrap gap-4 sm:gap-6">
+                    {data.fulham ? groupCards(data.fulham).map((g, i) => renderCardGroupTile(g, i, "gold")) : null}
+                  </div>
+                </section>
 
-
-               <section>
+                <section>
                   <div className="flex items-center justify-between mb-6">
                     <h3 className="text-2xl font-display text-[var(--gold-300)]">Everton</h3>
                     <span className="px-3 py-1 rounded-full bg-[#e8c97a]/10 border border-[#e8c97a]/20 text-[10px] uppercase text-white/50 tracking-wider font-display">The Toffees</span>
@@ -403,138 +429,200 @@ export default function TarotBookPopup({ open, onClose }: Props) {
                   </div>
                 </section>
 
+                <section>
+                  <div className="flex items-center justify-between mb-6">
+                    <h3 className="text-2xl font-display text-[var(--gold-300)]">West Ham</h3>
+                    <span className="px-3 py-1 rounded-full bg-[#e8c97a]/10 border border-[#e8c97a]/20 text-[10px] uppercase text-white/50 tracking-wider font-display">The Hammers</span>
+                  </div>
+                  <div className="flex flex-wrap gap-4 sm:gap-6">
+                    {data.westham ? groupCards(data.westham).map((g, i) => renderCardGroupTile(g, i, "gold")) : null}
+                  </div>
+                </section>
+
+                <section>
+                  <div className="flex items-center justify-between mb-6">
+                    <h3 className="text-2xl font-display text-[var(--gold-300)]">Stoke City</h3>
+                    <span className="px-3 py-1 rounded-full bg-[#e8c97a]/10 border border-[#e8c97a]/20 text-[10px] uppercase text-white/50 tracking-wider font-display">The Potters</span>
+                  </div>
+                  <div className="flex flex-wrap gap-4 sm:gap-6">
+                    {data.stokecity ? groupCards(data.stokecity).map((g, i) => renderCardGroupTile(g, i, "gold")) : null}
+                  </div>
+                </section>
+
                 {/* Wands */}
-               <section>
-                 <div className="flex items-center justify-between mb-6">
-                   <h3 className="text-2xl font-display text-[var(--gold-300)]">Ngoại Hạng Anh (Khác)</h3>
-                   <span className="px-3 py-1 rounded-full bg-orange-500/10 border border-orange-500/20 text-[10px] uppercase text-orange-400/70 tracking-wider">Nguyên tố Lửa</span>
-                 </div>
-                 <div className="flex flex-wrap gap-4 sm:gap-6">
-                   {data.wands ? groupCards(data.wands).map((g, i) => renderCardGroupTile(g, i, 'gold')) : null}
-                 </div>
-               </section>
-
-             </div>
-          ) : data && activeTab === 'La Liga' ? (
-             <div className="space-y-12">
                 <section>
-                 <div className="flex items-center justify-between mb-6">
-                   <h3 className="text-2xl font-display text-[var(--gold-300)]">Barcelona</h3>
-                   <span className="px-3 py-1 rounded-full bg-[#e8c97a]/10 border border-[#e8c97a]/20 text-[10px] uppercase text-white/50 tracking-wider">Blaugrana</span>
-                 </div>
-                 <div className="flex flex-wrap gap-4 sm:gap-6">
-                   {data.barcelona ? groupCards(data.barcelona).map((g, i) => renderCardGroupTile(g, i, 'gold')) : null}
-                 </div>
-               </section>
+                  <div className="flex items-center justify-between mb-6">
+                    <h3 className="text-2xl font-display text-[var(--gold-300)]">Ngoại Hạng Anh (Khác)</h3>
+                    <span className="px-3 py-1 rounded-full bg-orange-500/10 border border-orange-500/20 text-[10px] uppercase text-orange-400/70 tracking-wider">Nguyên tố Lửa</span>
+                  </div>
+                  <div className="flex flex-wrap gap-4 sm:gap-6">
+                    {data.wands ? groupCards(data.wands).map((g, i) => renderCardGroupTile(g, i, 'gold')) : null}
+                  </div>
+                </section>
 
-                <section>
-                 <div className="flex items-center justify-between mb-6">
-                   <h3 className="text-2xl font-display text-[var(--gold-300)]">Real Madrid</h3>
-                   <span className="px-3 py-1 rounded-full bg-[#e8c97a]/10 border border-[#e8c97a]/20 text-[10px] uppercase text-white/50 tracking-wider">Los Blancos</span>
-                 </div>
-                 <div className="flex flex-wrap gap-4 sm:gap-6">
-                   {data.realmadrid ? groupCards(data.realmadrid).map((g, i) => renderCardGroupTile(g, i, 'gold')) : null}
-                 </div>
-               </section>
-               <section>
-                 <div className="flex items-center justify-between mb-6">
-                   <h3 className="text-2xl font-display text-[var(--gold-300)]">Atletico Madrid</h3>
-                   <span className="px-3 py-1 rounded-full bg-[#e8c97a]/10 border border-[#e8c97a]/20 text-[10px] uppercase text-white/50 tracking-wider">Los Colchoneros</span>
-                 </div>
-                 <div className="flex flex-wrap gap-4 sm:gap-6">
-                   {data.atletico ? groupCards(data.atletico).map((g, i) => renderCardGroupTile(g, i, "gold")) : null}
-                 </div>
-               </section>
-               <section>
-                 <div className="flex items-center justify-between mb-6">
-                   <h3 className="text-2xl font-display text-[var(--gold-300)]">Valencia</h3>
-                   <span className="px-3 py-1 rounded-full bg-[#e8c97a]/10 border border-[#e8c97a]/20 text-[10px] uppercase text-white/50 tracking-wider">Los Che</span>
-                 </div>
-                 <div className="flex flex-wrap gap-4 sm:gap-6">
-                   {data.valencia ? groupCards(data.valencia).map((g, i) => renderCardGroupTile(g, i, "gold")) : null}
-                 </div>
-               </section>
+              </div>
+           ) : data && activeTab === 'La Liga' ? (
+              <div className="space-y-12">
+                 <section>
+                  <div className="flex items-center justify-between mb-6">
+                    <h3 className="text-2xl font-display text-[var(--gold-300)]">Barcelona</h3>
+                    <span className="px-3 py-1 rounded-full bg-[#e8c97a]/10 border border-[#e8c97a]/20 text-[10px] uppercase text-white/50 tracking-wider">Blaugrana</span>
+                  </div>
+                  <div className="flex flex-wrap gap-4 sm:gap-6">
+                    {data.barcelona ? groupCards(data.barcelona).map((g, i) => renderCardGroupTile(g, i, 'gold')) : null}
+                  </div>
+                </section>
 
-             </div>
-          ) : data && activeTab === 'Serie A' ? (
-             <div className="space-y-12">
+                 <section>
+                  <div className="flex items-center justify-between mb-6">
+                    <h3 className="text-2xl font-display text-[var(--gold-300)]">Real Madrid</h3>
+                    <span className="px-3 py-1 rounded-full bg-[#e8c97a]/10 border border-[#e8c97a]/20 text-[10px] uppercase text-white/50 tracking-wider">Los Blancos</span>
+                  </div>
+                  <div className="flex flex-wrap gap-4 sm:gap-6">
+                    {data.realmadrid ? groupCards(data.realmadrid).map((g, i) => renderCardGroupTile(g, i, 'gold')) : null}
+                  </div>
+                </section>
                 <section>
-                 <div className="flex items-center justify-between mb-6">
-                   <h3 className="text-2xl font-display text-[var(--gold-300)]">Inter Milan</h3>
-                   <span className="px-3 py-1 rounded-full bg-[#e8c97a]/10 border border-[#e8c97a]/20 text-[10px] uppercase text-white/50 tracking-wider">Nerazzurri</span>
-                 </div>
-                 <div className="flex flex-wrap gap-4 sm:gap-6">
-                   {data.inter ? groupCards(data.inter).map((g, i) => renderCardGroupTile(g, i, 'gold')) : null}
-                 </div>
-               </section>
+                  <div className="flex items-center justify-between mb-6">
+                    <h3 className="text-2xl font-display text-[var(--gold-300)]">Atletico Madrid</h3>
+                    <span className="px-3 py-1 rounded-full bg-[#e8c97a]/10 border border-[#e8c97a]/20 text-[10px] uppercase text-white/50 tracking-wider">Los Colchoneros</span>
+                  </div>
+                  <div className="flex flex-wrap gap-4 sm:gap-6">
+                    {data.atletico ? groupCards(data.atletico).map((g, i) => renderCardGroupTile(g, i, "gold")) : null}
+                  </div>
+                </section>
+                <section>
+                  <div className="flex items-center justify-between mb-6">
+                    <h3 className="text-2xl font-display text-[var(--gold-300)]">Valencia</h3>
+                    <span className="px-3 py-1 rounded-full bg-[#e8c97a]/10 border border-[#e8c97a]/20 text-[10px] uppercase text-white/50 tracking-wider">Los Che</span>
+                  </div>
+                  <div className="flex flex-wrap gap-4 sm:gap-6">
+                    {data.valencia ? groupCards(data.valencia).map((g, i) => renderCardGroupTile(g, i, "gold")) : null}
+                  </div>
+                </section>
 
                 <section>
-                 <div className="flex items-center justify-between mb-6">
-                   <h3 className="text-2xl font-display text-[var(--gold-300)]">AC Milan</h3>
-                   <span className="px-3 py-1 rounded-full bg-[#e8c97a]/10 border border-[#e8c97a]/20 text-[10px] uppercase text-white/50 tracking-wider">Rossoneri</span>
-                 </div>
-                 <div className="flex flex-wrap gap-4 sm:gap-6">
-                   {data.acmilan ? groupCards(data.acmilan).map((g, i) => renderCardGroupTile(g, i, 'gold')) : null}
-                 </div>
-               </section>
+                  <div className="flex items-center justify-between mb-6">
+                    <h3 className="text-2xl font-display text-[var(--gold-300)]">Sevilla</h3>
+                    <span className="px-3 py-1 rounded-full bg-[#e8c97a]/10 border border-[#e8c97a]/20 text-[10px] uppercase text-white/50 tracking-wider font-display">Los Nervionenses</span>
+                  </div>
+                  <div className="flex flex-wrap gap-4 sm:gap-6">
+                    {data.sevilla ? groupCards(data.sevilla).map((g, i) => renderCardGroupTile(g, i, "gold")) : null}
+                  </div>
+                </section>
+
+              </div>
+           ) : data && activeTab === 'Serie A' ? (
+              <div className="space-y-12">
+                 <section>
+                  <div className="flex items-center justify-between mb-6">
+                    <h3 className="text-2xl font-display text-[var(--gold-300)]">Inter Milan</h3>
+                    <span className="px-3 py-1 rounded-full bg-[#e8c97a]/10 border border-[#e8c97a]/20 text-[10px] uppercase text-white/50 tracking-wider">Nerazzurri</span>
+                  </div>
+                  <div className="flex flex-wrap gap-4 sm:gap-6">
+                    {data.inter ? groupCards(data.inter).map((g, i) => renderCardGroupTile(g, i, 'gold')) : null}
+                  </div>
+                </section>
+
+                 <section>
+                  <div className="flex items-center justify-between mb-6">
+                    <h3 className="text-2xl font-display text-[var(--gold-300)]">AC Milan</h3>
+                    <span className="px-3 py-1 rounded-full bg-[#e8c97a]/10 border border-[#e8c97a]/20 text-[10px] uppercase text-white/50 tracking-wider">Rossoneri</span>
+                  </div>
+                  <div className="flex flex-wrap gap-4 sm:gap-6">
+                    {data.acmilan ? groupCards(data.acmilan).map((g, i) => renderCardGroupTile(g, i, 'gold')) : null}
+                  </div>
+                </section>
+
+                 <section>
+                  <div className="flex items-center justify-between mb-6">
+                    <h3 className="text-2xl font-display text-[var(--gold-300)]">Juventus</h3>
+                    <span className="px-3 py-1 rounded-full bg-[#e8c97a]/10 border border-[#e8c97a]/20 text-[10px] uppercase text-white/50 tracking-wider">Bianconeri</span>
+                  </div>
+                  <div className="flex flex-wrap gap-4 sm:gap-6">
+                    {data.juventus ? groupCards(data.juventus).map((g, i) => renderCardGroupTile(g, i, 'gold')) : null}
+                  </div>
+                </section>
+
+                 <section>
+                  <div className="flex items-center justify-between mb-6">
+                    <h3 className="text-2xl font-display text-[var(--gold-300)]">AS Roma</h3>
+                    <span className="px-3 py-1 rounded-full bg-[#e8c97a]/10 border border-[#e8c97a]/20 text-[10px] uppercase text-white/50 tracking-wider">I Giallorossi</span>
+                  </div>
+                  <div className="flex flex-wrap gap-4 sm:gap-6">
+                    {data.roma ? groupCards(data.roma).map((g, i) => renderCardGroupTile(g, i, 'gold')) : null}
+                  </div>
+                </section>
 
                 <section>
-                 <div className="flex items-center justify-between mb-6">
-                   <h3 className="text-2xl font-display text-[var(--gold-300)]">Juventus</h3>
-                   <span className="px-3 py-1 rounded-full bg-[#e8c97a]/10 border border-[#e8c97a]/20 text-[10px] uppercase text-white/50 tracking-wider">Bianconeri</span>
-                 </div>
-                 <div className="flex flex-wrap gap-4 sm:gap-6">
-                   {data.juventus ? groupCards(data.juventus).map((g, i) => renderCardGroupTile(g, i, 'gold')) : null}
-                 </div>
-               </section>
+                  <div className="flex items-center justify-between mb-6">
+                    <h3 className="text-2xl font-display text-[var(--gold-300)]">Napoli</h3>
+                    <span className="px-3 py-1 rounded-full bg-[#e8c97a]/10 border border-[#e8c97a]/20 text-[10px] uppercase text-white/50 tracking-wider font-display">Partenopei</span>
+                  </div>
+                  <div className="flex flex-wrap gap-4 sm:gap-6">
+                    {data.napoli ? groupCards(data.napoli).map((g, i) => renderCardGroupTile(g, i, "gold")) : null}
+                  </div>
+                </section>
 
                 <section>
-                 <div className="flex items-center justify-between mb-6">
-                   <h3 className="text-2xl font-display text-[var(--gold-300)]">AS Roma</h3>
-                   <span className="px-3 py-1 rounded-full bg-[#e8c97a]/10 border border-[#e8c97a]/20 text-[10px] uppercase text-white/50 tracking-wider">I Giallorossi</span>
-                 </div>
-                 <div className="flex flex-wrap gap-4 sm:gap-6">
-                   {data.roma ? groupCards(data.roma).map((g, i) => renderCardGroupTile(g, i, 'gold')) : null}
-                 </div>
-               </section>
-             </div>
-          ) : data && activeTab === 'Bundesliga' ? (
-             <div className="space-y-12">
-                <section>
-                 <div className="flex items-center justify-between mb-6">
-                   <h3 className="text-2xl font-display text-[var(--gold-300)]">Bayern Munich</h3>
-                   <span className="px-3 py-1 rounded-full bg-[#e8c97a]/10 border border-[#e8c97a]/20 text-[10px] uppercase text-white/50 tracking-wider">Die Roten</span>
-                 </div>
-                 <div className="flex flex-wrap gap-4 sm:gap-6">
-                   {data.bayern ? groupCards(data.bayern).map((g, i) => renderCardGroupTile(g, i, 'gold')) : null}
-                 </div>
-               </section>
+                  <div className="flex items-center justify-between mb-6">
+                    <h3 className="text-2xl font-display text-[var(--gold-300)]">Lazio</h3>
+                    <span className="px-3 py-1 rounded-full bg-[#e8c97a]/10 border border-[#e8c97a]/20 text-[10px] uppercase text-white/50 tracking-wider font-display">I Biancocelesti</span>
+                  </div>
+                  <div className="flex flex-wrap gap-4 sm:gap-6">
+                    {data.lazio ? groupCards(data.lazio).map((g, i) => renderCardGroupTile(g, i, "gold")) : null}
+                  </div>
+                </section>
+              </div>
+           ) : data && activeTab === 'Bundesliga' ? (
+              <div className="space-y-12">
+                 <section>
+                  <div className="flex items-center justify-between mb-6">
+                    <h3 className="text-2xl font-display text-[var(--gold-300)]">Bayern Munich</h3>
+                    <span className="px-3 py-1 rounded-full bg-[#e8c97a]/10 border border-[#e8c97a]/20 text-[10px] uppercase text-white/50 tracking-wider">Die Roten</span>
+                  </div>
+                  <div className="flex flex-wrap gap-4 sm:gap-6">
+                    {data.bayern ? groupCards(data.bayern).map((g, i) => renderCardGroupTile(g, i, 'gold')) : null}
+                  </div>
+                </section>
 
-                <section>
-                 <div className="flex items-center justify-between mb-6">
-                   <h3 className="text-2xl font-display text-[var(--gold-300)]">Borussia Dortmund</h3>
-                   <span className="px-3 py-1 rounded-full bg-[#e8c97a]/10 border border-[#e8c97a]/20 text-[10px] uppercase text-white/50 tracking-wider">Die Borussen</span>
-                 </div>
-                 <div className="flex flex-wrap gap-4 sm:gap-6">
-                   {data.dortmund ? groupCards(data.dortmund).map((g, i) => renderCardGroupTile(g, i, 'gold')) : null}
-                 </div>
-               </section>
-             </div>
-          ) : data && activeTab === 'Ligue 1' ? (
-             <div className="space-y-12">
-                <section>
-                 <div className="flex items-center justify-between mb-6">
-                   <h3 className="text-2xl font-display text-[var(--gold-300)]">Paris Saint-Germain</h3>
-                   <span className="px-3 py-1 rounded-full bg-[#e8c97a]/10 border border-[#e8c97a]/20 text-[10px] uppercase text-white/50 tracking-wider">Les Parisiens</span>
-                 </div>
-                 <div className="flex flex-wrap gap-4 sm:gap-6">
-                   {data.psg ? groupCards(data.psg).map((g, i) => renderCardGroupTile(g, i, 'gold')) : null}
-                 </div>
-               </section>
-             </div>
-          ) : (
-             <div className="h-full flex items-center justify-center text-white/40 italic">Nội dung {activeTab} đang được truyền tải...</div>
-          )}
+                 <section>
+                  <div className="flex items-center justify-between mb-6">
+                    <h3 className="text-2xl font-display text-[var(--gold-300)]">Borussia Dortmund</h3>
+                    <span className="px-3 py-1 rounded-full bg-[#e8c97a]/10 border border-[#e8c97a]/20 text-[10px] uppercase text-white/50 tracking-wider">Die Borussen</span>
+                  </div>
+                  <div className="flex flex-wrap gap-4 sm:gap-6">
+                    {data.dortmund ? groupCards(data.dortmund).map((g, i) => renderCardGroupTile(g, i, 'gold')) : null}
+                  </div>
+                </section>
+              </div>
+           ) : data && activeTab === 'Ligue 1' ? (
+              <div className="space-y-12">
+                 <section>
+                  <div className="flex items-center justify-between mb-6">
+                    <h3 className="text-2xl font-display text-[var(--gold-300)]">Paris Saint-Germain</h3>
+                    <span className="px-3 py-1 rounded-full bg-[#e8c97a]/10 border border-[#e8c97a]/20 text-[10px] uppercase text-white/50 tracking-wider">Les Parisiens</span>
+                  </div>
+                  <div className="flex flex-wrap gap-4 sm:gap-6">
+                    {data.psg ? groupCards(data.psg).map((g, i) => renderCardGroupTile(g, i, 'gold')) : null}
+                  </div>
+                </section>
+              </div>
+           ) : data && activeTab === 'Giải Khác' ? (
+              <div className="space-y-12">
+                 <section>
+                  <div className="flex items-center justify-between mb-6">
+                    <h3 className="text-2xl font-display text-[var(--gold-300)]">Benfica</h3>
+                    <span className="px-3 py-1 rounded-full bg-[#e8c97a]/10 border border-[#e8c97a]/20 text-[10px] uppercase text-white/50 tracking-wider">As Águias</span>
+                  </div>
+                  <div className="flex flex-wrap gap-4 sm:gap-6">
+                    {data.benfica ? groupCards(data.benfica).map((g, i) => renderCardGroupTile(g, i, 'gold')) : null}
+                  </div>
+                </section>
+              </div>
+           ) : (
+              <div className="h-full flex items-center justify-center text-white/40 italic">Nội dung {activeTab} đang được truyền tải...</div>
+           )}
         </div>
       </div>
     </div>

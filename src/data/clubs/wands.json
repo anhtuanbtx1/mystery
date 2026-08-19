@@ -18,35 +18,15 @@
   "Nữ Hoàng Gậy",
   "Vua Gậy",
   {
-    "name": "Imobile",
-    "image": "/assets/imobile.webp"
-  },
-  {
     "name": "Ziyech",
     "image": "/assets/ziyech.webp"
-  },
-  {
-    "name": "Crouch",
-    "image": "/assets/crouch.webp"
-  },
-  {
-    "name": "Di Maria",
-    "image": "/assets/maria_ben.webp"
   },
   {
     "name": "Mitoma",
     "image": "/assets/mitoma.webp"
   },
   {
-    "name": "Rice",
-    "image": "/assets/rice_west.webp"
-  },
-  {
     "name": "Kante",
     "image": "/assets/kante_lec.webp"
-  },
-  {
-    "name": "Savic",
-    "image": "/assets/savic_lazio.webp"
   }
 ]
