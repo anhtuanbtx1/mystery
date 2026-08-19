@@ -44,7 +44,7 @@ export default function Hero({ onBegin }: Props) {
 
         {/* Title */}
         <LightningText
-          text="Football Player Card"
+          text="World Tour"
           className="mb-1 h-[80px] sm:h-[120px] w-full max-w-[820px] mx-auto"
         />
         <p className="text-[var(--parchment-300)] text-sm sm:text-lg mb-8 sm:mb-10 italic px-2">
@@ -62,8 +62,6 @@ export default function Hero({ onBegin }: Props) {
         >
           {fanCards.map((card, idx) => {
             const isCenter = idx === 1;
-            // Use CSS media queries or tailwind via state for dynamic sizing,
-            // but for inline styles we'll use viewport relative units or percentages
             return (
               <div
                 key={card.label}

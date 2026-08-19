@@ -10,7 +10,7 @@ interface LightningTextProps {
   className?: string;
 }
 
-export default function LightningText({ text = "Football Player Card", className }: LightningTextProps) {
+export default function LightningText({ text = "World Tour", className }: LightningTextProps) {
   const canvasRef = useRef<HTMLCanvasElement | null>(null);
   const frameRef = useRef<number | null>(null);
   const sparksRef = useRef<SparkPoint[]>([]);
