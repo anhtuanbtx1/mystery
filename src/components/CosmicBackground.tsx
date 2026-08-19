@@ -95,14 +95,20 @@ function drawParticles(ctx: CanvasRenderingContext2D, particles: Particle[], wid
     if (p.kind === 'rune') {
       ctx.save();
       ctx.font = `${p.size}px Georgia, serif`;
-      ctx.fillStyle = `rgba(200, 155, 255, ${p.alpha * pulse})`;
-      ctx.shadowColor = 'rgba(157, 105, 255, 0.34)';
+      ctx.fillStyle = `rgba(232, 201, 122, ${p.alpha * pulse})`;
+      ctx.shadowColor = 'rgba(0, 230, 150, 0.4)';
       ctx.shadowBlur = 12;
       ctx.fillText(p.char || 'ᚠ', p.x, p.y);
       ctx.restore();
     } else {
       const gradient = ctx.createRadialGradient(p.x, p.y, 0, p.x, p.y, p.size * (p.kind === 'wisp' ? 1.8 : 4));
-      const color = p.kind === 'firefly' ? '216,190,255' : p.kind === 'star' ? '245,238,255' : '176,112,255';
+      const color = p.kind === 'firefly'
+        ? '50, 255, 170'
+        : p.kind === 'star'
+        ? '255, 240, 200'
+        : p.kind === 'dust'
+        ? '232, 201, 122'
+        : '0, 200, 140';
       gradient.addColorStop(0, `rgba(${color}, ${p.alpha * pulse})`);
       gradient.addColorStop(1, `rgba(${color}, 0)`);
       ctx.fillStyle = gradient;
@@ -126,34 +132,69 @@ function drawParticles(ctx: CanvasRenderingContext2D, particles: Particle[], wid
 
 function createBolt(width: number, height: number): Bolt {
   const fromLeft = Math.random() > 0.5;
-  const start = { x: fromLeft ? rand(-20, width * 0.2) : rand(width * 0.8, width + 20), y: rand(0, height * 0.22) };
-  const end = { x: rand(width * 0.18, width * 0.82), y: rand(height * 0.3, height * 0.72) };
-  const segments = Math.floor(rand(5, 9));
+  const startType = Math.random();
+  let startX: number;
+  let startY: number;
+  let endX: number;
+  let endY: number;
+
+  if (startType < 0.4) {
+    // High sky to mid-screen
+    startX = rand(width * 0.15, width * 0.85);
+    startY = rand(-20, height * 0.08);
+    endX = startX + rand(-width * 0.25, width * 0.25);
+    endY = rand(height * 0.35, height * 0.75);
+  } else if (fromLeft) {
+    // Left diagonal strike
+    startX = rand(-20, width * 0.25);
+    startY = rand(0, height * 0.25);
+    endX = rand(width * 0.2, width * 0.75);
+    endY = rand(height * 0.25, height * 0.7);
+  } else {
+    // Right diagonal strike
+    startX = rand(width * 0.75, width + 20);
+    startY = rand(0, height * 0.25);
+    endX = rand(width * 0.25, width * 0.8);
+    endY = rand(height * 0.25, height * 0.7);
+  }
+
+  const segments = Math.floor(rand(6, 11));
   const points = Array.from({ length: segments + 1 }).map((_, i) => {
     const t = i / segments;
     return {
-      x: start.x + (end.x - start.x) * t + rand(-28, 28) * (1 - Math.abs(t - 0.5)),
-      y: start.y + (end.y - start.y) * t + rand(-18, 22),
+      x: startX + (endX - startX) * t + rand(-32, 32) * (1 - Math.abs(t - 0.5)),
+      y: startY + (endY - startY) * t + rand(-20, 24),
     };
   });
-  const branches = points.slice(2, -1).filter(() => Math.random() > 0.55).map((origin) => {
-    const len = rand(45, 120);
-    const angle = rand(-0.15, 0.9) * (fromLeft ? 1 : -1);
-    return [origin, { x: origin.x + Math.cos(angle) * len, y: origin.y + Math.sin(angle) * len }];
+
+  const branches = points.slice(1, -1).filter(() => Math.random() > 0.45).map((origin) => {
+    const len = rand(40, 130);
+    const angle = rand(-0.35, 1.1) * (fromLeft ? 1 : -1);
+    const subSegments = Math.floor(rand(2, 4));
+    const branchPts = [origin];
+    let cx = origin.x;
+    let cy = origin.y;
+    for (let s = 1; s <= subSegments; s++) {
+      cx += (Math.cos(angle) * len) / subSegments + rand(-12, 12);
+      cy += (Math.sin(angle) * len) / subSegments + rand(-10, 10);
+      branchPts.push({ x: cx, y: cy });
+    }
+    return branchPts;
   });
 
-  return { points, branches, born: performance.now(), duration: rand(360, 560) };
+  return { points, branches, born: performance.now(), duration: rand(280, 520) };
 }
 
-function strokeBolt(ctx: CanvasRenderingContext2D, points: Array<{ x: number; y: number }>, alpha: number, width: number) {
+function strokeBolt(ctx: CanvasRenderingContext2D, points: Array<{ x: number; y: number }>, alpha: number, width: number, isGold = false) {
+  if (points.length < 2) return;
   ctx.beginPath();
   points.forEach((point, index) => {
     index === 0 ? ctx.moveTo(point.x, point.y) : ctx.lineTo(point.x, point.y);
   });
-  ctx.strokeStyle = `rgba(216,190,255,${alpha})`;
+  ctx.strokeStyle = isGold ? `rgba(255,235,170,${alpha})` : `rgba(160,255,220,${alpha})`;
   ctx.lineWidth = width;
-  ctx.shadowColor = 'rgba(166, 96, 255, 0.72)';
-  ctx.shadowBlur = 16;
+  ctx.shadowColor = isGold ? 'rgba(232,201,122,0.85)' : 'rgba(0,230,160,0.85)';
+  ctx.shadowBlur = 20;
   ctx.stroke();
 }
 
@@ -237,7 +278,7 @@ export default function CosmicBackground() {
     let width = 0;
     let height = 0;
     let animationFrame: number | undefined;
-    let timeout: ReturnType<typeof setTimeout> | undefined;
+    const timeouts: Array<ReturnType<typeof setTimeout>> = [];
     let bolts: Bolt[] = [];
     let reduced = prefersReducedMotion();
 
@@ -255,39 +296,77 @@ export default function CosmicBackground() {
       ctx.clearRect(0, 0, width, height);
       bolts = bolts.filter((bolt) => now - bolt.born < bolt.duration);
 
-      bolts.forEach((bolt) => {
+      bolts.forEach((bolt, idx) => {
         const age = (now - bolt.born) / bolt.duration;
-        const alpha = Math.max(0, Math.sin((1 - age) * Math.PI)) * 0.55;
-        strokeBolt(ctx, bolt.points, alpha * 0.32, 5.5);
-        strokeBolt(ctx, bolt.points, alpha, 1.2);
-        bolt.branches.forEach((branch) => strokeBolt(ctx, branch, alpha * 0.42, 0.8));
+        const alpha = Math.max(0, Math.sin((1 - age) * Math.PI)) * 0.78;
+        const isGold = idx % 2 === 1;
+
+        // Outer glow
+        strokeBolt(ctx, bolt.points, alpha * 0.45, 6, isGold);
+        // Core beam
+        strokeBolt(ctx, bolt.points, alpha, 2, isGold);
+        // Bright white center line
+        ctx.beginPath();
+        bolt.points.forEach((p, i) => (i === 0 ? ctx.moveTo(p.x, p.y) : ctx.lineTo(p.x, p.y)));
+        ctx.strokeStyle = `rgba(255,255,255,${alpha * 0.9})`;
+        ctx.lineWidth = 0.8;
+        ctx.stroke();
+
+        // Branches
+        bolt.branches.forEach((branch) => {
+          strokeBolt(ctx, branch, alpha * 0.55, 1.2, isGold);
+        });
       });
 
-      if (bolts.length) animationFrame = requestAnimationFrame(draw);
+      if (bolts.length) {
+        animationFrame = requestAnimationFrame(draw);
+      }
+    };
+
+    const triggerStrike = () => {
+      bolts.push(createBolt(width, height));
+      if (!animationFrame) animationFrame = requestAnimationFrame(draw);
+
+      // 40% chance of double strike in rapid succession (crackle)
+      if (Math.random() > 0.6) {
+        const t2 = setTimeout(() => {
+          bolts.push(createBolt(width, height));
+          if (!animationFrame) animationFrame = requestAnimationFrame(draw);
+        }, rand(70, 160));
+        timeouts.push(t2);
+      }
     };
 
     const schedule = () => {
       if (reduced) return;
-      timeout = setTimeout(() => {
-        bolts.push(createBolt(width, height));
-        if (!animationFrame) animationFrame = requestAnimationFrame(draw);
+      const t = setTimeout(() => {
+        triggerStrike();
         schedule();
-      }, rand(3200, 7200));
+      }, rand(900, 2200));
+      timeouts.push(t);
+    };
+
+    const clearAllTimeouts = () => {
+      while (timeouts.length > 0) {
+        const t = timeouts.pop();
+        if (t) clearTimeout(t);
+      }
     };
 
     const media = window.matchMedia('(prefers-reduced-motion: reduce)');
     const handleMotionChange = () => {
       reduced = media.matches;
-      if (timeout) clearTimeout(timeout);
+      clearAllTimeouts();
       if (animationFrame) cancelAnimationFrame(animationFrame);
-      timeout = undefined;
       animationFrame = undefined;
       bolts = [];
       setup();
-      schedule();
+      if (!reduced) schedule();
     };
 
     setup();
+    // Initial immediate strike for instant visual feedback
+    setTimeout(() => triggerStrike(), 300);
     schedule();
 
     window.addEventListener('resize', setup);
@@ -295,7 +374,7 @@ export default function CosmicBackground() {
     return () => {
       window.removeEventListener('resize', setup);
       media.removeEventListener('change', handleMotionChange);
-      if (timeout) clearTimeout(timeout);
+      clearAllTimeouts();
       if (animationFrame) cancelAnimationFrame(animationFrame);
     };
   }, []);

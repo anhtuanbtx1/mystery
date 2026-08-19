@@ -177,7 +177,7 @@ export default function TarotBookPopup({ open, onClose }: Props) {
     <div className="fixed inset-0 z-[100] bg-black/75 backdrop-blur-[4px] flex items-center justify-center p-5 animate-in fade-in duration-300" onClick={onClose}>
       <div
         onClick={(e) => e.stopPropagation()}
-        className="w-[min(1400px,96vw)] h-full max-h-[900px] rounded-[26px] bg-gradient-to-b from-[#140920]/98 to-[#080410]/98 border border-[#e8c97a]/20 shadow-[0_40px_120px_rgba(0,0,0,0.65),0_0_80px_rgba(155,127,212,0.12)] overflow-hidden flex flex-col relative"
+        className="w-[min(1400px,96vw)] h-full max-h-[900px] rounded-[26px] bg-gradient-to-b from-[#0a2318]/98 to-[#03100a]/98 border border-[#e8c97a]/25 shadow-[0_40px_120px_rgba(0,0,0,0.75),0_0_80px_rgba(0,230,150,0.12)] overflow-hidden flex flex-col relative"
       >
         {selectedCardPreview && (
           <div
@@ -188,7 +188,7 @@ export default function TarotBookPopup({ open, onClose }: Props) {
               initial={{ scale: 0.88, opacity: 0, y: 15 }}
               animate={{ scale: 1, opacity: 1, y: 0 }}
               transition={{ type: 'spring', stiffness: 350, damping: 25 }}
-              className="relative w-[min(1350px,98vw)] max-h-[94vh] rounded-[28px] border border-[#e8c97a]/35 bg-gradient-to-b from-[#1c0d2e]/98 to-[#0b0514]/98 shadow-[0_30px_120px_rgba(0,0,0,0.85),0_0_80px_rgba(232,201,122,0.15)] p-5 sm:p-8 flex flex-col items-center overflow-hidden"
+              className="relative w-[min(1350px,98vw)] max-h-[94vh] rounded-[28px] border border-[#e8c97a]/35 bg-gradient-to-b from-[#0d2e20]/98 to-[#04140d]/98 shadow-[0_30px_120px_rgba(0,0,0,0.85),0_0_80px_rgba(232,201,122,0.18)] p-5 sm:p-8 flex flex-col items-center overflow-hidden"
               onClick={(e) => e.stopPropagation()}
             >
               {/* Close Button */}
@@ -221,7 +221,7 @@ export default function TarotBookPopup({ open, onClose }: Props) {
                           : 'w-[min(280px,75vw)] sm:w-[min(360px,75vw)] md:w-[min(420px,70vw)]'
                       }`}
                     >
-                      <div className="relative w-full rounded-[20px] sm:rounded-[26px] border-2 border-[#e8c97a]/40 shadow-[0_20px_50px_rgba(0,0,0,0.7),0_0_30px_rgba(232,201,122,0.15)] flex items-center justify-center overflow-hidden group bg-[#0e0719]">
+                      <div className="relative w-full rounded-[20px] sm:rounded-[26px] border-2 border-[#e8c97a]/40 shadow-[0_20px_50px_rgba(0,0,0,0.7),0_0_30px_rgba(232,201,122,0.15)] flex items-center justify-center overflow-hidden group bg-[#061810]">
                         {c.image ? (
                           <img
                             src={c.image}
@@ -229,7 +229,7 @@ export default function TarotBookPopup({ open, onClose }: Props) {
                             className="w-full max-h-[68vh] object-contain block transition-transform duration-300 group-hover:scale-105"
                           />
                         ) : (
-                          <div className="w-full aspect-[2/3] max-h-[68vh] bg-[#0f0818] flex items-center justify-center text-white/40 italic text-lg">
+                          <div className="w-full aspect-[2/3] max-h-[68vh] bg-[#071d13] flex items-center justify-center text-white/40 italic text-lg">
                             Không có ảnh
                           </div>
                         )}
@@ -255,8 +255,8 @@ export default function TarotBookPopup({ open, onClose }: Props) {
         <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-y-3 px-4 sm:px-6 py-4 border-b border-[#e8c97a]/15">
           <div className="flex items-center gap-3">
              <div className="text-xl sm:text-[28px] tracking-[0.06em] text-[var(--gold-400)] font-display uppercase text-glow">Bộ sưu tập</div>
-             <div className="w-5 h-5 sm:w-6 sm:h-6 rounded-full bg-purple-500/20 flex items-center justify-center border border-purple-500/40">
-               <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full bg-purple-400 animate-pulse" />
+             <div className="w-5 h-5 sm:w-6 sm:h-6 rounded-full bg-emerald-500/20 flex items-center justify-center border border-emerald-500/40">
+               <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full bg-emerald-400 animate-pulse" />
              </div>
           </div>
           <div className="flex items-center gap-2 sm:gap-3 flex-wrap">

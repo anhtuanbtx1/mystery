@@ -16,7 +16,7 @@ export default function HomePage() {
         <Hero onBegin={() => setStarted(true)} />
       ) : (
         <section className="relative z-10 min-h-screen flex items-center justify-center px-6 text-center">
-          <div className="max-w-2xl rounded-[28px] border border-[#e8c97a]/20 bg-[rgba(20,9,32,0.82)] p-10 backdrop-blur-xl shadow-[0_30px_90px_rgba(0,0,0,0.4)]">
+          <div className="max-w-2xl rounded-[28px] border border-[#e8c97a]/20 bg-[rgba(6,22,15,0.86)] p-10 backdrop-blur-xl shadow-[0_30px_90px_rgba(0,0,0,0.4)]">
             <p className="text-sm uppercase tracking-[0.3em] text-[var(--gold-400)] mb-4">Next.js Full-stack</p>
             <h2 className="font-display text-4xl text-[var(--gold-300)] text-glow mb-4">Khung FE + BE đã sẵn sàng</h2>
             <p className="text-[var(--parchment-300)] leading-8">

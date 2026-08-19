@@ -7,7 +7,7 @@ import { cn } from '@/lib/utils';
 import LightningText from './LightningText';
 
 interface Props {
-  onBegin: () => void;
+  onBegin?: () => void;
 }
 
 export default function Hero({ onBegin }: Props) {
@@ -32,7 +32,7 @@ export default function Hero({ onBegin }: Props) {
           >
             <motion.img
               src="/assets/emblem.svg"
-              alt="Mystery Tarot"
+              alt="Mystery Football"
               className={cn(
                 'w-10 h-10 sm:w-14 sm:h-14 object-contain drop-shadow-[0_0_12px_rgba(232,201,122,.22)]'
               )}
@@ -45,11 +45,8 @@ export default function Hero({ onBegin }: Props) {
         {/* Title */}
         <LightningText
           text="World Tour"
-          className="mb-1 h-[80px] sm:h-[120px] w-full max-w-[820px] mx-auto"
+          className="mb-4 sm:mb-6 h-[80px] sm:h-[120px] w-full max-w-[820px] mx-auto"
         />
-        <p className="text-[var(--parchment-300)] text-sm sm:text-lg mb-8 sm:mb-10 italic px-2">
-          Bí ẩn nằm trong những lá bài — hãy để vũ trụ lên tiếng
-        </p>
 
         {/* Fan Cards */}
         <div
@@ -78,12 +75,12 @@ export default function Hero({ onBegin }: Props) {
                   willChange: 'transform, box-shadow, filter',
                   borderRadius: 20,
                   background: isCenter
-                    ? 'linear-gradient(180deg, rgba(47,25,80,0.98), rgba(14,7,28,0.98))'
-                    : 'linear-gradient(180deg, rgba(30,14,54,0.95), rgba(10,5,20,0.95))',
-                  border: isCenter ? '1px solid rgba(255,224,150,0.38)' : '1px solid rgba(232,201,122,0.22)',
+                    ? 'linear-gradient(180deg, rgba(14,54,36,0.98), rgba(4,20,13,0.98))'
+                    : 'linear-gradient(180deg, rgba(8,38,25,0.95), rgba(3,14,9,0.95))',
+                  border: isCenter ? '1px solid rgba(255,224,150,0.45)' : '1px solid rgba(232,201,122,0.25)',
                   boxShadow: isCenter && hovered
-                    ? '0 24px 54px -24px rgba(21,9,32,.78), 0 0 42px rgba(232,201,122,.18), 0 0 60px rgba(155,127,212,.24)'
-                    : '0 14px 30px -18px rgba(21,9,32,.68), 0 0 24px rgba(155,127,212,.16)',
+                    ? '0 24px 54px -24px rgba(0,30,18,.82), 0 0 42px rgba(232,201,122,.24), 0 0 60px rgba(0,230,150,.28)'
+                    : '0 14px 30px -18px rgba(0,20,12,.72), 0 0 24px rgba(0,230,150,.18)',
                   filter: isCenter ? 'none' : hovered ? 'brightness(0.88)' : 'brightness(0.96)',
                 }}
               >
@@ -91,7 +88,7 @@ export default function Hero({ onBegin }: Props) {
                 <div style={{ position: 'absolute', inset: 7, borderRadius: 14, border: '1px solid rgba(83,48,14,0.5)', pointerEvents: 'none' }} />
                 <div style={{ position: 'absolute', inset: 14, borderRadius: 12, border: '1px solid rgba(255,238,197,0.45)', pointerEvents: 'none' }} />
                 {/* Card art */}
-                <div style={{ position: 'absolute', inset: 10, borderRadius: 14, overflow: 'hidden', background: '#1a102b', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                <div style={{ position: 'absolute', inset: 10, borderRadius: 14, overflow: 'hidden', background: '#081d14', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
                   <img
                     src="/assets/card-back.svg"
                     alt={card.label}
@@ -111,14 +108,6 @@ export default function Hero({ onBegin }: Props) {
             );
           })}
         </div>
-
-        {/* CTA */}
-        <button
-          onClick={onBegin}
-          className="px-10 py-3.5 rounded-full text-base font-display tracking-widest uppercase transition-all duration-300 border border-[#e8c97a]/50 text-[var(--gold-300)] hover:bg-[#e8c97a]/10 hover:border-[#e8c97a]/80 hover:text-glow active:scale-95"
-        >
-          Bắt đầu hành trình
-        </button>
 
         {/* Tarot Book Popup */}
         <TarotBookPopup open={bookOpen} onClose={() => setBookOpen(false)} />

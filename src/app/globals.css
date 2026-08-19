@@ -10,7 +10,7 @@
   --color-parchment-200: #f2e6ce;
   --color-parchment-300: #e6d3b3;
   --color-parchment-400: #d4b88c;
-  --color-bg-dark: #140920;
+  --color-bg-dark: #05140e;
 }
 
 :root {
@@ -23,8 +23,8 @@
   --parchment-200: #f2e6ce;
   --parchment-300: #e6d3b3;
   --parchment-400: #d4b88c;
-  --bg-dark: #140920;
-  --bg-surface: #140920;
+  --bg-dark: #05140e;
+  --bg-surface: #071c14;
   --font-display: 'Cinzel', Georgia, serif;
   --font-body: 'Cormorant Garamond', Georgia, serif;
 }
@@ -54,32 +54,41 @@ body {
   --radius-card: 18px;
 }
 
-/* --- Animated background layers --- */
+/* --- Animated background layers (World Cup Festival Theme) --- */
 .bg-nebula {
-  inset: -8%;
+  inset: -5%;
   background:
-    radial-gradient(70% 60% at 18% 24%, rgba(138, 76, 206, 0.6) 0%, rgba(138, 76, 206, 0.18) 42%, transparent 74%),
-    radial-gradient(62% 68% at 78% 18%, rgba(108, 54, 184, 0.48) 0%, rgba(108, 54, 184, 0.16) 48%, transparent 76%),
-    radial-gradient(80% 70% at 52% 72%, rgba(80, 32, 146, 0.42) 0%, rgba(80, 32, 146, 0.14) 52%, transparent 78%);
-  background-color: #140920;
-  animation: nebulaDrift 15s ease-in-out infinite alternate;
-  transform-origin: center;
-  will-change: transform, opacity;
+    radial-gradient(60% 50% at 16% 22%, rgba(0, 168, 107, 0.58) 0%, rgba(0, 168, 107, 0.2) 38%, transparent 68%),
+    radial-gradient(55% 58% at 80% 16%, rgba(0, 195, 230, 0.48) 0%, rgba(0, 195, 230, 0.16) 42%, transparent 70%),
+    radial-gradient(65% 55% at 50% 75%, rgba(180, 138, 30, 0.44) 0%, rgba(180, 138, 30, 0.14) 46%, transparent 72%),
+    radial-gradient(50% 50% at 48% 28%, rgba(5, 78, 48, 0.65) 0%, rgba(5, 78, 48, 0.2) 45%, transparent 75%);
+  background-color: #05140e;
+  animation: nebulaDrift 18s ease-in-out infinite alternate;
+}
+
+/* Subtle grain overlay for crisp texture — removes the "soft/blurry" feel */
+.bg-nebula::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.035'/%3E%3C/svg%3E");
+  background-repeat: repeat;
+  mix-blend-mode: overlay;
+  pointer-events: none;
+  opacity: 0.7;
 }
 
 @keyframes nebulaDrift {
-  0% { transform: scale(1.0) translate3d(0, 0, 0); opacity: 0.92; }
-  50% { transform: scale(1.08) translate3d(1.4%, -1.6%, 0); opacity: 1; }
-  100% { transform: scale(1.0) translate3d(0, 0, 0); opacity: 0.92; }
+  0%   { transform: translate3d(0, 0, 0); opacity: 0.94; }
+  50%  { transform: translate3d(1.2%, -1%, 0); opacity: 1; }
+  100% { transform: translate3d(0, 0, 0); opacity: 0.94; }
 }
 
 .bg-vignette {
-  inset: -8%;
-  background: radial-gradient(circle at 50% 42%, rgba(0, 0, 0, 0) 42%, rgba(0, 0, 0, 0.28) 72%, rgba(0, 0, 0, 0.54) 96%);
+  inset: -4%;
+  background: radial-gradient(ellipse 110% 100% at 50% 42%, rgba(0, 0, 0, 0) 38%, rgba(0, 15, 10, 0.4) 68%, rgba(2, 10, 7, 0.78) 100%);
   background-color: transparent;
   animation: fogDrift 16s ease-in-out infinite alternate;
-  transform-origin: center;
-  will-change: transform, opacity;
 }
 
 .bg-vignette::after {
@@ -93,9 +102,9 @@ body {
 }
 
 @keyframes fogDrift {
-  0% { transform: translate3d(0, 0, 0); opacity: 0.58; }
-  50% { transform: translate3d(1.2%, -0.8%, 0); opacity: 0.82; }
-  100% { transform: translate3d(0, 0, 0); opacity: 0.58; }
+  0%   { transform: translate3d(0, 0, 0); opacity: 0.6; }
+  50%  { transform: translate3d(0.8%, -0.5%, 0); opacity: 0.85; }
+  100% { transform: translate3d(0, 0, 0); opacity: 0.6; }
 }
 
 .bg-sigil-wrap {
@@ -103,7 +112,7 @@ body {
   align-items: center;
   justify-content: center;
   animation: centerFloat 10s ease-in-out infinite;
-  opacity: 0.4;
+  opacity: 0.42;
 }
 
 .bg-sigil {
@@ -113,7 +122,7 @@ body {
   opacity: 0.9;
   animation: bgSigilSpin 80s linear infinite, bgSigilBreath 8s ease-in-out infinite;
   transform-origin: center;
-  filter: saturate(0.88) brightness(0.92);
+  filter: saturate(1.1) brightness(0.95) drop-shadow(0 0 35px rgba(0, 230, 150, 0.2));
 }
 
 @keyframes bgSigilSpin {
@@ -131,17 +140,17 @@ body {
   50% { transform: translateY(-14px); }
 }
 
-/* Floating tarot cards */
+/* Floating football tarot cards */
 .bg-card {
   width: 108px;
   height: 152px;
   border-radius: 14px;
   overflow: hidden;
-  background-color: #120a22;
+  background-color: #081d14;
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
-  box-shadow: 0 18px 34px -18px rgba(21, 9, 32, 0.72), 0 0 22px rgba(155, 127, 212, 0.12), var(--edge-gold);
+  box-shadow: 0 18px 34px -18px rgba(0, 20, 12, 0.82), 0 0 24px rgba(0, 230, 150, 0.16), var(--edge-gold);
   will-change: transform;
   animation: cardDrift calc(var(--dur, 22s) * 0.4) ease-in-out infinite;
   animation-delay: calc(var(--delay, 0s) * 0.4);
