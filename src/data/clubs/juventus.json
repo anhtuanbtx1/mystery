@@ -1,7 +1,27 @@
 [
   {
+    "name": "Buffon",
+    "image": "/assets/buffon_juv_1.webp"
+  },
+  {
+    "name": "Del Piero",
+    "image": "/assets/piero.webp"
+  },
+  {
+    "name": "Pirlo",
+    "image": "/assets/pirlo.webp"
+  },
+  {
+    "name": "Pirlo (Retro)",
+    "image": "/assets/pirlo_juventus.webp"
+  },
+  {
     "name": "Chiellini",
     "image": "/assets/chiellini.webp"
+  },
+  {
+    "name": "Bonucci",
+    "image": "/assets/bonucci.webp"
   },
   {
     "name": "Pogba",
@@ -12,40 +32,28 @@
     "image": "/assets/dybala.webp"
   },
   {
-    "name": "Ronaldo (Juve)",
+    "name": "Dybala (Prime)",
+    "image": "/assets/dybala_juv_1.webp"
+  },
+  {
+    "name": "Ronaldo",
     "image": "/assets/ronaldo_juv.webp"
   },
   {
-    "name": "Ronaldo (Juve 2)",
+    "name": "Ronaldo (Alt)",
     "image": "/assets/ronaldo_juv_1.webp"
   },
   {
-    "name": "Buffon",
-    "image": "/assets/buffon_juv_1.webp"
-  },
-  {
-    "name": "Ligt",
+    "name": "De Ligt",
     "image": "/assets/ligt_juv.webp"
-  },
-  {
-    "name": "Bonucci",
-    "image": "/assets/bonucci.webp"
   },
   {
     "name": "Chiesa",
     "image": "/assets/chiesa.webp"
   },
   {
-    "name": "Dybala",
-    "image": "/assets/dybala_juv_1.webp"
-  },
-  {
     "name": "Di Maria",
     "image": "/assets/maria_juv.webp"
-  },
-  {
-    "name": "Del Piero",
-    "image": "/assets/piero.webp"
   },
   {
     "name": "Morata",

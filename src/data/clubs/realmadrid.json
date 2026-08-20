@@ -1,72 +1,39 @@
 [
   {
-    "id": "1",
     "name": "Bale",
-    "numeral": "",
-    "image": "/assets/bale_real.webp",
-    "meaning": "Kỹ năng, sự tự tin, hành động có mục đích."
+    "image": "/assets/bale_real.webp"
   },
   {
-    "id": "1",
     "name": "Ramos",
-    "numeral": "",
-    "image": "/assets/ramos.webp",
-    "meaning": "Kỹ năng, sự tự tin, hành động có mục đích."
+    "image": "/assets/ramos.webp"
   },
   {
-    "id": "1",
+    "name": "Casillas",
+    "image": "/assets/casillas_real.webp"
+  },
+  {
     "name": "Courtois",
-    "numeral": "",
-    "image": "/assets/courtois.webp",
-    "meaning": "Kỹ năng, sự tự tin, hành động có mục đích."
+    "image": "/assets/courtois.webp"
   },
   {
     "name": "Benzema",
     "image": "/assets/benzema.webp"
   },
   {
-    "name": "Varane",
-    "image": "/assets/varane_real.webp"
-  },
-  {
-    "name": "Roberto Carlos",
-    "image": "/assets/carlos.webp"
-  },
-  {
-    "name": "Marcelo",
-    "image": "/assets/marcelo.webp"
-  },
-  {
     "name": "Mbappe",
     "image": "/assets/mbappe_real.webp"
   },
   {
-    "name": "Fede Valverde",
-    "image": "/assets/valverde.webp"
+    "name": "Mbappe (Alt)",
+    "image": "/assets/mbappe_real_1.webp"
+  },
+  {
+    "name": "Vinicius Jr",
+    "image": "/assets/vini.webp"
   },
   {
     "name": "Bellingham",
     "image": "/assets/bellingham.webp"
-  },
-  {
-    "name": "Roberto Carlos",
-    "image": "/assets/carlos_real_1.webp"
-  },
-  {
-    "name": "Casemiro",
-    "image": "/assets/casemiro_real.webp"
-  },
-  {
-    "name": "Hazard",
-    "image": "/assets/hazard_real.webp"
-  },
-  {
-    "name": "Kroos",
-    "image": "/assets/kroos.webp"
-  },
-  {
-    "name": "Rudiger",
-    "image": "/assets/rudiger_real.webp"
   },
   {
     "name": "Modric",
@@ -74,10 +41,42 @@
   },
   {
     "name": "Kroos",
+    "image": "/assets/kroos.webp"
+  },
+  {
+    "name": "Kroos (Retro)",
     "image": "/assets/kroos_real_1.webp"
   },
   {
-    "name": "Vinicius Jr",
-    "image": "/assets/vini.webp"
+    "name": "Casemiro",
+    "image": "/assets/casemiro_real.webp"
+  },
+  {
+    "name": "Fede Valverde",
+    "image": "/assets/valverde.webp"
+  },
+  {
+    "name": "Roberto Carlos",
+    "image": "/assets/carlos.webp"
+  },
+  {
+    "name": "Roberto Carlos (Prime)",
+    "image": "/assets/carlos_real_1.webp"
+  },
+  {
+    "name": "Marcelo",
+    "image": "/assets/marcelo.webp"
+  },
+  {
+    "name": "Varane",
+    "image": "/assets/varane_real.webp"
+  },
+  {
+    "name": "Rudiger",
+    "image": "/assets/rudiger_real.webp"
+  },
+  {
+    "name": "Hazard",
+    "image": "/assets/hazard_real.webp"
   }
 ]

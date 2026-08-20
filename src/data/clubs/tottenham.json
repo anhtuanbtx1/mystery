@@ -1,59 +1,75 @@
 [
   {
-    "name": "Son Heung-Min",
-    "image": "/assets/son.webp"
-  },
-  {
-    "name": "Vertonghen",
-    "image": "/assets/vertonghen.webp"
-  },
-  {
-    "name": "Lennon",
-    "image": "/assets/lennon.webp"
-  },
-  {
     "name": "Bale",
     "image": "/assets/bale_tot.webp"
   },
   {
-    "name": "Bale",
+    "name": "Bale (Home)",
     "image": "/assets/bale_tot_1.webp"
   },
   {
-    "name": "Adebayor",
-    "image": "/assets/adebayor_tot.webp"
-  },
-  {
-    "name": "Bale",
+    "name": "Bale (Away)",
     "image": "/assets/bale_tot_2.webp"
   },
   {
-    "name": "Mousa Dembele",
-    "image": "/assets/dembele.webp"
+    "name": "Bale (Retro)",
+    "image": "/assets/bale_tot_3.webp"
   },
   {
     "name": "Kane",
     "image": "/assets/kane_tot_1.webp"
   },
   {
+    "name": "Kane (Retro)",
+    "image": "/assets/kane_tot_2.webp"
+  },
+  {
+    "name": "Son Heung-Min",
+    "image": "/assets/son.webp"
+  },
+  {
+    "name": "Son Heung-Min (Home)",
+    "image": "/assets/son_tot_1.webp"
+  },
+  {
+    "name": "Son Heung-Min (Away)",
+    "image": "/assets/son_tot_2.webp"
+  },
+  {
     "name": "Modric",
     "image": "/assets/modric_tot.webp"
   },
   {
-    "name": "Son Heung-Min",
-    "image": "/assets/son_tot_1.webp"
+    "name": "Robbie Keane",
+    "image": "/assets/keane_tot.webp"
+  },
+  {
+    "name": "Adebayor",
+    "image": "/assets/adebayor_tot.webp"
+  },
+  {
+    "name": "Vertonghen",
+    "image": "/assets/vertonghen.webp"
+  },
+  {
+    "name": "Vertonghen (Retro)",
+    "image": "/assets/vertonghen_tot_1.webp"
   },
   {
     "name": "Walker",
     "image": "/assets/walker_tot_1.webp"
   },
   {
-    "name": "Son Heung-Min",
-    "image": "/assets/son_tot_2.webp"
+    "name": "Mousa Dembele",
+    "image": "/assets/dembele.webp"
   },
   {
-    "name": "Vertonghen",
-    "image": "/assets/vertonghen_tot_1.webp"
+    "name": "Lennon",
+    "image": "/assets/lennon.webp"
+  },
+  {
+    "name": "Palhinha",
+    "image": "/assets/palhinha_tot.webp"
   },
   {
     "name": "Richarlison",

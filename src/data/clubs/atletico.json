@@ -26,5 +26,13 @@
   {
     "name": "Oblak",
     "image": "/assets/oblak.webp"
+  },
+  {
+    "name": "Savic",
+    "image": "/assets/savic.webp"
+  },
+  {
+    "name": "Llorente",
+    "image": "/assets/llorente_alt.webp"
   }
 ]

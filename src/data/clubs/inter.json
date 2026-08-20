@@ -4,20 +4,32 @@
     "image": "/assets/zanetti.webp"
   },
   {
-    "name": "Lautaro",
-    "image": "/assets/lautaro.webp"
-  },
-  {
     "name": "Ronaldo",
     "image": "/assets/ronaldo_inter.webp"
   },
   {
     "name": "Lautaro",
+    "image": "/assets/lautaro.webp"
+  },
+  {
+    "name": "Lautaro (Retro)",
     "image": "/assets/lautaro_inter_1.webp"
   },
   {
     "name": "Lukaku",
     "image": "/assets/lukaku_inter.webp"
+  },
+  {
+    "name": "Lukaku (Prime)",
+    "image": "/assets/lukaku_inter_1.webp"
+  },
+  {
+    "name": "Calhanoglu",
+    "image": "/assets/calhanoglu_inter.webp"
+  },
+  {
+    "name": "Dzeko",
+    "image": "/assets/dzeko_inter.webp"
   },
   {
     "name": "Perisic",
@@ -38,5 +50,9 @@
   {
     "name": "Thuram",
     "image": "/assets/thuram.webp"
+  },
+  {
+    "name": "Mkhitaryan",
+    "image": "/assets/mkkhitaryan.webp"
   }
 ]

@@ -1,7 +1,35 @@
 [
   {
-    "name": "Cabaye",
+    "name": "Alan Shearer",
+    "image": "/assets/shearer.webp"
+  },
+  {
+    "name": "Alan Shearer (Black)",
+    "image": "/assets/shearer_black.webp"
+  },
+  {
+    "name": "Alan Shearer (Retro)",
+    "image": "/assets/shearer_new_1.webp"
+  },
+  {
+    "name": "Yohan Cabaye",
     "image": "/assets/cabaye.webp"
+  },
+  {
+    "name": "Yohan Cabaye (Retro)",
+    "image": "/assets/cabaye_new.webp"
+  },
+  {
+    "name": "Demba Ba",
+    "image": "/assets/ba_new.webp"
+  },
+  {
+    "name": "Papiss Cisse",
+    "image": "/assets/cisse_new.webp"
+  },
+  {
+    "name": "Patrick Kluivert",
+    "image": "/assets/kluivert_new.webp"
   },
   {
     "name": "Tiote",
@@ -12,19 +40,11 @@
     "image": "/assets/krul.webp"
   },
   {
-    "name": "Shearer",
-    "image": "/assets/shearer.webp"
-  },
-  {
-    "name": "Shearer",
-    "image": "/assets/shearer_black.webp"
-  },
-  {
     "name": "Guimaraes",
     "image": "/assets/guimaraes.webp"
   },
   {
-    "name": "Sissoko",
+    "name": "Moussa Sissoko",
     "image": "/assets/sissoko_new.webp"
   }
 ]

@@ -1,42 +1,78 @@
 [
   {
-    "name": "Balotelli",
-    "image": "/assets/balotelli.webp"
+    "name": "Aguero",
+    "image": "/assets/aguero_mc.webp"
   },
   {
-    "name": "Silva",
-    "image": "/assets/silva.webp"
+    "name": "Aguero (Prime)",
+    "image": "/assets/aguero_mc_1.webp"
   },
   {
-    "name": "Toure",
+    "name": "Aguero (Goal)",
+    "image": "/assets/aguero_mc_2.webp"
+  },
+  {
+    "name": "Aguero (93:20)",
+    "image": "/assets/aguero_mc_3.webp"
+  },
+  {
+    "name": "David Silva",
+    "image": "/assets/silva_mc.webp"
+  },
+  {
+    "name": "David Silva (Retro)",
+    "image": "/assets/silva_mc_1.webp"
+  },
+  {
+    "name": "Yaya Toure",
     "image": "/assets/toure.webp"
   },
   {
-    "name": "Aguero",
-    "image": "/assets/aguero.webp"
+    "name": "Yaya Toure (Prime)",
+    "image": "/assets/toure_mc_1.webp"
   },
   {
-    "name": "Tevez",
-    "image": "/assets/tevez.webp"
+    "name": "Yaya Toure (Retro)",
+    "image": "/assets/toure_mc_2.webp"
   },
   {
-    "name": "Cancelo",
-    "image": "/assets/cancelo.webp"
-  },
-  {
-    "name": "Hart",
-    "image": "/assets/hart.webp"
+    "name": "Kompany",
+    "image": "/assets/komany_mc.webp"
   },
   {
     "name": "De Bruyne",
     "image": "/assets/bruyne.webp"
   },
   {
-    "name": "Semenyo",
-    "image": "/assets/semenyo.webp"
+    "name": "Haaland",
+    "image": "/assets/haaland_mc.webp"
+  },
+  {
+    "name": "Tevez",
+    "image": "/assets/tevez.webp"
+  },
+  {
+    "name": "Balotelli",
+    "image": "/assets/balotelli.webp"
+  },
+  {
+    "name": "Sterling",
+    "image": "/assets/sterlig_mc.webp"
+  },
+  {
+    "name": "Cancelo",
+    "image": "/assets/cancelo.webp"
+  },
+  {
+    "name": "Cancelo (City)",
+    "image": "/assets/cancelo_mc.webp"
   },
   {
     "name": "Hart",
+    "image": "/assets/hart.webp"
+  },
+  {
+    "name": "Hart (Classic)",
     "image": "/assets/hart_mc_1.webp"
   },
   {
@@ -56,15 +92,27 @@
     "image": "/assets/gvardiol.webp"
   },
   {
-    "name": "Toure",
-    "image": "/assets/toure_mc_1.webp"
-  },
-  {
     "name": "Otamendi",
     "image": "/assets/otamendi.webp"
   },
   {
-    "name": "Phillips",
+    "name": "Kalvin Phillips",
     "image": "/assets/phillips.webp"
+  },
+  {
+    "name": "Cherki",
+    "image": "/assets/cherki_mc.webp"
+  },
+  {
+    "name": "Cherki (Alt)",
+    "image": "/assets/cherki_mc_1.webp"
+  },
+  {
+    "name": "Reijnders",
+    "image": "/assets/reijnders_mc.webp"
+  },
+  {
+    "name": "Semenyo",
+    "image": "/assets/semenyo.webp"
   }
 ]

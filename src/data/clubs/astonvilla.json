@@ -1,30 +1,26 @@
 [
   {
-    "name": "Given",
-    "image": "/assets/given.webp"
-  },
-  {
-    "name": "E. Martinez",
-    "image": "/assets/martinez.webp"
-  },
-  {
-    "name": "O. Watkins",
-    "image": "/assets/watkins.webp"
-  },
-  {
-    "name": "J. Grealish",
-    "image": "/assets/grealish_av.webp"
-  },
-  {
-    "name": "G. Agbonlahor",
+    "name": "Agbonlahor",
     "image": "/assets/agbonlahor.webp"
-  },
-  {
-    "name": "Ashley Young",
-    "image": "/assets/young_aston.webp"
   },
   {
     "name": "Bent",
     "image": "/assets/bent.webp"
+  },
+  {
+    "name": "Given",
+    "image": "/assets/given.webp"
+  },
+  {
+    "name": "Young",
+    "image": "/assets/young_aston.webp"
+  },
+  {
+    "name": "Watkins",
+    "image": "/assets/watkins.webp"
+  },
+  {
+    "name": "E. Martinez",
+    "image": "/assets/martinez.webp"
   }
 ]

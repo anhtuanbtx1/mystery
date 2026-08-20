@@ -1,142 +1,166 @@
 [
   {
-    "id": "0",
-    "name": "Lampard",
-    "numeral": "",
-    "image": "/assets/lampard.webp",
-    "meaning": "Sự khởi đầu mới, ngây thơ, mạo hiểm."
-  },
-  {
-    "id": "2",
-    "name": "Hazard",
-    "numeral": "",
-    "image": "/assets/hazard.webp",
-    "meaning": "Trực giác, bí mật, sự im lặng thần thánh."
-  },
-  {
-    "id": "2",
     "name": "Terry",
-    "numeral": "",
-    "image": "/assets/terry.webp",
-    "meaning": "Trực giác, bí mật, sự im lặng thần thánh."
+    "image": "/assets/terry.webp"
   },
   {
-    "name": "Anelka",
-    "image": "/assets/anelka.webp"
+    "name": "Terry (Captain)",
+    "image": "/assets/terry_chel_1.webp"
   },
   {
-    "id": "2",
-    "name": "Oscar",
-    "numeral": "",
-    "image": "/assets/oscar.webp",
-    "meaning": "Trực giác, bí mật, sự im lặng thần thánh."
+    "name": "Terry (Retro)",
+    "image": "/assets/terry_chel_2.webp"
   },
   {
-    "name": "Luiz",
-    "image": "/assets/luiz.webp"
+    "name": "Lampard",
+    "image": "/assets/lampard.webp"
   },
   {
-    "name": "Cech (Chelsea)",
-    "image": "/assets/cech_chelsea.webp"
+    "name": "Lampard (Prime)",
+    "image": "/assets/lampard_chel_1.webp"
   },
   {
-    "name": "Cole",
-    "image": "/assets/cole.webp"
+    "name": "Lampard (Retro)",
+    "image": "/assets/lampard_chel_2.webp"
   },
   {
     "name": "Drogba",
     "image": "/assets/drogba.webp"
   },
   {
-    "name": "Koulibaly",
-    "image": "/assets/koulibaly.webp"
+    "name": "Drogba (Legend)",
+    "image": "/assets/drogba_chel_1.webp"
   },
   {
-    "name": "Makelele",
-    "image": "/assets/makelele.webp"
+    "name": "Hazard",
+    "image": "/assets/hazard.webp"
+  },
+  {
+    "name": "Hazard (Home)",
+    "image": "/assets/hazard_chel_1.webp"
+  },
+  {
+    "name": "Hazard (Away)",
+    "image": "/assets/hazard_chel_2.webp"
+  },
+  {
+    "name": "Cech",
+    "image": "/assets/cech_chelsea.webp"
+  },
+  {
+    "name": "Cech (Classic)",
+    "image": "/assets/cech_chel_1.webp"
+  },
+  {
+    "name": "Cech (Helmet)",
+    "image": "/assets/cech_chel_2.webp"
+  },
+  {
+    "name": "Cech (Retro)",
+    "image": "/assets/cech_chel_3.webp"
+  },
+  {
+    "name": "Courtois",
+    "image": "/assets/courtois_chel.webp"
+  },
+  {
+    "name": "Kepa",
+    "image": "/assets/arrizabalaga_chel.webp"
   },
   {
     "name": "Cahill",
     "image": "/assets/cahill.webp"
   },
   {
-    "name": "Lampard",
-    "image": "/assets/lampard_chel_1.webp"
+    "name": "Cahill (Captain)",
+    "image": "/assets/cahill_chel.webp"
   },
   {
-    "name": "Palmer",
-    "image": "/assets/palmer.webp"
+    "name": "David Luiz",
+    "image": "/assets/luiz.webp"
   },
   {
-    "name": "Terry",
-    "image": "/assets/terry_chel_1.webp"
+    "name": "David Luiz (Retro)",
+    "image": "/assets/luiz_chel_1.webp"
   },
   {
-    "name": "Azpilicueta",
-    "image": "/assets/azpilicueta.webp"
+    "name": "Rudiger",
+    "image": "/assets/rudiger_chel.webp"
   },
   {
-    "name": "Eto'o",
-    "image": "/assets/eto_chel.webp"
+    "name": "Havertz",
+    "image": "/assets/havertz_chel.webp"
+  },
+  {
+    "name": "Schurrle",
+    "image": "/assets/schurrle_chel.webp"
+  },
+  {
+    "name": "Joe Cole",
+    "image": "/assets/joe_cole.webp"
+  },
+  {
+    "name": "Cole",
+    "image": "/assets/cole.webp"
   },
   {
     "name": "Kante",
     "image": "/assets/kante.webp"
   },
   {
-    "name": "Mason Mount",
-    "image": "/assets/mount_chel.webp"
-  },
-  {
-    "name": "Ziyech",
-    "image": "/assets/ziyech_chel.webp"
-  },
-  {
-    "name": "Azpilicueta",
-    "image": "/assets/azpilicueta_chel_1.webp"
-  },
-  {
-    "name": "Cech",
-    "image": "/assets/cech_chel_1.webp"
-  },
-  {
-    "name": "Diego Costa",
-    "image": "/assets/costa_chel.webp"
-  },
-  {
-    "name": "Drogba",
-    "image": "/assets/drogba_chel_1.webp"
-  },
-  {
     "name": "Fabregas",
     "image": "/assets/fabregas_chel.webp"
-  },
-  {
-    "name": "Jorginho",
-    "image": "/assets/jorginho.webp"
-  },
-  {
-    "name": "Kalou",
-    "image": "/assets/kalou.webp"
-  },
-  {
-    "name": "Lampard",
-    "image": "/assets/lampard_chel_2.webp"
   },
   {
     "name": "Mata",
     "image": "/assets/mata_chel.webp"
   },
   {
-    "name": "Terry",
-    "image": "/assets/terry_chel_2.webp"
+    "name": "Diego Costa",
+    "image": "/assets/costa_chel.webp"
   },
   {
     "name": "Torres",
     "image": "/assets/torres_chel.webp"
   },
   {
+    "name": "Eto'o",
+    "image": "/assets/eto_chel.webp"
+  },
+  {
+    "name": "Azpilicueta",
+    "image": "/assets/azpilicueta.webp"
+  },
+  {
+    "name": "Azpilicueta (Captain)",
+    "image": "/assets/azpilicueta_chel_1.webp"
+  },
+  {
+    "name": "Makelele",
+    "image": "/assets/makelele.webp"
+  },
+  {
     "name": "Willian",
     "image": "/assets/willian_chel.webp"
+  },
+  {
+    "name": "Cole Palmer",
+    "image": "/assets/palmer.webp"
+  },
+  {
+    "name": "Mount",
+    "image": "/assets/mount_chel.webp"
+  },
+  {
+    "name": "Oscar",
+    "image": "/assets/oscar.webp"
+  },
+  {
+    "name": "Ziyech",
+    "image": "/assets/ziyech_chel.webp"
+  },
+  {
+    "name": "Kalou",
+    "image": "/assets/kalou.webp"
   }
 ]

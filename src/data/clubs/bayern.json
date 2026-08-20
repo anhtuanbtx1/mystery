@@ -8,10 +8,6 @@
     "image": "/assets/robben.webp"
   },
   {
-    "name": "Kimmich",
-    "image": "/assets/kimmich.webp"
-  },
-  {
     "name": "Matthaus",
     "image": "/assets/matthaus.webp"
   },
@@ -20,43 +16,55 @@
     "image": "/assets/alonso_bayern.webp"
   },
   {
-    "name": "Musiala",
-    "image": "/assets/musiala.webp"
+    "name": "Kimmich",
+    "image": "/assets/kimmich.webp"
   },
   {
-    "name": "Kane",
+    "name": "Kimmich (Retro)",
+    "image": "/assets/kimmich_bayern_1.webp"
+  },
+  {
+    "name": "Harry Kane",
     "image": "/assets/kane.webp"
   },
   {
-    "name": "Ligt",
-    "image": "/assets/ligt.webp"
-  },
-  {
-    "name": "Ligt",
-    "image": "/assets/ligt_juv.webp"
+    "name": "Musiala",
+    "image": "/assets/musiala.webp"
   },
   {
     "name": "Upamecano",
     "image": "/assets/upamecano.webp"
   },
   {
+    "name": "Upamecano (Alt)",
+    "image": "/assets/upamecano_bayern_1.webp"
+  },
+  {
+    "name": "De Ligt",
+    "image": "/assets/ligt.webp"
+  },
+  {
+    "name": "De Ligt (Bayern)",
+    "image": "/assets/ligt_bayern.webp"
+  },
+  {
     "name": "Thiago Alcantara",
     "image": "/assets/alcantara.webp"
   },
   {
-    "name": "Davies",
+    "name": "Alphonso Davies",
     "image": "/assets/davis.webp"
-  },
-  {
-    "name": "Ligt",
-    "image": "/assets/ligt_bayern.webp"
   },
   {
     "name": "Olise",
     "image": "/assets/olise.webp"
   },
   {
-    "name": "Olise",
+    "name": "Olise (Home)",
     "image": "/assets/olise_bay.webp"
+  },
+  {
+    "name": "Luis Diaz",
+    "image": "/assets/diaz_bayern.webp"
   }
 ]

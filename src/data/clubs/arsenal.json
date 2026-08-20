@@ -1,137 +1,150 @@
 [
   {
-    "id": "8",
-    "name": "Persie",
-    "numeral": "",
-    "image": "/assets/persie_ars.webp",
-    "meaning": "Lòng can đảm, sự kiên nhẫn, sức mạnh nội tâm."
-  },
-  {
-    "id": "5",
-    "name": "Vermaelen",
-    "numeral": "",
-    "image": "/assets/vermaelen.webp",
-    "meaning": "Truyền thống, niềm tin, sự hướng dẫn."
-  },
-  {
-    "name": "Eze",
-    "image": "/assets/eze.webp"
-  },
-  {
-    "id": "5",
-    "name": "Sanchez",
-    "numeral": "",
-    "image": "/assets/sanchez.webp",
-    "meaning": "Truyền thống, niềm tin, sự hướng dẫn."
-  },
-  {
-    "id": "7",
-    "name": "Ozil",
-    "numeral": "",
-    "image": "/assets/ozil.webp",
-    "meaning": "Chiến thắng, ý chí, sự kiểm soát."
-  },
-  {
-    "id": "8",
-    "name": "Fabregas",
-    "numeral": "",
-    "image": "/assets/fabregas.webp",
-    "meaning": "Lòng can đảm, sự kiên nhẫn, sức mạnh nội tâm."
-  },
-  {
-    "name": "Arshavin",
-    "image": "/assets/arshavin.webp"
-  },
-  {
-    "name": "Giroud",
-    "image": "/assets/giroud.webp"
-  },
-  {
-    "name": "Cazorla",
-    "image": "/assets/cazorla.webp"
-  },
-  {
-    "name": "Cech (Arsenal)",
-    "image": "/assets/cech_ars.webp"
-  },
-  {
-    "name": "Mertesacker",
-    "image": "/assets/mertesacker.webp"
-  },
-  {
-    "name": "Walcott",
-    "image": "/assets/walcott.webp"
-  },
-  {
     "name": "Henry",
     "image": "/assets/henry_ars.webp"
   },
   {
     "name": "Henry (Retro)",
-    "image": "/assets/henry_ars1.webp"
+    "image": "/assets/henry_ars_1.webp"
   },
   {
-    "name": "Arteta",
-    "image": "/assets/arteta.webp"
+    "name": "Henry (Vintage)",
+    "image": "/assets/henry_ars_2.webp"
   },
   {
-    "name": "Persie",
-    "image": "/assets/persie_ars_1.webp"
+    "name": "Henry (Legend)",
+    "image": "/assets/henry_ars_3.webp"
   },
   {
-    "name": "Rice",
-    "image": "/assets/rice.webp"
+    "name": "Bergkamp",
+    "image": "/assets/bergkamp_ars.webp"
   },
   {
-    "name": "Song",
-    "image": "/assets/song.webp"
+    "name": "Pires",
+    "image": "/assets/pires_ars.webp"
   },
   {
     "name": "Vieira",
     "image": "/assets/vieira.webp"
   },
   {
-    "name": "Calafiori",
-    "image": "/assets/calafiori.webp"
+    "name": "Vieira (Retro)",
+    "image": "/assets/vieira_ars_1.webp"
   },
   {
-    "name": "Lacazette",
-    "image": "/assets/lacazette.webp"
+    "name": "Arteta",
+    "image": "/assets/arteta.webp"
   },
   {
-    "name": "Merino",
-    "image": "/assets/merino.webp"
+    "name": "Cazorla",
+    "image": "/assets/cazorla.webp"
+  },
+  {
+    "name": "Cech",
+    "image": "/assets/cech_ars.webp"
+  },
+  {
+    "name": "Cech (Alt)",
+    "image": "/assets/cech_ars_1.webp"
+  },
+  {
+    "name": "Raya",
+    "image": "/assets/raya_ars.webp"
+  },
+  {
+    "name": "Van Persie",
+    "image": "/assets/persie_ars.webp"
+  },
+  {
+    "name": "Van Persie (Retro)",
+    "image": "/assets/persie_ars_1.webp"
+  },
+  {
+    "name": "Fabregas",
+    "image": "/assets/fabregas.webp"
+  },
+  {
+    "name": "Sanchez",
+    "image": "/assets/sanchez.webp"
   },
   {
     "name": "Ozil",
+    "image": "/assets/ozil.webp"
+  },
+  {
+    "name": "Ozil (Home)",
     "image": "/assets/ozil_ars_1.webp"
   },
   {
-    "name": "Partey",
-    "image": "/assets/partey.webp"
+    "name": "Ozil (Away)",
+    "image": "/assets/ozil_ars_2.webp"
   },
   {
-    "name": "Vieira",
-    "image": "/assets/vieira_ars_1.webp"
+    "name": "Walcott",
+    "image": "/assets/walcott.webp"
   },
   {
     "name": "Wilshere",
     "image": "/assets/wilshere.webp"
   },
   {
+    "name": "Arshavin",
+    "image": "/assets/arshavin.webp"
+  },
+  {
     "name": "Koscielny",
     "image": "/assets/koscielny.webp"
   },
   {
-    "name": "Vieira",
-    "image": "/assets/viera_ars_1.webp"
+    "name": "Mertesacker",
+    "image": "/assets/mertesacker.webp"
+  },
+  {
+    "name": "Vermaelen",
+    "image": "/assets/vermaelen.webp"
+  },
+  {
+    "name": "Giroud",
+    "image": "/assets/giroud.webp"
+  },
+  {
+    "name": "Giroud (Alt)",
+    "image": "/assets/giround.webp"
+  },
+  {
+    "name": "Lacazette",
+    "image": "/assets/lacazette.webp"
+  },
+  {
+    "name": "Rice",
+    "image": "/assets/rice.webp"
+  },
+  {
+    "name": "Partey",
+    "image": "/assets/partey.webp"
   },
   {
     "name": "Xhaka",
     "image": "/assets/xhaka.webp"
   },
   {
-    "name": "Mkhitaryan",
-    "image": "/assets/mkkhitaryan.webp"
+    "name": "Calafiori",
+    "image": "/assets/calafiori.webp"
+  },
+  {
+    "name": "Merino",
+    "image": "/assets/merino.webp"
+  },
+  {
+    "name": "Song",
+    "image": "/assets/song.webp"
+  },
+  {
+    "name": "Anelka",
+    "image": "/assets/anelka.webp"
+  },
+  {
+    "name": "Jorginho",
+    "image": "/assets/jorginho.webp"
   }
 ]

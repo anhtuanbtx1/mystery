@@ -1,7 +1,23 @@
 [
   {
+    "name": "Pickford",
+    "image": "/assets/pickford.webp"
+  },
+  {
+    "name": "Lukaku",
+    "image": "/assets/lukaku_everton.webp"
+  },
+  {
     "name": "Barkley",
     "image": "/assets/barkley.webp"
+  },
+  {
+    "name": "Barkley (Retro)",
+    "image": "/assets/barkley_everton.webp"
+  },
+  {
+    "name": "Stones",
+    "image": "/assets/stones_everton.webp"
   },
   {
     "name": "Barry",
@@ -12,15 +28,7 @@
     "image": "/assets/bolasie_everton.webp"
   },
   {
-    "name": "Lukaku",
-    "image": "/assets/lukaku_everton.webp"
-  },
-  {
-    "name": "Pickford",
-    "image": "/assets/pickford.webp"
-  },
-  {
-    "name": "Stones",
-    "image": "/assets/stones_everton.webp"
+    "name": "Pienaar",
+    "image": "/assets/pienaar_everton.webp"
   }
 ]

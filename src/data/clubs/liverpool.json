@@ -1,105 +1,126 @@
 [
   {
-    "id": "8",
-    "name": "Suarez",
-    "numeral": "",
-    "image": "/assets/suarez.webp",
-    "meaning": "Lòng can đảm, sự kiên nhẫn, sức mạnh nội tâm."
+    "name": "Gerrard",
+    "image": "/assets/gerrard.webp"
+  },
+  {
+    "name": "Gerrard (Retro)",
+    "image": "/assets/gerrard_liv_1.webp"
   },
   {
     "name": "Torres",
     "image": "/assets/torres_liv.webp"
   },
   {
-    "name": "Gerrard",
-    "image": "/assets/gerrard.webp"
-  },
-  {
-    "name": "Isak",
-    "image": "/assets/isak.webp"
-  },
-  {
-    "name": "Reina",
-    "image": "/assets/reina.webp"
-  },
-  {
-    "name": "Skrtel",
-    "image": "/assets/skrtel.webp"
-  },
-  {
-    "name": "Johnson",
-    "image": "/assets/johnson.webp"
-  },
-  {
-    "name": "Sturridge",
-    "image": "/assets/sturridge.webp"
-  },
-  {
-    "name": "Firmino",
-    "image": "/assets/firmino.webp"
-  },
-  {
-    "name": "Coutinho",
-    "image": "/assets/coutinho.webp"
-  },
-  {
-    "name": "Becker",
-    "image": "/assets/becker.webp"
-  },
-  {
-    "name": "Gerrard",
-    "image": "/assets/gerrard_liv_1.webp"
-  },
-  {
-    "name": "Mane",
-    "image": "/assets/mane_liv.webp"
-  },
-  {
-    "name": "Szoboszlai",
-    "image": "/assets/szoboszlai.webp"
-  },
-  {
-    "name": "Gravenberch",
-    "image": "/assets/gravenberch.webp"
-  },
-  {
-    "name": "Robertson",
-    "image": "/assets/robertson.webp"
-  },
-  {
-    "name": "Torres",
+    "name": "Torres (Retro)",
     "image": "/assets/torres_liv_1.webp"
   },
   {
-    "name": "Alonso",
-    "image": "/assets/alonso_liv.webp"
+    "name": "Suarez",
+    "image": "/assets/suarez.webp"
   },
   {
-    "name": "Emre Can",
-    "image": "/assets/can_liv.webp"
-  },
-  {
-    "name": "Coutinho",
-    "image": "/assets/coutinho_liv_1.webp"
-  },
-  {
-    "name": "Konate",
-    "image": "/assets/konate.webp"
-  },
-  {
-    "name": "Milner",
-    "image": "/assets/milner_liv.webp"
+    "name": "Suarez (Alt)",
+    "image": "/assets/suarez_alt.webp"
   },
   {
     "name": "Salah",
     "image": "/assets/salah_liv_1.webp"
   },
   {
-    "name": "Suarez",
-    "image": "/assets/suarez_alt.webp"
+    "name": "Mane",
+    "image": "/assets/mane_liv.webp"
+  },
+  {
+    "name": "Firmino",
+    "image": "/assets/firmino.webp"
+  },
+  {
+    "name": "Firmino (Prime)",
+    "image": "/assets/firmino_liv_1.webp"
+  },
+  {
+    "name": "Coutinho",
+    "image": "/assets/coutinho.webp"
+  },
+  {
+    "name": "Coutinho (Retro)",
+    "image": "/assets/coutinho_liv_1.webp"
+  },
+  {
+    "name": "Alonso",
+    "image": "/assets/alonso_liv.webp"
+  },
+  {
+    "name": "Baros",
+    "image": "/assets/baros_liv.webp"
+  },
+  {
+    "name": "Downing",
+    "image": "/assets/downing_liv.webp"
+  },
+  {
+    "name": "Jota",
+    "image": "/assets/jota_liv.webp"
+  },
+  {
+    "name": "Wirtz",
+    "image": "/assets/wirtz_liv.webp"
   },
   {
     "name": "Szoboszlai",
+    "image": "/assets/szoboszlai.webp"
+  },
+  {
+    "name": "Szoboszlai (Home)",
     "image": "/assets/szoboszlai_liv_1.webp"
+  },
+  {
+    "name": "Szoboszlai (Away)",
+    "image": "/assets/szoboszlai_liv_2.webp"
+  },
+  {
+    "name": "Alisson Becker",
+    "image": "/assets/becker.webp"
+  },
+  {
+    "name": "Reina",
+    "image": "/assets/reina.webp"
+  },
+  {
+    "name": "Robertson",
+    "image": "/assets/robertson.webp"
+  },
+  {
+    "name": "Konate",
+    "image": "/assets/konate.webp"
+  },
+  {
+    "name": "Gravenberch",
+    "image": "/assets/gravenberch.webp"
+  },
+  {
+    "name": "Emre Can",
+    "image": "/assets/can_liv.webp"
+  },
+  {
+    "name": "Milner",
+    "image": "/assets/milner_liv.webp"
+  },
+  {
+    "name": "Sturridge",
+    "image": "/assets/sturridge.webp"
+  },
+  {
+    "name": "Skrtel",
+    "image": "/assets/skrtel.webp"
+  },
+  {
+    "name": "Glen Johnson",
+    "image": "/assets/johnson.webp"
+  },
+  {
+    "name": "Isak",
+    "image": "/assets/isak.webp"
   }
 ]

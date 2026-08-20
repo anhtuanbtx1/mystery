@@ -1,49 +1,5 @@
 [
   {
-    "name": "Buffon",
-    "image": "/assets/buffon.webp"
-  },
-  {
-    "name": "Thiago Silva",
-    "image": "/assets/silva_psg.webp"
-  },
-  {
-    "name": "Doue",
-    "image": "/assets/doue.webp"
-  },
-  {
-    "name": "Barcola",
-    "image": "/assets/barcola.webp"
-  },
-  {
-    "name": "Kimpembe",
-    "image": "/assets/kimpembe.webp"
-  },
-  {
-    "name": "Di Maria",
-    "image": "/assets/maria_psg.webp"
-  },
-  {
-    "name": "Kvaratskhelia",
-    "image": "/assets/kvaratskhelia.webp"
-  },
-  {
-    "name": "Hakimi",
-    "image": "/assets/hakimi.webp"
-  },
-  {
-    "name": "Muani",
-    "image": "/assets/muani.webp"
-  },
-  {
-    "name": "Navas",
-    "image": "/assets/navas.webp"
-  },
-  {
-    "name": "Icardi",
-    "image": "/assets/icardi.webp"
-  },
-  {
     "name": "Messi",
     "image": "/assets/messi_psg.webp"
   },
@@ -56,11 +12,63 @@
     "image": "/assets/ramos_psg.webp"
   },
   {
-    "name": "Verratti",
-    "image": "/assets/verratti.webp"
+    "name": "Thiago Silva",
+    "image": "/assets/silva_psg.webp"
+  },
+  {
+    "name": "Di Maria",
+    "image": "/assets/maria_psg.webp"
+  },
+  {
+    "name": "Hakimi",
+    "image": "/assets/hakimi.webp"
+  },
+  {
+    "name": "Hakimi (Home)",
+    "image": "/assets/hakimi_psg_1.webp"
+  },
+  {
+    "name": "Nuno Mendes",
+    "image": "/assets/mendes_psg.webp"
   },
   {
     "name": "Vitinha",
     "image": "/assets/vitinha.webp"
+  },
+  {
+    "name": "Verratti",
+    "image": "/assets/verratti.webp"
+  },
+  {
+    "name": "Buffon",
+    "image": "/assets/buffon.webp"
+  },
+  {
+    "name": "Navas",
+    "image": "/assets/navas.webp"
+  },
+  {
+    "name": "Icardi",
+    "image": "/assets/icardi.webp"
+  },
+  {
+    "name": "Kolo Muani",
+    "image": "/assets/muani.webp"
+  },
+  {
+    "name": "Kimpembe",
+    "image": "/assets/kimpembe.webp"
+  },
+  {
+    "name": "Barcola",
+    "image": "/assets/barcola.webp"
+  },
+  {
+    "name": "Doue",
+    "image": "/assets/doue.webp"
+  },
+  {
+    "name": "Kvaratskhelia",
+    "image": "/assets/kvaratskhelia.webp"
   }
 ]

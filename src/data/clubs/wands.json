@@ -1,32 +1,38 @@
 [
   {
-    "id": "8",
-    "name": "Michu",
-    "numeral": "",
-    "image": "/assets/michu.webp",
-    "meaning": "Lòng can đảm, sự kiên nhẫn, sức mạnh nội tâm."
+    "name": "Jamie Vardy",
+    "image": "/assets/vardy_lei.webp"
   },
   {
-    "id": "6",
-    "name": "Robinson",
-    "numeral": "",
-    "image": "/assets/robinson.webp",
-    "meaning": "Lựa chọn, tình yêu, sự hòa hợp."
-  },
-  "Tiểu Đồng Gậy",
-  "Kỵ Sĩ Gậy",
-  "Nữ Hoàng Gậy",
-  "Vua Gậy",
-  {
-    "name": "Ziyech",
-    "image": "/assets/ziyech.webp"
+    "name": "Riyad Mahrez",
+    "image": "/assets/mahrez_lei.webp"
   },
   {
-    "name": "Mitoma",
+    "name": "N'Golo Kante",
+    "image": "/assets/kante_lec.webp"
+  },
+  {
+    "name": "Kaoru Mitoma",
     "image": "/assets/mitoma.webp"
   },
   {
-    "name": "Kante",
-    "image": "/assets/kante_lec.webp"
+    "name": "Michu",
+    "image": "/assets/michu.webp"
+  },
+  {
+    "name": "Paul Robinson",
+    "image": "/assets/robinson.webp"
+  },
+  {
+    "name": "Hakim Ziyech",
+    "image": "/assets/ziyech.webp"
+  },
+  {
+    "name": "Viktor Gyokeres",
+    "image": "/assets/gyokeres.webp"
+  },
+  {
+    "name": "Eberechi Eze",
+    "image": "/assets/eze.webp"
   }
 ]

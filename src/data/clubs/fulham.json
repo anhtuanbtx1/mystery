@@ -1,10 +1,14 @@
 [
   {
+    "name": "Berbatov",
+    "image": "/assets/berbatov_fulham.webp"
+  },
+  {
     "name": "Hangeland",
     "image": "/assets/hangeland.webp"
   },
   {
-    "name": "Berbatov",
-    "image": "/assets/berbatov_fulham.webp"
+    "name": "Petric",
+    "image": "/assets/petric_fulham.webp"
   }
 ]

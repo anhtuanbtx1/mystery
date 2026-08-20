@@ -1,210 +1,135 @@
 [
   {
-    "id": "3",
-    "name": "De Gea",
-    "numeral": "",
-    "image": "/assets/gea.webp",
-    "meaning": "Sự màu mỡ, tự nhiên, sự dồi dào."
-  },
-  {
-    "name": "De Gea",
-    "image": "/assets/gea_mu_1.webp"
-  },
-  {
-    "name": "De Gea",
-    "image": "/assets/gea_mu_2.webp"
-  },
-  {
-    "name": "Henderson",
-    "image": "/assets/henderson.webp"
-  },
-  {
-    "id": "3",
-    "name": "Berbatov",
-    "numeral": "",
-    "image": "/assets/berbatov.webp",
-    "meaning": "Sự màu mỡ, tự nhiên, sự dồi dào."
-  },
-  {
-    "id": "3",
     "name": "Ronaldo",
-    "numeral": "",
-    "image": "/assets/ronaldo_mu.webp",
-    "meaning": "Sự màu mỡ, tự nhiên, sự dồi dào."
-  },
-  {
-    "name": "Ronaldo (MU - Retro)",
-    "image": "/assets/ronaldo_mu_1.webp"
+    "image": "/assets/ronaldo_mu.webp"
   },
   {
     "name": "Ronaldo (Retro)",
+    "image": "/assets/ronaldo_mu_1.webp"
+  },
+  {
+    "name": "Ronaldo (Prime)",
     "image": "/assets/ronaldo_mu_2.webp"
   },
   {
-    "name": "Rooney (Retro 1)",
+    "name": "Ronaldo (Classic)",
+    "image": "/assets/ronaldo_mu_3.webp"
+  },
+  {
+    "name": "Ronaldo (Icon)",
+    "image": "/assets/ronaldo_mu_4.webp"
+  },
+  {
+    "name": "Rooney",
     "image": "/assets/rooney_mu.webp"
   },
   {
-    "name": "Rooney (Retro 2)",
+    "name": "Rooney (Captain)",
     "image": "/assets/rooney_mu_1.webp"
   },
   {
-    "id": "4",
-    "name": "Lukaku",
-    "numeral": "",
-    "image": "/assets/lukaku.webp",
-    "meaning": "Cấu trúc, quyền lực, sự ổn định."
+    "name": "Rooney (Prime)",
+    "image": "/assets/rooney_mu_2.webp"
   },
   {
-    "name": "Persie",
-    "numeral": "20",
-    "image": "/assets/persie_mu.webp"
+    "name": "Rooney (Legend)",
+    "image": "/assets/rooney_mu_3.webp"
   },
   {
-    "name": "Bruno",
-    "numeral": "20",
-    "image": "/assets/fernandes.webp"
+    "name": "Rooney (Retro)",
+    "image": "/assets/rooney_mu_4.webp"
   },
   {
-    "name": "Falcao",
-    "image": "/assets/falcao.webp"
+    "name": "De Gea",
+    "image": "/assets/gea.webp"
   },
   {
-    "name": "Mata",
-    "numeral": "20",
-    "image": "/assets/mata.webp"
+    "name": "De Gea (Save)",
+    "image": "/assets/gea_mu_1.webp"
   },
   {
-    "name": "Persie",
-    "image": "/assets/persie_mu_1.webp"
+    "name": "De Gea (Wall)",
+    "image": "/assets/gea_mu_2.webp"
   },
   {
-    "name": "Rashford",
-    "image": "/assets/rashford.webp"
-  },
-  {
-    "name": "Pogba",
-    "image": "/assets/pogba.webp"
-  },
-  {
-    "name": "Vidic",
-    "image": "/assets/vidic.webp"
-  },
-  {
-    "name": "Ferdinand",
-    "image": "/assets/ferdinand.webp"
-  },
-  {
-    "name": "Giggs",
-    "image": "/assets/giggs.webp"
+    "name": "De Gea (Prime)",
+    "image": "/assets/gea_mu_3.webp"
   },
   {
     "name": "Scholes",
     "image": "/assets/scholes.webp"
   },
   {
+    "name": "Scholes (Sniper)",
+    "image": "/assets/scholes_mu_1.webp"
+  },
+  {
+    "name": "Scholes (Retro)",
+    "image": "/assets/scholes_mu_2.webp"
+  },
+  {
+    "name": "Giggs",
+    "image": "/assets/giggs.webp"
+  },
+  {
+    "name": "Ferdinand",
+    "image": "/assets/ferdinand.webp"
+  },
+  {
+    "name": "Vidic",
+    "image": "/assets/vidic.webp"
+  },
+  {
+    "name": "Evra",
+    "image": "/assets/evra_mu.webp"
+  },
+  {
+    "name": "Gary Neville",
+    "image": "/assets/neville_mu.webp"
+  },
+  {
+    "name": "Antonio Valencia",
+    "image": "/assets/valencia_mu.webp"
+  },
+  {
     "name": "Schmeichel",
     "image": "/assets/schmeichel.webp"
   },
   {
-    "name": "Wan-Bissaka",
-    "image": "/assets/bissaka.webp"
+    "name": "Cantona",
+    "image": "/assets/cantona.webp"
+  },
+  {
+    "name": "Van Persie",
+    "image": "/assets/persie_mu.webp"
+  },
+  {
+    "name": "Van Persie (Volley)",
+    "image": "/assets/persie_mu_1.webp"
+  },
+  {
+    "name": "Van Persie (20)",
+    "image": "/assets/persie_mu_2.webp"
+  },
+  {
+    "name": "Berbatov",
+    "image": "/assets/berbatov.webp"
+  },
+  {
+    "name": "Falcao",
+    "image": "/assets/falcao.webp"
   },
   {
     "name": "Cavani",
     "image": "/assets/cavani.webp"
   },
   {
-    "name": "L. Martinez",
-    "image": "/assets/martinez_mu.webp"
-  },
-  {
-    "name": "Mason Mount",
-    "image": "/assets/mount.webp"
-  },
-  {
-    "name": "Maguire",
-    "image": "/assets/maguire.webp"
-  },
-  {
-    "name": "Casemiro",
-    "image": "/assets/casemiro.webp"
-  },
-  {
-    "name": "Amrabat",
-    "image": "/assets/amrabat.webp"
-  },
-  {
-    "name": "Baily",
-    "image": "/assets/baily.webp"
-  },
-  {
-    "name": "Dalot",
-    "image": "/assets/dalot.webp"
-  },
-  {
-    "name": "Henderson",
-    "image": "/assets/henderson_mu_1.webp"
-  },
-  {
-    "name": "Hoijlund",
-    "image": "/assets/hoijlund.webp"
-  },
-  {
-    "name": "Lingard",
-    "image": "/assets/lingard.webp"
-  },
-  {
     "name": "Lukaku",
+    "image": "/assets/lukaku.webp"
+  },
+  {
+    "name": "Lukaku (Prime)",
     "image": "/assets/lukaku_mu_1.webp"
-  },
-  {
-    "name": "Mazraoui",
-    "image": "/assets/mazraoui.webp"
-  },
-  {
-    "name": "Pogba",
-    "image": "/assets/pogba_mu_1.webp"
-  },
-  {
-    "name": "Pogba",
-    "image": "/assets/pogba_mu_2.webp"
-  },
-  {
-    "name": "Ronaldo",
-    "image": "/assets/ronaldo_mu_3.webp"
-  },
-  {
-    "name": "Rooney",
-    "image": "/assets/rooney_mu_2.webp"
-  },
-  {
-    "name": "Sachez",
-    "image": "/assets/sachez_mu_1.webp"
-  },
-  {
-    "name": "Scholes",
-    "image": "/assets/scholes_mu_1.webp"
-  },
-  {
-    "name": "Smalling",
-    "image": "/assets/smalling.webp"
-  },
-  {
-    "name": "Ugarte",
-    "image": "/assets/ugarte.webp"
-  },
-  {
-    "name": "Yoro",
-    "image": "/assets/yoro.webp"
-  },
-  {
-    "name": "Zirkzee",
-    "image": "/assets/zirkzee.webp"
-  },
-  {
-    "name": "Cantona",
-    "image": "/assets/cantona.webp"
   },
   {
     "name": "Di Maria",
@@ -212,27 +137,107 @@
   },
   {
     "name": "Pogba",
+    "image": "/assets/pogba.webp"
+  },
+  {
+    "name": "Pogba (Home)",
+    "image": "/assets/pogba_mu_1.webp"
+  },
+  {
+    "name": "Pogba (Away)",
+    "image": "/assets/pogba_mu_2.webp"
+  },
+  {
+    "name": "Pogba (Alt)",
     "image": "/assets/paul_alt_1.webp"
   },
   {
-    "name": "Persie",
-    "image": "/assets/persie_mu_2.webp"
+    "name": "Bruno Fernandes",
+    "image": "/assets/fernandes.webp"
   },
   {
-    "name": "Ronaldo",
-    "image": "/assets/ronaldo_mu_4.webp"
+    "name": "Rashford",
+    "image": "/assets/rashford.webp"
   },
   {
-    "name": "Rooney",
-    "image": "/assets/rooney_mu_3.webp"
+    "name": "Martial",
+    "image": "/assets/martial.webp"
   },
   {
-    "name": "Rooney",
-    "image": "/assets/rooney_mu_4.webp"
+    "name": "Alexis Sanchez",
+    "image": "/assets/sachez_mu_1.webp"
   },
   {
-    "name": "Scholes",
-    "image": "/assets/scholes_mu_2.webp"
+    "name": "Mata",
+    "image": "/assets/mata.webp"
+  },
+  {
+    "name": "Casemiro",
+    "image": "/assets/casemiro.webp"
+  },
+  {
+    "name": "L. Martinez",
+    "image": "/assets/martinez_mu.webp"
+  },
+  {
+    "name": "Maguire",
+    "image": "/assets/maguire.webp"
+  },
+  {
+    "name": "Wan-Bissaka",
+    "image": "/assets/bissaka.webp"
+  },
+  {
+    "name": "Dalot",
+    "image": "/assets/dalot.webp"
+  },
+  {
+    "name": "Mazraoui",
+    "image": "/assets/mazraoui.webp"
+  },
+  {
+    "name": "Yoro",
+    "image": "/assets/yoro.webp"
+  },
+  {
+    "name": "Ugarte",
+    "image": "/assets/ugarte.webp"
+  },
+  {
+    "name": "Hojlund",
+    "image": "/assets/hoijlund.webp"
+  },
+  {
+    "name": "Zirkzee",
+    "image": "/assets/zirkzee.webp"
+  },
+  {
+    "name": "Mason Mount",
+    "image": "/assets/mount.webp"
+  },
+  {
+    "name": "Amrabat",
+    "image": "/assets/amrabat.webp"
+  },
+  {
+    "name": "Bailly",
+    "image": "/assets/baily.webp"
+  },
+  {
+    "name": "Henderson",
+    "image": "/assets/henderson.webp"
+  },
+  {
+    "name": "Henderson (Alt)",
+    "image": "/assets/henderson_mu_1.webp"
+  },
+  {
+    "name": "Lingard",
+    "image": "/assets/lingard.webp"
+  },
+  {
+    "name": "Smalling",
+    "image": "/assets/smalling.webp"
   },
   {
     "name": "Schweinsteiger",
