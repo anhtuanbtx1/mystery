@@ -25,8 +25,7 @@
   --parchment-400: #d4b88c;
   --bg-dark: #05140e;
   --bg-surface: #071c14;
-  --font-display: var(--font-display, 'Playfair Display', 'Georgia', serif);
-  --font-body: var(--font-body, 'Be Vietnam Pro', sans-serif);
+  /* Font variables are supplied by next/font on <html>. Do not self-reference them. */
 }
 
 body {
